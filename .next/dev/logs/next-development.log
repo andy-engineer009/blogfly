@@ -1,7 +1,8 @@
-[00:00:01.104] Server  LOG      ✓ Ready in 836ms
-[00:00:11.131] Server  LOG      ○ Compiling /_not-found/page ...
-[00:00:12.662] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
-[00:00:12.806] Browser ERROR   A tree hydrated but some attributes of the server rendered HTML didn't match the client properties. This won't be patched up. This can happen if a SSR-ed Client Component used:
+[00:00:00.542] Server  LOG      ✓ Ready in 367ms
+[00:00:03.883] Server  WARN     ⚠ The "images.domains" configuration is deprecated. Please use "images.remotePatterns" configuration instead.
+[00:00:03.918] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[00:00:03.918] Browser ERROR   Encountered two children with the same key, `%s`. Keys should be unique so that components maintain their identity across updates. Non-unique keys may cause children to be duplicated and/or omitted — the behavior is unsupported and could change in a future version. How Product Development Can Increase Your Profit!
+[00:00:03.918] Browser ERROR   uncaughtError: Error: Hydration failed because the server rendered text didn't match the client. As a result this tree will be regenerated on the client. This can happen if a SSR-ed Client Component used:
 
 - A server/client branch `if (typeof window !== 'undefined')`.
 - Variable input such as `Date.now()` or `Math.random()` which changes each time it's called.
@@ -11,36 +12,56 @@
 
 It can also happen if the client has a browser extension installed which messes with the HTML before React loaded.
 
-%s%s https://react.dev/link/hydration-mismatch 
+https://react.dev/link/hydration-mismatch
 
   ...
-    <HotReload globalError={[...]} webSocket={WebSocket} staticIndicatorState={{pathname:null, ...}}>
-      <AppDevOverlayErrorBoundary globalError={[...]}>
-        <ReplaySsrOnlyErrors>
-        <DevRootHTTPAccessFallbackBoundary>
-          <HTTPAccessFallbackBoundary notFound={<NotAllowedRootHTTPFallbackError>}>
-            <HTTPAccessFallbackErrorBoundary pathname="/blog/mark..." notFound={<NotAllowedRootHTTPFallbackError>} ...>
-              <RedirectBoundary>
-                <RedirectErrorBoundary router={{...}}>
-                  <Head>
-                  <__next_root_layout_boundary__>
-                    <SegmentViewNode type="layout" pagePath="/Documents...">
-                      <SegmentTrieNode>
-                      <link>
-                      <script>
-                      <RootLayout>
-                        <html lang="en">
-                          <body
-                            className="geist_a71539c9-module__T19VSG__variable geist_mono_8d43a2aa-module__8Li5zG__var..."
--                           cz-shortcut-listen="true"
-                          >
-                  ...
+    <HTTPAccessFallbackBoundary notFound={<NotAllowedRootHTTPFallbackError>}>
+      <HTTPAccessFallbackErrorBoundary pathname="/" notFound={<NotAllowedRootHTTPFallbackError>} forbidden={undefined} ...>
+        <RedirectBoundary>
+          <RedirectErrorBoundary router={{...}}>
+            <Head>
+            <__next_root_layout_boundary__>
+              <SegmentViewNode type="layout" pagePath="layout.tsx">
+                <SegmentTrieNode>
+                <link>
+                <script>
+                <script>
+                <RootLayout>
+                  <html lang="en">
+                    <body className="poppins_6b..." style={{...}}>
+                      <ThemeProvider>
+                        <Header>
+                          <header className="sticky top...">
+                            <div className="mx-auto fl...">
+                              <LinkComponent>
+                              <nav>
+                              <div className="hidden ite...">
+                                <a>
+                                <a>
+                                <a>
+                                <a>
+                                <button
+                                  onClick={function ThemeProvider.useCallback[toggleMode]}
++                                 aria-label="Switch to dark theme"
+-                                 aria-label="Switch to light theme"
+                                  className="flex h-9 items-center justify-center rounded-full border border-[var(--bo..."
+                                >
++                                 Moon
+-                                 Sun
+                              ...
+                        ...
+            ...
 
-[00:00:15.055] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
-[00:00:15.195] Browser WARN    Image with src "http://localhost:3000/vercel.svg" has either width or height modified, but not the other. If you use CSS to change the size of your image, also include the styles 'width: "auto"' or 'height: "auto"' to maintain the aspect ratio.
-[00:08:26.417] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
-[00:09:15.955] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
-[00:09:16.125] Browser ERROR   A tree hydrated but some attributes of the server rendered HTML didn't match the client properties. This won't be patched up. This can happen if a SSR-ed Client Component used:
+[00:00:04.780] Server  ERROR    ⨯ "upstream image response failed for" "https://images.unsplash.com/photo-1498575207490-34b60d3b04e4?auto=format&fit=crop&w=800&q=80" 404
+[00:00:04.886] Server  ERROR    ⨯ "upstream image response failed for" "https://images.unsplash.com/photo-1498575207490-34b60d3b04e4?auto=format&fit=crop&w=800&q=80" 404
+[00:01:37.049] Server  LOG      ✓ Compiled in 13ms
+[00:01:56.982] Server  LOG      ✓ Compiled in 10ms
+[00:01:57.264] Server  ERROR    ⨯ "upstream image response failed for" "https://images.unsplash.com/photo-1498575207490-34b60d3b04e4?auto=format&fit=crop&w=800&q=80" 404
+[00:03:05.519] Server  LOG      ✓ Compiled in 26ms
+[00:03:51.367] Server  LOG      ✓ Compiled in 24ms
+[00:03:56.532] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[00:03:56.657] Browser ERROR   Encountered two children with the same key, `%s`. Keys should be unique so that components maintain their identity across updates. Non-unique keys may cause children to be duplicated and/or omitted — the behavior is unsupported and could change in a future version. How Product Development Can Increase Your Profit!
+[00:03:56.658] Browser ERROR   uncaughtError: Error: Hydration failed because the server rendered text didn't match the client. As a result this tree will be regenerated on the client. This can happen if a SSR-ed Client Component used:
 
 - A server/client branch `if (typeof window !== 'undefined')`.
 - Variable input such as `Date.now()` or `Math.random()` which changes each time it's called.
@@ -50,33 +71,59 @@ It can also happen if the client has a browser extension installed which messes 
 
 It can also happen if the client has a browser extension installed which messes with the HTML before React loaded.
 
-%s%s https://react.dev/link/hydration-mismatch 
+https://react.dev/link/hydration-mismatch
 
   ...
-    <HotReload globalError={[...]} webSocket={WebSocket} staticIndicatorState={{pathname:null, ...}}>
-      <AppDevOverlayErrorBoundary globalError={[...]}>
-        <ReplaySsrOnlyErrors>
-        <DevRootHTTPAccessFallbackBoundary>
-          <HTTPAccessFallbackBoundary notFound={<NotAllowedRootHTTPFallbackError>}>
-            <HTTPAccessFallbackErrorBoundary pathname="/header" notFound={<NotAllowedRootHTTPFallbackError>} ...>
-              <RedirectBoundary>
-                <RedirectErrorBoundary router={{...}}>
-                  <Head>
-                  <__next_root_layout_boundary__>
-                    <SegmentViewNode type="layout" pagePath="/Documents...">
-                      <SegmentTrieNode>
-                      <link>
-                      <script>
-                      <RootLayout>
-                        <html lang="en">
-                          <body
-                            className="geist_a71539c9-module__T19VSG__variable geist_mono_8d43a2aa-module__8Li5zG__var..."
--                           cz-shortcut-listen="true"
-                          >
-                  ...
+    <HTTPAccessFallbackBoundary notFound={<NotAllowedRootHTTPFallbackError>}>
+      <HTTPAccessFallbackErrorBoundary pathname="/" notFound={<NotAllowedRootHTTPFallbackError>} forbidden={undefined} ...>
+        <RedirectBoundary>
+          <RedirectErrorBoundary router={{...}}>
+            <Head>
+            <__next_root_layout_boundary__>
+              <SegmentViewNode type="layout" pagePath="layout.tsx">
+                <SegmentTrieNode>
+                <link>
+                <script>
+                <script>
+                <RootLayout>
+                  <html lang="en">
+                    <body className="poppins_6b..." style={{...}}>
+                      <ThemeProvider>
+                        <Header>
+                          <header className="sticky top...">
+                            <div className="mx-auto fl...">
+                              <LinkComponent>
+                              <nav>
+                              <div className="hidden ite...">
+                                <a>
+                                <a>
+                                <a>
+                                <a>
+                                <button
+                                  onClick={function ThemeProvider.useCallback[toggleMode]}
++                                 aria-label="Switch to dark theme"
+-                                 aria-label="Switch to light theme"
+                                  className="flex h-9 items-center justify-center rounded-full border border-[var(--bo..."
+                                >
++                                 Moon
+-                                 Sun
+                              ...
+                        ...
+            ...
 
-[00:10:36.812] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
-[00:10:37.121] Browser ERROR   A tree hydrated but some attributes of the server rendered HTML didn't match the client properties. This won't be patched up. This can happen if a SSR-ed Client Component used:
+[00:03:56.783] Server  ERROR    ⨯ "upstream image response failed for" "https://images.unsplash.com/photo-1498575207490-34b60d3b04e4?auto=format&fit=crop&w=800&q=80" 404
+[00:04:36.800] Server  LOG      ✓ Compiled in 41ms
+[00:05:04.837] Server  LOG      ✓ Compiled in 15ms
+[00:05:14.143] Server  LOG      ✓ Compiled in 5ms
+[00:05:20.483] Server  LOG      ✓ Compiled in 7ms
+[00:05:38.169] Server  LOG      ✓ Compiled in 27ms
+[00:06:01.030] Server  LOG      ✓ Compiled in 10ms
+[00:06:16.737] Server  LOG      ✓ Compiled in 6ms
+[00:06:31.363] Server  LOG      ✓ Compiled in 22ms
+[00:06:39.016] Server  LOG      ✓ Compiled in 22ms
+[00:06:41.972] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[00:06:41.972] Browser ERROR   Encountered two children with the same key, `%s`. Keys should be unique so that components maintain their identity across updates. Non-unique keys may cause children to be duplicated and/or omitted — the behavior is unsupported and could change in a future version. How Product Development Can Increase Your Profit!
+[00:06:41.972] Browser ERROR   uncaughtError: Error: Hydration failed because the server rendered text didn't match the client. As a result this tree will be regenerated on the client. This can happen if a SSR-ed Client Component used:
 
 - A server/client branch `if (typeof window !== 'undefined')`.
 - Variable input such as `Date.now()` or `Math.random()` which changes each time it's called.
@@ -86,36 +133,69 @@ It can also happen if the client has a browser extension installed which messes 
 
 It can also happen if the client has a browser extension installed which messes with the HTML before React loaded.
 
-%s%s https://react.dev/link/hydration-mismatch 
+https://react.dev/link/hydration-mismatch
 
   ...
-    <HotReload globalError={[...]} webSocket={WebSocket} staticIndicatorState={{pathname:null, ...}}>
-      <AppDevOverlayErrorBoundary globalError={[...]}>
-        <ReplaySsrOnlyErrors>
-        <DevRootHTTPAccessFallbackBoundary>
-          <HTTPAccessFallbackBoundary notFound={<NotAllowedRootHTTPFallbackError>}>
-            <HTTPAccessFallbackErrorBoundary pathname="/header" notFound={<NotAllowedRootHTTPFallbackError>} ...>
-              <RedirectBoundary>
-                <RedirectErrorBoundary router={{...}}>
-                  <Head>
-                  <__next_root_layout_boundary__>
-                    <SegmentViewNode type="layout" pagePath="/Documents...">
-                      <SegmentTrieNode>
-                      <link>
-                      <script>
-                      <RootLayout>
-                        <html lang="en">
-                          <body
-                            className="geist_a71539c9-module__T19VSG__variable geist_mono_8d43a2aa-module__8Li5zG__var..."
--                           cz-shortcut-listen="true"
-                          >
-                  ...
+    <HTTPAccessFallbackBoundary notFound={<NotAllowedRootHTTPFallbackError>}>
+      <HTTPAccessFallbackErrorBoundary pathname="/" notFound={<NotAllowedRootHTTPFallbackError>} forbidden={undefined} ...>
+        <RedirectBoundary>
+          <RedirectErrorBoundary router={{...}}>
+            <Head>
+            <__next_root_layout_boundary__>
+              <SegmentViewNode type="layout" pagePath="layout.tsx">
+                <SegmentTrieNode>
+                <link>
+                <script>
+                <script>
+                <RootLayout>
+                  <html lang="en">
+                    <body className="poppins_6b..." style={{...}}>
+                      <ThemeProvider>
+                        <Header>
+                          <header className="sticky top...">
+                            <div className="mx-auto fl...">
+                              <LinkComponent>
+                              <nav>
+                              <div className="hidden ite...">
+                                <a>
+                                <a>
+                                <a>
+                                <a>
+                                <button
+                                  onClick={function ThemeProvider.useCallback[toggleMode]}
++                                 aria-label="Switch to dark theme"
+-                                 aria-label="Switch to light theme"
+                                  className="flex h-9 items-center justify-center rounded-full border border-[var(--bo..."
+                                >
++                                 Moon
+-                                 Sun
+                              ...
+                        ...
+            ...
 
-[00:10:56.565] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
-[00:11:21.816] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
-[00:11:26.695] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
-[00:12:05.744] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
-[00:12:05.870] Browser ERROR   A tree hydrated but some attributes of the server rendered HTML didn't match the client properties. This won't be patched up. This can happen if a SSR-ed Client Component used:
+[00:06:41.972] Browser WARN    Image with src "https://images.unsplash.com/photo-1469474968028-56623f02e42e?auto=format&fit=crop&w=800&q=80" has either width or height modified, but not the other. If you use CSS to change the size of your image, also include the styles 'width: "auto"' or 'height: "auto"' to maintain the aspect ratio.
+[00:06:41.972] Browser WARN    Image with src "https://images.unsplash.com/photo-1524504388940-b1c1722653e1?auto=format&fit=crop&w=800&q=80" has either width or height modified, but not the other. If you use CSS to change the size of your image, also include the styles 'width: "auto"' or 'height: "auto"' to maintain the aspect ratio.
+[00:06:41.972] Browser WARN    Image with src "https://images.unsplash.com/photo-1487412720507-e7ab37603c6f?auto=format&fit=crop&w=800&q=80" has either width or height modified, but not the other. If you use CSS to change the size of your image, also include the styles 'width: "auto"' or 'height: "auto"' to maintain the aspect ratio.
+[00:06:41.972] Browser WARN    Image with src "https://images.unsplash.com/photo-1485827404703-89b55fcc595e?auto=format&fit=crop&w=800&q=80" has either width or height modified, but not the other. If you use CSS to change the size of your image, also include the styles 'width: "auto"' or 'height: "auto"' to maintain the aspect ratio.
+[00:06:42.082] Browser WARN    Image with src "https://images.unsplash.com/photo-1472214103451-9374bd1c798e?auto=format&fit=crop&w=800&q=80" has either width or height modified, but not the other. If you use CSS to change the size of your image, also include the styles 'width: "auto"' or 'height: "auto"' to maintain the aspect ratio.
+[00:06:42.082] Browser WARN    Image with src "https://images.unsplash.com/photo-1504593811423-6dd665756598?auto=format&fit=crop&w=800&q=80" has either width or height modified, but not the other. If you use CSS to change the size of your image, also include the styles 'width: "auto"' or 'height: "auto"' to maintain the aspect ratio.
+[00:06:42.082] Browser WARN    Image with src "https://images.unsplash.com/photo-1529333166437-7750a6dd5a70?auto=format&fit=crop&w=800&q=80" has either width or height modified, but not the other. If you use CSS to change the size of your image, also include the styles 'width: "auto"' or 'height: "auto"' to maintain the aspect ratio.
+[00:06:42.082] Browser WARN    Image with src "https://images.unsplash.com/photo-1498050108023-c5249f4df085?auto=format&fit=crop&w=800&q=80" has either width or height modified, but not the other. If you use CSS to change the size of your image, also include the styles 'width: "auto"' or 'height: "auto"' to maintain the aspect ratio.
+[00:06:42.082] Browser WARN    Image with src "https://images.unsplash.com/photo-1500530855697-b586d89ba3ee?auto=format&fit=crop&w=800&q=80" has either width or height modified, but not the other. If you use CSS to change the size of your image, also include the styles 'width: "auto"' or 'height: "auto"' to maintain the aspect ratio.
+[00:06:43.812] Server  ERROR    ⨯ "upstream image response failed for" "https://images.unsplash.com/photo-1498575207490-34b60d3b04e4?auto=format&fit=crop&w=800&q=80" 404
+[00:06:56.503] Server  LOG      ✓ Compiled in 16ms
+[00:09:23.036] Server  LOG      ✓ Compiled in 22ms
+[00:09:38.363] Server  LOG      ✓ Compiled in 18ms
+[00:09:57.688] Server  LOG      ✓ Compiled in 15ms
+[00:10:13.351] Server  LOG      ✓ Compiled in 19ms
+[00:10:29.122] Server  LOG      ✓ Compiled in 22ms
+[00:12:10.678] Server  WARN     ⚠ Fast Refresh had to perform a full reload when ./app/providers/ThemeProvider.tsx changed. Read more: https://nextjs.org/docs/messages/fast-refresh-reload
+[00:12:10.722] Server  LOG      ✓ Compiled in 9ms
+[00:12:10.833] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[00:12:11.799] Server  ERROR    ⨯ "upstream image response failed for" "https://images.unsplash.com/photo-1498575207490-34b60d3b04e4?auto=format&fit=crop&w=800&q=80" 404
+[00:12:11.866] Browser ERROR   Encountered two children with the same key, `%s`. Keys should be unique so that components maintain their identity across updates. Non-unique keys may cause children to be duplicated and/or omitted — the behavior is unsupported and could change in a future version. How Product Development Can Increase Your Profit!
+[00:12:11.866] Browser ERROR   Encountered two children with the same key, `%s`. Keys should be unique so that components maintain their identity across updates. Non-unique keys may cause children to be duplicated and/or omitted — the behavior is unsupported and could change in a future version. How Product Development Can Increase Your Profit!
+[00:12:11.866] Browser ERROR   uncaughtError: Error: Hydration failed because the server rendered text didn't match the client. As a result this tree will be regenerated on the client. This can happen if a SSR-ed Client Component used:
 
 - A server/client branch `if (typeof window !== 'undefined')`.
 - Variable input such as `Date.now()` or `Math.random()` which changes each time it's called.
@@ -125,44 +205,65 @@ It can also happen if the client has a browser extension installed which messes 
 
 It can also happen if the client has a browser extension installed which messes with the HTML before React loaded.
 
-%s%s https://react.dev/link/hydration-mismatch 
+https://react.dev/link/hydration-mismatch
 
   ...
-    <HotReload globalError={[...]} webSocket={WebSocket} staticIndicatorState={{pathname:null, ...}}>
-      <AppDevOverlayErrorBoundary globalError={[...]}>
-        <ReplaySsrOnlyErrors>
-        <DevRootHTTPAccessFallbackBoundary>
-          <HTTPAccessFallbackBoundary notFound={<NotAllowedRootHTTPFallbackError>}>
-            <HTTPAccessFallbackErrorBoundary pathname="/" notFound={<NotAllowedRootHTTPFallbackError>} ...>
-              <RedirectBoundary>
-                <RedirectErrorBoundary router={{...}}>
-                  <Head>
-                  <__next_root_layout_boundary__>
-                    <SegmentViewNode type="layout" pagePath="/Documents...">
-                      <SegmentTrieNode>
-                      <link>
-                      <script>
-                      <RootLayout>
-                        <html lang="en">
-                          <body
-                            className="geist_a71539c9-module__T19VSG__variable geist_mono_8d43a2aa-module__8Li5zG__var..."
--                           cz-shortcut-listen="true"
-                          >
-                  ...
+    <HTTPAccessFallbackBoundary notFound={<NotAllowedRootHTTPFallbackError>}>
+      <HTTPAccessFallbackErrorBoundary pathname="/" notFound={<NotAllowedRootHTTPFallbackError>} forbidden={undefined} ...>
+        <RedirectBoundary>
+          <RedirectErrorBoundary router={{...}}>
+            <Head>
+            <__next_root_layout_boundary__>
+              <SegmentViewNode type="layout" pagePath="layout.tsx">
+                <SegmentTrieNode>
+                <link>
+                <script>
+                <script>
+                <RootLayout>
+                  <html lang="en">
+                    <body className="poppins_6b..." style={{...}}>
+                      <ThemeProvider>
+                        <Header>
+                          <header className="sticky top...">
+                            <div className="mx-auto fl...">
+                              <LinkComponent>
+                              <nav>
+                              <div className="hidden ite...">
+                                <a>
+                                <a>
+                                <a>
+                                <a>
+                                <button
+                                  onClick={function ThemeProvider.useCallback[toggleMode]}
++                                 aria-label="Switch to dark theme"
+-                                 aria-label="Switch to light theme"
+                                  className="flex h-9 items-center justify-center rounded-full border border-[var(--bo..."
+                                >
++                                 Moon
+-                                 Sun
+                              ...
+                        ...
+            ...
 
-[00:12:05.870] Browser WARN    Image with src "http://localhost:3000/vercel.svg" has either width or height modified, but not the other. If you use CSS to change the size of your image, also include the styles 'width: "auto"' or 'height: "auto"' to maintain the aspect ratio.
-[00:12:29.579] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
-[00:12:42.992] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
-[00:12:55.138] Server  LOG      ✓ Compiled in 28ms
-[00:21:06.867] Server  WARN    Error: Route "/[category]/[id]" used `params.id`. `params` is a Promise and must be unwrapped with `await` or `React.use()` before accessing its properties. Learn more: https://nextjs.org/docs/messages/sync-dynamic-apis
-[00:21:07.277] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
-[00:21:14.611] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
-[00:21:34.209] Server  WARN    Error: Route "/[category]" used `params.category`. `params` is a Promise and must be unwrapped with `await` or `React.use()` before accessing its properties. Learn more: https://nextjs.org/docs/messages/sync-dynamic-apis
-[00:21:34.504] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
-[00:21:38.575] Server  WARN    Error: Route "/[category]/[id]" used `params.id`. `params` is a Promise and must be unwrapped with `await` or `React.use()` before accessing its properties. Learn more: https://nextjs.org/docs/messages/sync-dynamic-apis
-[00:21:38.962] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
-[00:22:19.365] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
-[00:22:19.470] Browser ERROR   A tree hydrated but some attributes of the server rendered HTML didn't match the client properties. This won't be patched up. This can happen if a SSR-ed Client Component used:
+[00:12:11.866] Browser WARN    Image with src "https://images.unsplash.com/photo-1469474968028-56623f02e42e?auto=format&fit=crop&w=800&q=80" has either width or height modified, but not the other. If you use CSS to change the size of your image, also include the styles 'width: "auto"' or 'height: "auto"' to maintain the aspect ratio.
+[00:12:11.866] Browser WARN    Image with src "https://images.unsplash.com/photo-1524504388940-b1c1722653e1?auto=format&fit=crop&w=800&q=80" has either width or height modified, but not the other. If you use CSS to change the size of your image, also include the styles 'width: "auto"' or 'height: "auto"' to maintain the aspect ratio.
+[00:12:11.866] Browser WARN    Image with src "https://images.unsplash.com/photo-1487412720507-e7ab37603c6f?auto=format&fit=crop&w=800&q=80" has either width or height modified, but not the other. If you use CSS to change the size of your image, also include the styles 'width: "auto"' or 'height: "auto"' to maintain the aspect ratio.
+[00:12:11.866] Browser WARN    Image with src "https://images.unsplash.com/photo-1485827404703-89b55fcc595e?auto=format&fit=crop&w=800&q=80" has either width or height modified, but not the other. If you use CSS to change the size of your image, also include the styles 'width: "auto"' or 'height: "auto"' to maintain the aspect ratio.
+[00:12:11.866] Browser WARN    Image with src "https://images.unsplash.com/photo-1472214103451-9374bd1c798e?auto=format&fit=crop&w=800&q=80" has either width or height modified, but not the other. If you use CSS to change the size of your image, also include the styles 'width: "auto"' or 'height: "auto"' to maintain the aspect ratio.
+[00:12:11.866] Browser WARN    Image with src "https://images.unsplash.com/photo-1504593811423-6dd665756598?auto=format&fit=crop&w=800&q=80" has either width or height modified, but not the other. If you use CSS to change the size of your image, also include the styles 'width: "auto"' or 'height: "auto"' to maintain the aspect ratio.
+[00:12:11.866] Browser WARN    Image with src "https://images.unsplash.com/photo-1498050108023-c5249f4df085?auto=format&fit=crop&w=800&q=80" has either width or height modified, but not the other. If you use CSS to change the size of your image, also include the styles 'width: "auto"' or 'height: "auto"' to maintain the aspect ratio.
+[00:12:11.866] Browser WARN    Image with src "https://images.unsplash.com/photo-1500530855697-b586d89ba3ee?auto=format&fit=crop&w=800&q=80" has either width or height modified, but not the other. If you use CSS to change the size of your image, also include the styles 'width: "auto"' or 'height: "auto"' to maintain the aspect ratio.
+[00:12:11.866] Browser WARN    Image with src "https://images.unsplash.com/photo-1529333166437-7750a6dd5a70?auto=format&fit=crop&w=800&q=80" has either width or height modified, but not the other. If you use CSS to change the size of your image, also include the styles 'width: "auto"' or 'height: "auto"' to maintain the aspect ratio.
+[00:12:39.209] Server  LOG      ✓ Compiled in 13ms
+[00:12:46.152] Server  LOG      ✓ Compiled in 22ms
+[00:14:24.308] Browser WARN    Image with src "https://images.unsplash.com/photo-1485827404703-89b55fcc595e?auto=format&fit=crop&w=600&q=80" has either width or height modified, but not the other. If you use CSS to change the size of your image, also include the styles 'width: "auto"' or 'height: "auto"' to maintain the aspect ratio.
+[00:14:24.308] Browser WARN    Image with src "https://images.unsplash.com/photo-1504593811423-6dd665756598?auto=format&fit=crop&w=600&q=80" has either width or height modified, but not the other. If you use CSS to change the size of your image, also include the styles 'width: "auto"' or 'height: "auto"' to maintain the aspect ratio.
+[00:14:24.308] Browser WARN    Image with src "https://images.unsplash.com/photo-1545239351-1141bd82e8a6?auto=format&fit=crop&w=600&q=80" has either width or height modified, but not the other. If you use CSS to change the size of your image, also include the styles 'width: "auto"' or 'height: "auto"' to maintain the aspect ratio.
+[00:16:23.867] Browser ERROR   Encountered two children with the same key, `%s`. Keys should be unique so that components maintain their identity across updates. Non-unique keys may cause children to be duplicated and/or omitted — the behavior is unsupported and could change in a future version. How Product Development Can Increase Your Profit!
+[00:16:54.417] Browser ERROR   Encountered two children with the same key, `%s`. Keys should be unique so that components maintain their identity across updates. Non-unique keys may cause children to be duplicated and/or omitted — the behavior is unsupported and could change in a future version. How Product Development Can Increase Your Profit!
+[00:17:52.499] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[00:17:52.499] Browser ERROR   Encountered two children with the same key, `%s`. Keys should be unique so that components maintain their identity across updates. Non-unique keys may cause children to be duplicated and/or omitted — the behavior is unsupported and could change in a future version. How Product Development Can Increase Your Profit!
+[00:17:52.499] Browser ERROR   uncaughtError: Error: Hydration failed because the server rendered text didn't match the client. As a result this tree will be regenerated on the client. This can happen if a SSR-ed Client Component used:
 
 - A server/client branch `if (typeof window !== 'undefined')`.
 - Variable input such as `Date.now()` or `Math.random()` which changes each time it's called.
@@ -172,86 +273,101 @@ It can also happen if the client has a browser extension installed which messes 
 
 It can also happen if the client has a browser extension installed which messes with the HTML before React loaded.
 
-%s%s https://react.dev/link/hydration-mismatch 
+https://react.dev/link/hydration-mismatch
 
   ...
-    <HotReload globalError={[...]} webSocket={WebSocket} staticIndicatorState={{pathname:null, ...}}>
-      <AppDevOverlayErrorBoundary globalError={[...]}>
-        <ReplaySsrOnlyErrors>
-        <DevRootHTTPAccessFallbackBoundary>
-          <HTTPAccessFallbackBoundary notFound={<NotAllowedRootHTTPFallbackError>}>
-            <HTTPAccessFallbackErrorBoundary pathname="/admin/das..." notFound={<NotAllowedRootHTTPFallbackError>} ...>
-              <RedirectBoundary>
-                <RedirectErrorBoundary router={{...}}>
-                  <Head>
-                  <__next_root_layout_boundary__>
-                    <SegmentViewNode type="layout" pagePath="/Documents...">
-                      <SegmentTrieNode>
-                      <link>
-                      <script>
-                      <RootLayout>
-                        <html lang="en">
-                          <body
-                            className="geist_a71539c9-module__T19VSG__variable geist_mono_8d43a2aa-module__8Li5zG__var..."
--                           cz-shortcut-listen="true"
-                          >
-                  ...
+    <HTTPAccessFallbackBoundary notFound={<NotAllowedRootHTTPFallbackError>}>
+      <HTTPAccessFallbackErrorBoundary pathname="/" notFound={<NotAllowedRootHTTPFallbackError>} forbidden={undefined} ...>
+        <RedirectBoundary>
+          <RedirectErrorBoundary router={{...}}>
+            <Head>
+            <__next_root_layout_boundary__>
+              <SegmentViewNode type="layout" pagePath="layout.tsx">
+                <SegmentTrieNode>
+                <link>
+                <script>
+                <script>
+                <RootLayout>
+                  <html lang="en">
+                    <body className="poppins_6b..." style={{...}}>
+                      <ThemeProvider>
+                        <Header>
+                          <header className="sticky top...">
+                            <div className="mx-auto fl...">
+                              <LinkComponent>
+                              <nav>
+                              <div className="hidden ite...">
+                                <a>
+                                <a>
+                                <a>
+                                <a>
+                                <button
+                                  onClick={function ThemeProvider.useCallback[toggleMode]}
++                                 aria-label="Switch to dark theme"
+-                                 aria-label="Switch to light theme"
+                                  className="flex h-9 items-center justify-center rounded-full border border-[var(--bo..."
+                                >
++                                 Moon
+-                                 Sun
+                              ...
+                        ...
+            ...
 
-[00:22:26.825] Server  WARN    Error: Route "/[category]/[id]" used `params.id`. `params` is a Promise and must be unwrapped with `await` or `React.use()` before accessing its properties. Learn more: https://nextjs.org/docs/messages/sync-dynamic-apis
-[00:22:27.210] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
-[00:23:05.751] Server  WARN    Error: Route "/[category]/[id]" used `params.id`. `params` is a Promise and must be unwrapped with `await` or `React.use()` before accessing its properties. Learn more: https://nextjs.org/docs/messages/sync-dynamic-apis
-[00:23:05.945] Server  WARN    Error: Route "/[category]/[id]" used `params.id`. `params` is a Promise and must be unwrapped with `await` or `React.use()` before accessing its properties. Learn more: https://nextjs.org/docs/messages/sync-dynamic-apis
-[00:23:06.082] Server  WARN    Error: Route "/[category]/[id]" used `params.id`. `params` is a Promise and must be unwrapped with `await` or `React.use()` before accessing its properties. Learn more: https://nextjs.org/docs/messages/sync-dynamic-apis
-[00:23:06.172] Server  WARN    Error: Route "/[category]/[id]" used `params.id`. `params` is a Promise and must be unwrapped with `await` or `React.use()` before accessing its properties. Learn more: https://nextjs.org/docs/messages/sync-dynamic-apis
-[00:23:06.279] Server  WARN    Error: Route "/[category]/[id]" used `params.id`. `params` is a Promise and must be unwrapped with `await` or `React.use()` before accessing its properties. Learn more: https://nextjs.org/docs/messages/sync-dynamic-apis
-[00:23:06.378] Server  WARN    Error: Route "/[category]/[id]" used `params.id`. `params` is a Promise and must be unwrapped with `await` or `React.use()` before accessing its properties. Learn more: https://nextjs.org/docs/messages/sync-dynamic-apis
-[00:23:06.441] Server  WARN    Error: Route "/[category]/[id]" used `params.id`. `params` is a Promise and must be unwrapped with `await` or `React.use()` before accessing its properties. Learn more: https://nextjs.org/docs/messages/sync-dynamic-apis
-[00:23:06.589] Server  WARN    Error: Route "/[category]/[id]" used `params.id`. `params` is a Promise and must be unwrapped with `await` or `React.use()` before accessing its properties. Learn more: https://nextjs.org/docs/messages/sync-dynamic-apis
-[00:23:06.760] Server  WARN    Error: Route "/[category]/[id]" used `params.id`. `params` is a Promise and must be unwrapped with `await` or `React.use()` before accessing its properties. Learn more: https://nextjs.org/docs/messages/sync-dynamic-apis
-[00:23:06.880] Server  WARN    Error: Route "/[category]/[id]" used `params.id`. `params` is a Promise and must be unwrapped with `await` or `React.use()` before accessing its properties. Learn more: https://nextjs.org/docs/messages/sync-dynamic-apis
-[00:23:07.010] Server  WARN    Error: Route "/[category]/[id]" used `params.id`. `params` is a Promise and must be unwrapped with `await` or `React.use()` before accessing its properties. Learn more: https://nextjs.org/docs/messages/sync-dynamic-apis
-[00:23:07.068] Server  WARN    Error: Route "/[category]/[id]" used `params.id`. `params` is a Promise and must be unwrapped with `await` or `React.use()` before accessing its properties. Learn more: https://nextjs.org/docs/messages/sync-dynamic-apis
-[00:23:07.137] Server  WARN    Error: Route "/[category]/[id]" used `params.id`. `params` is a Promise and must be unwrapped with `await` or `React.use()` before accessing its properties. Learn more: https://nextjs.org/docs/messages/sync-dynamic-apis
-[00:23:07.221] Server  WARN    Error: Route "/[category]/[id]" used `params.id`. `params` is a Promise and must be unwrapped with `await` or `React.use()` before accessing its properties. Learn more: https://nextjs.org/docs/messages/sync-dynamic-apis
-[00:23:07.312] Server  WARN    Error: Route "/[category]/[id]" used `params.id`. `params` is a Promise and must be unwrapped with `await` or `React.use()` before accessing its properties. Learn more: https://nextjs.org/docs/messages/sync-dynamic-apis
-[00:23:07.411] Server  WARN    Error: Route "/[category]/[id]" used `params.id`. `params` is a Promise and must be unwrapped with `await` or `React.use()` before accessing its properties. Learn more: https://nextjs.org/docs/messages/sync-dynamic-apis
-[00:23:17.874] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
-[00:23:23.144] Server  WARN    Error: Route "/[category]/[id]" used `params.id`. `params` is a Promise and must be unwrapped with `await` or `React.use()` before accessing its properties. Learn more: https://nextjs.org/docs/messages/sync-dynamic-apis
-[00:23:23.578] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
-[00:23:27.132] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
-[00:27:07.497] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
-[00:27:12.434] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
-[00:27:16.324] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
-[00:27:20.193] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
-[00:27:27.399] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
-[00:27:47.001] Server  LOG      ✓ Compiled in 64ms
-[00:27:48.872] Server  WARN    Error: Route "/admin/post/edit/[id]" used `params.id`. `params` is a Promise and must be unwrapped with `await` or `React.use()` before accessing its properties. Learn more: https://nextjs.org/docs/messages/sync-dynamic-apis
-[00:27:48.993] Server  WARN    Error: Route "/admin/post/edit/[id]" used `params.id`. `params` is a Promise and must be unwrapped with `await` or `React.use()` before accessing its properties. Learn more: https://nextjs.org/docs/messages/sync-dynamic-apis
-[00:27:49.085] Server  WARN    Error: Route "/admin/post/edit/[id]" used `params.id`. `params` is a Promise and must be unwrapped with `await` or `React.use()` before accessing its properties. Learn more: https://nextjs.org/docs/messages/sync-dynamic-apis
-[00:27:49.163] Server  WARN    Error: Route "/admin/post/edit/[id]" used `params.id`. `params` is a Promise and must be unwrapped with `await` or `React.use()` before accessing its properties. Learn more: https://nextjs.org/docs/messages/sync-dynamic-apis
-[00:27:49.240] Server  WARN    Error: Route "/admin/post/edit/[id]" used `params.id`. `params` is a Promise and must be unwrapped with `await` or `React.use()` before accessing its properties. Learn more: https://nextjs.org/docs/messages/sync-dynamic-apis
-[00:27:49.316] Server  WARN    Error: Route "/admin/post/edit/[id]" used `params.id`. `params` is a Promise and must be unwrapped with `await` or `React.use()` before accessing its properties. Learn more: https://nextjs.org/docs/messages/sync-dynamic-apis
-[00:27:49.402] Server  WARN    Error: Route "/admin/post/edit/[id]" used `params.id`. `params` is a Promise and must be unwrapped with `await` or `React.use()` before accessing its properties. Learn more: https://nextjs.org/docs/messages/sync-dynamic-apis
-[00:27:49.478] Server  WARN    Error: Route "/admin/post/edit/[id]" used `params.id`. `params` is a Promise and must be unwrapped with `await` or `React.use()` before accessing its properties. Learn more: https://nextjs.org/docs/messages/sync-dynamic-apis
-[00:27:49.555] Server  WARN    Error: Route "/admin/post/edit/[id]" used `params.id`. `params` is a Promise and must be unwrapped with `await` or `React.use()` before accessing its properties. Learn more: https://nextjs.org/docs/messages/sync-dynamic-apis
-[00:27:49.636] Server  WARN    Error: Route "/admin/post/edit/[id]" used `params.id`. `params` is a Promise and must be unwrapped with `await` or `React.use()` before accessing its properties. Learn more: https://nextjs.org/docs/messages/sync-dynamic-apis
-[00:27:49.734] Server  WARN    Error: Route "/admin/post/edit/[id]" used `params.id`. `params` is a Promise and must be unwrapped with `await` or `React.use()` before accessing its properties. Learn more: https://nextjs.org/docs/messages/sync-dynamic-apis
-[00:27:49.822] Server  WARN    Error: Route "/admin/post/edit/[id]" used `params.id`. `params` is a Promise and must be unwrapped with `await` or `React.use()` before accessing its properties. Learn more: https://nextjs.org/docs/messages/sync-dynamic-apis
-[00:27:50.292] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
-[00:27:52.999] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
-[00:27:57.198] Server  WARN    Error: Route "/admin/post/edit/[id]" used `params.id`. `params` is a Promise and must be unwrapped with `await` or `React.use()` before accessing its properties. Learn more: https://nextjs.org/docs/messages/sync-dynamic-apis
-[00:27:57.627] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
-[00:28:32.347] Server  WARN    Error: Route "/admin/post/edit/[id]" used `params.id`. `params` is a Promise and must be unwrapped with `await` or `React.use()` before accessing its properties. Learn more: https://nextjs.org/docs/messages/sync-dynamic-apis
-[00:28:35.971] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
-[00:28:40.305] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
-[00:35:37.264] Server  ERROR    ⨯ Error: The default export is not a React Component in "/admin/post/add/layout"
-[00:35:37.631] Server  ERROR    ⨯ Error: The default export is not a React Component in "/admin/post/add/layout"
-[00:35:37.634] Server  LOG      ✓ Compiled in 1108ms
-[00:35:40.161] Server  ERROR    ⨯ Error: The default export is not a React Component in "/admin/post/add/layout"
-[00:35:40.542] Server  ERROR    ⨯ Error: The default export is not a React Component in "/admin/post/add/layout"
-[00:35:40.545] Server  LOG      ✓ Compiled in 0ms
-[00:35:43.071] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
-[00:35:43.310] Browser ERROR   A tree hydrated but some attributes of the server rendered HTML didn't match the client properties. This won't be patched up. This can happen if a SSR-ed Client Component used:
+[00:17:52.612] Browser WARN    Image with src "https://images.unsplash.com/photo-1469474968028-56623f02e42e?auto=format&fit=crop&w=800&q=80" has either width or height modified, but not the other. If you use CSS to change the size of your image, also include the styles 'width: "auto"' or 'height: "auto"' to maintain the aspect ratio.
+[00:17:52.612] Browser WARN    Image with src "https://images.unsplash.com/photo-1524504388940-b1c1722653e1?auto=format&fit=crop&w=800&q=80" has either width or height modified, but not the other. If you use CSS to change the size of your image, also include the styles 'width: "auto"' or 'height: "auto"' to maintain the aspect ratio.
+[00:17:52.612] Browser WARN    Image with src "https://images.unsplash.com/photo-1487412720507-e7ab37603c6f?auto=format&fit=crop&w=800&q=80" has either width or height modified, but not the other. If you use CSS to change the size of your image, also include the styles 'width: "auto"' or 'height: "auto"' to maintain the aspect ratio.
+[00:17:52.612] Browser WARN    Image with src "https://images.unsplash.com/photo-1485827404703-89b55fcc595e?auto=format&fit=crop&w=800&q=80" has either width or height modified, but not the other. If you use CSS to change the size of your image, also include the styles 'width: "auto"' or 'height: "auto"' to maintain the aspect ratio.
+[00:17:52.612] Browser WARN    Image with src "https://images.unsplash.com/photo-1472214103451-9374bd1c798e?auto=format&fit=crop&w=800&q=80" has either width or height modified, but not the other. If you use CSS to change the size of your image, also include the styles 'width: "auto"' or 'height: "auto"' to maintain the aspect ratio.
+[00:17:52.612] Browser WARN    Image with src "https://images.unsplash.com/photo-1504593811423-6dd665756598?auto=format&fit=crop&w=800&q=80" has either width or height modified, but not the other. If you use CSS to change the size of your image, also include the styles 'width: "auto"' or 'height: "auto"' to maintain the aspect ratio.
+[00:17:52.612] Browser WARN    Image with src "https://images.unsplash.com/photo-1498050108023-c5249f4df085?auto=format&fit=crop&w=800&q=80" has either width or height modified, but not the other. If you use CSS to change the size of your image, also include the styles 'width: "auto"' or 'height: "auto"' to maintain the aspect ratio.
+[00:17:52.612] Browser WARN    Image with src "https://images.unsplash.com/photo-1500530855697-b586d89ba3ee?auto=format&fit=crop&w=800&q=80" has either width or height modified, but not the other. If you use CSS to change the size of your image, also include the styles 'width: "auto"' or 'height: "auto"' to maintain the aspect ratio.
+[00:17:53.401] Server  ERROR    ⨯ "upstream image response failed for" "https://images.unsplash.com/photo-1498575207490-34b60d3b04e4?auto=format&fit=crop&w=800&q=80" 404
+[00:18:50.484] Browser WARN    Image with src "https://images.unsplash.com/photo-1529333166437-7750a6dd5a70?auto=format&fit=crop&w=800&q=80" has either width or height modified, but not the other. If you use CSS to change the size of your image, also include the styles 'width: "auto"' or 'height: "auto"' to maintain the aspect ratio.
+[00:22:33.866] Browser ERROR   Encountered two children with the same key, `%s`. Keys should be unique so that components maintain their identity across updates. Non-unique keys may cause children to be duplicated and/or omitted — the behavior is unsupported and could change in a future version. How Product Development Can Increase Your Profit!
+[00:23:10.112] Server  LOG      ✓ Compiled in 16ms
+[00:24:41.226] Server  LOG      ✓ Compiled in 25ms
+[00:24:55.450] Server  LOG      ✓ Compiled in 12ms
+[00:25:08.632] Server  LOG      ✓ Compiled in 18ms
+[00:25:25.976] Server  LOG      ✓ Compiled in 13ms
+[00:25:32.526] Server  LOG      ✓ Compiled in 17ms
+[00:26:48.433] Server  LOG      ✓ Compiled in 10ms
+[00:26:52.032] Server  LOG      ✓ Compiled in 27ms
+[00:26:56.864] Server  LOG      ✓ Compiled in 14ms
+[00:27:02.294] Server  LOG      ✓ Compiled in 20ms
+[00:27:09.705] Server  LOG      ✓ Compiled in 9ms
+[00:42:30.664] Browser ERROR   Encountered two children with the same key, `%s`. Keys should be unique so that components maintain their identity across updates. Non-unique keys may cause children to be duplicated and/or omitted — the behavior is unsupported and could change in a future version. How Product Development Can Increase Your Profit!
+[00:42:37.752] Browser ERROR   Encountered two children with the same key, `%s`. Keys should be unique so that components maintain their identity across updates. Non-unique keys may cause children to be duplicated and/or omitted — the behavior is unsupported and could change in a future version. How Product Development Can Increase Your Profit!
+[00:42:40.749] Browser ERROR   Encountered two children with the same key, `%s`. Keys should be unique so that components maintain their identity across updates. Non-unique keys may cause children to be duplicated and/or omitted — the behavior is unsupported and could change in a future version. How Product Development Can Increase Your Profit!
+[00:45:18.749] Browser ERROR   Encountered two children with the same key, `%s`. Keys should be unique so that components maintain their identity across updates. Non-unique keys may cause children to be duplicated and/or omitted — the behavior is unsupported and could change in a future version. How Product Development Can Increase Your Profit!
+[00:45:32.748] Browser ERROR   Encountered two children with the same key, `%s`. Keys should be unique so that components maintain their identity across updates. Non-unique keys may cause children to be duplicated and/or omitted — the behavior is unsupported and could change in a future version. How Product Development Can Increase Your Profit!
+[00:45:33.671] Server  ERROR    ⨯ "upstream image response failed for" "https://images.unsplash.com/photo-1498575207490-34b60d3b04e4?auto=format&fit=crop&w=800&q=80" 404
+[00:46:35.623] Server  LOG      ✓ Compiled in 69ms
+[00:46:35.894] Server  ERROR    ⨯ "upstream image response failed for" "https://images.unsplash.com/photo-1498575207490-34b60d3b04e4?auto=format&fit=crop&w=800&q=80" 404
+[00:47:04.747] Browser ERROR   Encountered two children with the same key, `%s`. Keys should be unique so that components maintain their identity across updates. Non-unique keys may cause children to be duplicated and/or omitted — the behavior is unsupported and could change in a future version. How Product Development Can Increase Your Profit!
+[00:47:04.747] Browser ERROR   Encountered two children with the same key, `%s`. Keys should be unique so that components maintain their identity across updates. Non-unique keys may cause children to be duplicated and/or omitted — the behavior is unsupported and could change in a future version. How Product Development Can Increase Your Profit!
+[00:48:20.524] Server  WARN    Error: Route "/[category]/[id]" used `params.id`. `params` is a Promise and must be unwrapped with `await` or `React.use()` before accessing its properties. Learn more: https://nextjs.org/docs/messages/sync-dynamic-apis
+[00:48:29.735] Browser ERROR   Encountered two children with the same key, `%s`. Keys should be unique so that components maintain their identity across updates. Non-unique keys may cause children to be duplicated and/or omitted — the behavior is unsupported and could change in a future version. How Product Development Can Increase Your Profit!
+[00:48:30.840] Server  WARN    Error: Route "/[category]/[id]" used `params.id`. `params` is a Promise and must be unwrapped with `await` or `React.use()` before accessing its properties. Learn more: https://nextjs.org/docs/messages/sync-dynamic-apis
+[00:48:30.936] Server  ERROR    ⨯ "upstream image response failed for" "https://images.unsplash.com/photo-1498575207490-34b60d3b04e4?auto=format&fit=crop&w=800&q=80" 404
+[00:48:32.485] Server  ERROR    ⨯ "upstream image response failed for" "https://images.unsplash.com/photo-1498575207490-34b60d3b04e4?auto=format&fit=crop&w=800&q=80" 404
+[00:48:32.501] Browser ERROR   Encountered two children with the same key, `%s`. Keys should be unique so that components maintain their identity across updates. Non-unique keys may cause children to be duplicated and/or omitted — the behavior is unsupported and could change in a future version. How Product Development Can Increase Your Profit!
+[00:48:33.336] Server  WARN    Error: Route "/[category]/[id]" used `params.id`. `params` is a Promise and must be unwrapped with `await` or `React.use()` before accessing its properties. Learn more: https://nextjs.org/docs/messages/sync-dynamic-apis
+[00:48:35.436] Browser ERROR   Encountered two children with the same key, `%s`. Keys should be unique so that components maintain their identity across updates. Non-unique keys may cause children to be duplicated and/or omitted — the behavior is unsupported and could change in a future version. How Product Development Can Increase Your Profit!
+[00:48:35.445] Server  ERROR    ⨯ "upstream image response failed for" "https://images.unsplash.com/photo-1498575207490-34b60d3b04e4?auto=format&fit=crop&w=800&q=80" 404
+[00:48:37.013] Server  WARN    Error: Route "/[category]/[id]" used `params.id`. `params` is a Promise and must be unwrapped with `await` or `React.use()` before accessing its properties. Learn more: https://nextjs.org/docs/messages/sync-dynamic-apis
+[00:48:38.465] Server  ERROR    ⨯ "upstream image response failed for" "https://images.unsplash.com/photo-1498575207490-34b60d3b04e4?auto=format&fit=crop&w=800&q=80" 404
+[00:48:38.504] Browser ERROR   Encountered two children with the same key, `%s`. Keys should be unique so that components maintain their identity across updates. Non-unique keys may cause children to be duplicated and/or omitted — the behavior is unsupported and could change in a future version. How Product Development Can Increase Your Profit!
+[00:50:45.187] Server  WARN    Error: Route "/[category]/[id]" used `params.id`. `params` is a Promise and must be unwrapped with `await` or `React.use()` before accessing its properties. Learn more: https://nextjs.org/docs/messages/sync-dynamic-apis
+[00:50:47.170] Browser ERROR   Encountered two children with the same key, `%s`. Keys should be unique so that components maintain their identity across updates. Non-unique keys may cause children to be duplicated and/or omitted — the behavior is unsupported and could change in a future version. How Product Development Can Increase Your Profit!
+[00:50:49.182] Server  ERROR    ⨯ "upstream image response failed for" "https://images.unsplash.com/photo-1498575207490-34b60d3b04e4?auto=format&fit=crop&w=800&q=80" 404
+[00:55:53.545] Server  LOG      ✓ Compiled in 21ms
+[00:55:53.748] Browser ERROR   Encountered two children with the same key, `%s`. Keys should be unique so that components maintain their identity across updates. Non-unique keys may cause children to be duplicated and/or omitted — the behavior is unsupported and could change in a future version. How Product Development Can Increase Your Profit!
+[00:56:03.800] Server  WARN    Error: Route "/[category]/[id]" used `params.category`. `params` is a Promise and must be unwrapped with `await` or `React.use()` before accessing its properties. Learn more: https://nextjs.org/docs/messages/sync-dynamic-apis
+[00:56:03.804] Server  ERROR    ⨯ TypeError: Cannot read properties of undefined (reading 'split')
+[00:56:03.930] Browser ERROR   uncaughtError: TypeError: Cannot read properties of undefined (reading 'split')
+[00:56:32.894] Server  WARN    Error: Route "/[category]/[id]" used `params.category`. `params` is a Promise and must be unwrapped with `await` or `React.use()` before accessing its properties. Learn more: https://nextjs.org/docs/messages/sync-dynamic-apis
+[00:56:33.022] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[00:56:33.751] Browser ERROR   uncaughtError: Error: Hydration failed because the server rendered text didn't match the client. As a result this tree will be regenerated on the client. This can happen if a SSR-ed Client Component used:
 
 - A server/client branch `if (typeof window !== 'undefined')`.
 - Variable input such as `Date.now()` or `Math.random()` which changes each time it's called.
@@ -261,58 +377,50 @@ It can also happen if the client has a browser extension installed which messes 
 
 It can also happen if the client has a browser extension installed which messes with the HTML before React loaded.
 
-%s%s https://react.dev/link/hydration-mismatch 
+https://react.dev/link/hydration-mismatch
 
   ...
-    <HotReload globalError={[...]} webSocket={WebSocket} staticIndicatorState={{pathname:null, ...}}>
-      <AppDevOverlayErrorBoundary globalError={[...]}>
-        <ReplaySsrOnlyErrors>
-        <DevRootHTTPAccessFallbackBoundary>
-          <HTTPAccessFallbackBoundary notFound={<NotAllowedRootHTTPFallbackError>}>
-            <HTTPAccessFallbackErrorBoundary pathname="/admin/pos..." notFound={<NotAllowedRootHTTPFallbackError>} ...>
-              <RedirectBoundary>
-                <RedirectErrorBoundary router={{...}}>
-                  <Head>
-                  <__next_root_layout_boundary__>
-                    <SegmentViewNode type="layout" pagePath="/Documents...">
-                      <SegmentTrieNode>
-                      <link>
-                      <script>
-                      <RootLayout>
-                        <html lang="en">
-                          <body
-                            className="geist_a71539c9-module__T19VSG__variable geist_mono_8d43a2aa-module__8Li5zG__var..."
--                           cz-shortcut-listen="true"
-                          >
-                  ...
+    <HTTPAccessFallbackBoundary notFound={<NotAllowedRootHTTPFallbackError>}>
+      <HTTPAccessFallbackErrorBoundary pathname="/space/spa..." notFound={<NotAllowedRootHTTPFallbackError>} ...>
+        <RedirectBoundary>
+          <RedirectErrorBoundary router={{...}}>
+            <Head>
+            <__next_root_layout_boundary__>
+              <SegmentViewNode type="layout" pagePath="layout.tsx">
+                <SegmentTrieNode>
+                <link>
+                <script>
+                <script>
+                <RootLayout>
+                  <html lang="en">
+                    <body className="poppins_6b..." style={{...}}>
+                      <ThemeProvider>
+                        <Header>
+                          <header className="sticky top...">
+                            <div className="mx-auto fl...">
+                              <LinkComponent>
+                              <nav>
+                              <div className="hidden ite...">
+                                <a>
+                                <a>
+                                <a>
+                                <a>
+                                <button
+                                  onClick={function ThemeProvider.useCallback[toggleMode]}
++                                 aria-label="Switch to dark theme"
+-                                 aria-label="Switch to light theme"
+                                  className="flex h-9 items-center justify-center rounded-full border border-[var(--bo..."
+                                >
++                                 Moon
+-                                 Sun
+                              ...
+                        ...
+            ...
 
-[00:35:54.632] Server  WARN    Error: Route "/[category]" used `params.category`. `params` is a Promise and must be unwrapped with `await` or `React.use()` before accessing its properties. Learn more: https://nextjs.org/docs/messages/sync-dynamic-apis
-[00:35:55.086] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
-[00:35:57.868] Server  WARN    Error: Route "/[category]/[id]" used `params.id`. `params` is a Promise and must be unwrapped with `await` or `React.use()` before accessing its properties. Learn more: https://nextjs.org/docs/messages/sync-dynamic-apis
-[00:35:58.245] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
-[00:36:01.430] Server  WARN    Error: Route "/[category]" used `params.category`. `params` is a Promise and must be unwrapped with `await` or `React.use()` before accessing its properties. Learn more: https://nextjs.org/docs/messages/sync-dynamic-apis
-[00:36:01.836] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
-[00:36:02.505] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
-[01:30:21.142] Server  LOG      ✓ Compiled in 18ms
-[01:30:23.596] Server  LOG      ✓ Compiled in 21ms
-[01:45:53.318] Server  LOG      ✓ Compiled in 641ms
-[01:46:05.523] Server  LOG      ✓ Compiled in 109ms
-[01:46:31.283] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
-[01:46:47.914] Server  LOG      ✓ Compiled in 57ms
-[01:46:53.064] Server  LOG      ✓ Compiled in 12ms
-[01:47:14.719] Server  WARN     ⚠ Fast Refresh had to perform a full reload when ./Documents/Data/blogfly/app/providers/ThemeProvider.tsx changed. Read more: https://nextjs.org/docs/messages/fast-refresh-reload
-[01:47:14.753] Server  LOG      ✓ Compiled in 49ms
-[01:47:15.801] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
-[01:47:21.138] Server  WARN     ⚠ Fast Refresh had to perform a full reload when ./Documents/Data/blogfly/app/providers/ThemeProvider.tsx changed. Read more: https://nextjs.org/docs/messages/fast-refresh-reload
-[01:47:21.419] Server  LOG      ✓ Compiled in 40ms
-[01:47:21.914] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
-[01:47:32.458] Server  WARN     ⚠ Fast Refresh had to perform a full reload when ./Documents/Data/blogfly/app/providers/ThemeProvider.tsx changed. Read more: https://nextjs.org/docs/messages/fast-refresh-reload
-[01:47:32.484] Server  LOG      ✓ Compiled in 41ms
-[01:47:33.712] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
-[01:50:28.273] Server  WARN     ⚠ Fast Refresh had to perform a full reload when ./Documents/Data/blogfly/app/providers/ThemeProvider.tsx changed. Read more: https://nextjs.org/docs/messages/fast-refresh-reload
-[01:50:28.292] Server  LOG      ✓ Compiled in 37ms
-[01:50:33.702] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
-[01:50:34.019] Browser ERROR   A tree hydrated but some attributes of the server rendered HTML didn't match the client properties. This won't be patched up. This can happen if a SSR-ed Client Component used:
+[01:00:58.078] Server  WARN    Error: Route "/[category]/[id]" used `params.category`. `params` is a Promise and must be unwrapped with `await` or `React.use()` before accessing its properties. Learn more: https://nextjs.org/docs/messages/sync-dynamic-apis
+[01:00:58.102] Server  WARN    Error: Route "/[category]/[id]" used `params.category`. `params` is a Promise and must be unwrapped with `await` or `React.use()` before accessing its properties. Learn more: https://nextjs.org/docs/messages/sync-dynamic-apis
+[01:00:58.202] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[01:00:58.749] Browser ERROR   uncaughtError: Error: Hydration failed because the server rendered text didn't match the client. As a result this tree will be regenerated on the client. This can happen if a SSR-ed Client Component used:
 
 - A server/client branch `if (typeof window !== 'undefined')`.
 - Variable input such as `Date.now()` or `Math.random()` which changes each time it's called.
@@ -322,36 +430,88 @@ It can also happen if the client has a browser extension installed which messes 
 
 It can also happen if the client has a browser extension installed which messes with the HTML before React loaded.
 
-%s%s https://react.dev/link/hydration-mismatch 
+https://react.dev/link/hydration-mismatch
 
   ...
-    <HotReload globalError={[...]} webSocket={WebSocket} staticIndicatorState={{pathname:null, ...}}>
-      <AppDevOverlayErrorBoundary globalError={[...]}>
-        <ReplaySsrOnlyErrors>
-        <DevRootHTTPAccessFallbackBoundary>
-          <HTTPAccessFallbackBoundary notFound={<NotAllowedRootHTTPFallbackError>}>
-            <HTTPAccessFallbackErrorBoundary pathname="/" notFound={<NotAllowedRootHTTPFallbackError>} ...>
-              <RedirectBoundary>
-                <RedirectErrorBoundary router={{...}}>
-                  <Head>
-                  <__next_root_layout_boundary__>
-                    <SegmentViewNode type="layout" pagePath="/Documents...">
-                      <SegmentTrieNode>
-                      <link>
-                      <script>
-                      <script>
-                      <RootLayout>
-                        <html lang="en">
-                          <body
-                            className="geist_a71539c9-module__T19VSG__variable geist_mono_8d43a2aa-module__8Li5zG__var..."
--                           cz-shortcut-listen="true"
-                          >
-                  ...
+    <HTTPAccessFallbackBoundary notFound={<NotAllowedRootHTTPFallbackError>}>
+      <HTTPAccessFallbackErrorBoundary pathname="/space/spa..." notFound={<NotAllowedRootHTTPFallbackError>} ...>
+        <RedirectBoundary>
+          <RedirectErrorBoundary router={{...}}>
+            <Head>
+            <__next_root_layout_boundary__>
+              <SegmentViewNode type="layout" pagePath="layout.tsx">
+                <SegmentTrieNode>
+                <link>
+                <script>
+                <script>
+                <RootLayout>
+                  <html lang="en">
+                    <body className="poppins_6b..." style={{...}}>
+                      <ThemeProvider>
+                        <Header>
+                          <header className="sticky top...">
+                            <div className="mx-auto fl...">
+                              <LinkComponent>
+                              <nav>
+                              <div className="hidden ite...">
+                                <a>
+                                <a>
+                                <a>
+                                <a>
+                                <button
+                                  onClick={function ThemeProvider.useCallback[toggleMode]}
++                                 aria-label="Switch to dark theme"
+-                                 aria-label="Switch to light theme"
+                                  className="flex h-9 items-center justify-center rounded-full border border-[var(--bo..."
+                                >
++                                 Moon
+-                                 Sun
+                              ...
+                        ...
+            ...
 
-[01:50:41.315] Server  WARN     ⚠ Fast Refresh had to perform a full reload when ./Documents/Data/blogfly/app/providers/ThemeProvider.tsx changed. Read more: https://nextjs.org/docs/messages/fast-refresh-reload
-[01:50:41.334] Server  LOG      ✓ Compiled in 32ms
-[01:50:43.956] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
-[01:50:44.379] Browser ERROR   A tree hydrated but some attributes of the server rendered HTML didn't match the client properties. This won't be patched up. This can happen if a SSR-ed Client Component used:
+[01:01:08.600] Server  WARN    Error: Route "/[category]/[id]" used `params.category`. `params` is a Promise and must be unwrapped with `await` or `React.use()` before accessing its properties. Learn more: https://nextjs.org/docs/messages/sync-dynamic-apis
+[01:01:14.721] Server  WARN    Error: Route "/[category]/[id]" used `params.category`. `params` is a Promise and must be unwrapped with `await` or `React.use()` before accessing its properties. Learn more: https://nextjs.org/docs/messages/sync-dynamic-apis
+[01:01:39.480] Server  WARN    Error: Route "/[category]/[id]" used `params.category`. `params` is a Promise and must be unwrapped with `await` or `React.use()` before accessing its properties. Learn more: https://nextjs.org/docs/messages/sync-dynamic-apis
+[01:01:49.884] Server  WARN    Error: Route "/[category]/[id]" used `params.category`. `params` is a Promise and must be unwrapped with `await` or `React.use()` before accessing its properties. Learn more: https://nextjs.org/docs/messages/sync-dynamic-apis
+[01:02:05.103] Server  WARN    Error: Route "/[category]/[id]" used `params.category`. `params` is a Promise and must be unwrapped with `await` or `React.use()` before accessing its properties. Learn more: https://nextjs.org/docs/messages/sync-dynamic-apis
+[01:02:19.942] Server  WARN    Error: Route "/[category]/[id]" used `params.category`. `params` is a Promise and must be unwrapped with `await` or `React.use()` before accessing its properties. Learn more: https://nextjs.org/docs/messages/sync-dynamic-apis
+[01:02:27.716] Server  WARN    Error: Route "/[category]/[id]" used `params.category`. `params` is a Promise and must be unwrapped with `await` or `React.use()` before accessing its properties. Learn more: https://nextjs.org/docs/messages/sync-dynamic-apis
+[01:02:48.381] Browser ERROR   Encountered two children with the same key, `%s`. Keys should be unique so that components maintain their identity across updates. Non-unique keys may cause children to be duplicated and/or omitted — the behavior is unsupported and could change in a future version. How Product Development Can Increase Your Profit!
+[01:02:51.203] Server  ERROR    ⨯ "upstream image response failed for" "https://images.unsplash.com/photo-1498575207490-34b60d3b04e4?auto=format&fit=crop&w=800&q=80" 404
+[01:02:59.576] Server  WARN    Error: Route "/[category]/[id]" used `params.category`. `params` is a Promise and must be unwrapped with `await` or `React.use()` before accessing its properties. Learn more: https://nextjs.org/docs/messages/sync-dynamic-apis
+[01:03:58.196] Server  WARN    Error: Route "/[category]/[id]" used `params.category`. `params` is a Promise and must be unwrapped with `await` or `React.use()` before accessing its properties. Learn more: https://nextjs.org/docs/messages/sync-dynamic-apis
+[01:04:05.980] Browser ERROR   Encountered two children with the same key, `%s`. Keys should be unique so that components maintain their identity across updates. Non-unique keys may cause children to be duplicated and/or omitted — the behavior is unsupported and could change in a future version. How Product Development Can Increase Your Profit!
+[01:04:06.172] Server  ERROR    ⨯ "upstream image response failed for" "https://images.unsplash.com/photo-1498575207490-34b60d3b04e4?auto=format&fit=crop&w=800&q=80" 404
+[01:04:16.044] Server  LOG      ✓ Compiled in 7ms
+[01:04:16.749] Browser ERROR   Encountered two children with the same key, `%s`. Keys should be unique so that components maintain their identity across updates. Non-unique keys may cause children to be duplicated and/or omitted — the behavior is unsupported and could change in a future version. How Product Development Can Increase Your Profit!
+[01:04:18.446] Server  WARN    Error: Route "/[category]/[id]" used `params.category`. `params` is a Promise and must be unwrapped with `await` or `React.use()` before accessing its properties. Learn more: https://nextjs.org/docs/messages/sync-dynamic-apis
+[01:05:23.438] Server  WARN    Error: Route "/[category]/[id]" used `params.category`. `params` is a Promise and must be unwrapped with `await` or `React.use()` before accessing its properties. Learn more: https://nextjs.org/docs/messages/sync-dynamic-apis
+[01:05:51.105] Server  WARN    Error: Route "/[category]/[id]" used `params.category`. `params` is a Promise and must be unwrapped with `await` or `React.use()` before accessing its properties. Learn more: https://nextjs.org/docs/messages/sync-dynamic-apis
+[01:06:08.216] Server  WARN    Error: Route "/[category]/[id]" used `params.category`. `params` is a Promise and must be unwrapped with `await` or `React.use()` before accessing its properties. Learn more: https://nextjs.org/docs/messages/sync-dynamic-apis
+[01:06:19.376] Server  WARN    Error: Route "/[category]/[id]" used `params.category`. `params` is a Promise and must be unwrapped with `await` or `React.use()` before accessing its properties. Learn more: https://nextjs.org/docs/messages/sync-dynamic-apis
+[01:06:32.764] Server  WARN    Error: Route "/[category]/[id]" used `params.category`. `params` is a Promise and must be unwrapped with `await` or `React.use()` before accessing its properties. Learn more: https://nextjs.org/docs/messages/sync-dynamic-apis
+[01:06:37.380] Server  WARN    Error: Route "/[category]/[id]" used `params.category`. `params` is a Promise and must be unwrapped with `await` or `React.use()` before accessing its properties. Learn more: https://nextjs.org/docs/messages/sync-dynamic-apis
+[01:06:42.551] Server  WARN    Error: Route "/[category]/[id]" used `params.category`. `params` is a Promise and must be unwrapped with `await` or `React.use()` before accessing its properties. Learn more: https://nextjs.org/docs/messages/sync-dynamic-apis
+[01:06:53.912] Server  WARN    Error: Route "/[category]/[id]" used `params.category`. `params` is a Promise and must be unwrapped with `await` or `React.use()` before accessing its properties. Learn more: https://nextjs.org/docs/messages/sync-dynamic-apis
+[01:07:02.741] Server  WARN    Error: Route "/[category]/[id]" used `params.category`. `params` is a Promise and must be unwrapped with `await` or `React.use()` before accessing its properties. Learn more: https://nextjs.org/docs/messages/sync-dynamic-apis
+[01:07:16.111] Server  WARN    Error: Route "/[category]/[id]" used `params.category`. `params` is a Promise and must be unwrapped with `await` or `React.use()` before accessing its properties. Learn more: https://nextjs.org/docs/messages/sync-dynamic-apis
+[01:07:21.632] Server  WARN    Error: Route "/[category]/[id]" used `params.category`. `params` is a Promise and must be unwrapped with `await` or `React.use()` before accessing its properties. Learn more: https://nextjs.org/docs/messages/sync-dynamic-apis
+[01:07:39.836] Browser ERROR   Encountered two children with the same key, `%s`. Keys should be unique so that components maintain their identity across updates. Non-unique keys may cause children to be duplicated and/or omitted — the behavior is unsupported and could change in a future version. How Product Development Can Increase Your Profit!
+[01:07:39.972] Server  ERROR    ⨯ "upstream image response failed for" "https://images.unsplash.com/photo-1498575207490-34b60d3b04e4?auto=format&fit=crop&w=800&q=80" 404
+[01:08:01.180] Server  WARN    Error: Route "/[category]/[id]" used `params.category`. `params` is a Promise and must be unwrapped with `await` or `React.use()` before accessing its properties. Learn more: https://nextjs.org/docs/messages/sync-dynamic-apis
+[01:08:06.265] Browser ERROR   Encountered two children with the same key, `%s`. Keys should be unique so that components maintain their identity across updates. Non-unique keys may cause children to be duplicated and/or omitted — the behavior is unsupported and could change in a future version. How Product Development Can Increase Your Profit!
+[01:08:07.317] Server  ERROR    ⨯ "upstream image response failed for" "https://images.unsplash.com/photo-1498575207490-34b60d3b04e4?auto=format&fit=crop&w=800&q=80" 404
+[01:08:20.099] Browser ERROR   Encountered two children with the same key, `%s`. Keys should be unique so that components maintain their identity across updates. Non-unique keys may cause children to be duplicated and/or omitted — the behavior is unsupported and could change in a future version. How Product Development Can Increase Your Profit!
+[01:09:06.153] Server  WARN    Error: Route "/[category]/[id]" used `params.category`. `params` is a Promise and must be unwrapped with `await` or `React.use()` before accessing its properties. Learn more: https://nextjs.org/docs/messages/sync-dynamic-apis
+[01:09:09.067] Browser ERROR   Encountered two children with the same key, `%s`. Keys should be unique so that components maintain their identity across updates. Non-unique keys may cause children to be duplicated and/or omitted — the behavior is unsupported and could change in a future version. How Product Development Can Increase Your Profit!
+[01:09:09.275] Server  ERROR    ⨯ "upstream image response failed for" "https://images.unsplash.com/photo-1498575207490-34b60d3b04e4?auto=format&fit=crop&w=800&q=80" 404
+[01:09:43.688] Server  WARN    Error: Route "/[category]/[id]" used `params.category`. `params` is a Promise and must be unwrapped with `await` or `React.use()` before accessing its properties. Learn more: https://nextjs.org/docs/messages/sync-dynamic-apis
+[01:09:56.166] Browser ERROR   Encountered two children with the same key, `%s`. Keys should be unique so that components maintain their identity across updates. Non-unique keys may cause children to be duplicated and/or omitted — the behavior is unsupported and could change in a future version. How Product Development Can Increase Your Profit!
+[01:09:56.298] Server  ERROR    ⨯ "upstream image response failed for" "https://images.unsplash.com/photo-1498575207490-34b60d3b04e4?auto=format&fit=crop&w=800&q=80" 404
+[01:10:17.979] Server  WARN    Error: Route "/[category]" used `params.category`. `params` is a Promise and must be unwrapped with `await` or `React.use()` before accessing its properties. Learn more: https://nextjs.org/docs/messages/sync-dynamic-apis
+[01:10:18.082] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[01:10:18.082] Browser ERROR   uncaughtError: Error: Hydration failed because the server rendered text didn't match the client. As a result this tree will be regenerated on the client. This can happen if a SSR-ed Client Component used:
 
 - A server/client branch `if (typeof window !== 'undefined')`.
 - Variable input such as `Date.now()` or `Math.random()` which changes each time it's called.
@@ -361,36 +521,100 @@ It can also happen if the client has a browser extension installed which messes 
 
 It can also happen if the client has a browser extension installed which messes with the HTML before React loaded.
 
-%s%s https://react.dev/link/hydration-mismatch 
+https://react.dev/link/hydration-mismatch
 
   ...
-    <HotReload globalError={[...]} webSocket={WebSocket} staticIndicatorState={{pathname:null, ...}}>
-      <AppDevOverlayErrorBoundary globalError={[...]}>
-        <ReplaySsrOnlyErrors>
-        <DevRootHTTPAccessFallbackBoundary>
-          <HTTPAccessFallbackBoundary notFound={<NotAllowedRootHTTPFallbackError>}>
-            <HTTPAccessFallbackErrorBoundary pathname="/" notFound={<NotAllowedRootHTTPFallbackError>} ...>
-              <RedirectBoundary>
-                <RedirectErrorBoundary router={{...}}>
-                  <Head>
-                  <__next_root_layout_boundary__>
-                    <SegmentViewNode type="layout" pagePath="/Documents...">
-                      <SegmentTrieNode>
-                      <link>
-                      <script>
-                      <script>
-                      <RootLayout>
-                        <html lang="en">
-                          <body
-                            className="geist_a71539c9-module__T19VSG__variable geist_mono_8d43a2aa-module__8Li5zG__var..."
--                           cz-shortcut-listen="true"
-                          >
-                  ...
+    <HTTPAccessFallbackBoundary notFound={<NotAllowedRootHTTPFallbackError>}>
+      <HTTPAccessFallbackErrorBoundary pathname="/login" notFound={<NotAllowedRootHTTPFallbackError>} ...>
+        <RedirectBoundary>
+          <RedirectErrorBoundary router={{...}}>
+            <Head>
+            <__next_root_layout_boundary__>
+              <SegmentViewNode type="layout" pagePath="layout.tsx">
+                <SegmentTrieNode>
+                <link>
+                <script>
+                <script>
+                <RootLayout>
+                  <html lang="en">
+                    <body className="poppins_6b..." style={{...}}>
+                      <ThemeProvider>
+                        <Header>
+                          <header className="sticky top...">
+                            <div className="mx-auto fl...">
+                              <LinkComponent>
+                              <nav>
+                              <div className="hidden ite...">
+                                <a>
+                                <a>
+                                <a>
+                                <a>
+                                <button
+                                  onClick={function ThemeProvider.useCallback[toggleMode]}
++                                 aria-label="Switch to dark theme"
+-                                 aria-label="Switch to light theme"
+                                  className="flex h-9 items-center justify-center rounded-full border border-[var(--bo..."
+                                >
++                                 Moon
+-                                 Sun
+                              ...
+                        ...
+            ...
 
-[01:50:51.168] Server  WARN     ⚠ Fast Refresh had to perform a full reload when ./Documents/Data/blogfly/app/providers/ThemeProvider.tsx changed. Read more: https://nextjs.org/docs/messages/fast-refresh-reload
-[01:50:51.184] Server  LOG      ✓ Compiled in 51ms
-[01:50:53.372] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
-[01:50:53.637] Browser ERROR   A tree hydrated but some attributes of the server rendered HTML didn't match the client properties. This won't be patched up. This can happen if a SSR-ed Client Component used:
+[01:11:01.371] Server  ERROR    ⨯ Error: The default export is not a React Component in "/login/page"
+[01:11:01.486] Server  ERROR    ⨯ Error: The default export is not a React Component in "/login/page"
+[01:11:01.942] Server  ERROR    ⨯ Error: The default export is not a React Component in "/login/page"
+[01:11:02.041] Server  ERROR    ⨯ Error: The default export is not a React Component in "/login/page"
+[01:11:02.152] Server  ERROR    ⨯ Error: The default export is not a React Component in "/login/page"
+[01:11:02.281] Server  ERROR    ⨯ Error: The default export is not a React Component in "/login/page"
+[01:11:02.391] Server  ERROR    ⨯ Error: The default export is not a React Component in "/login/page"
+[01:11:02.488] Server  ERROR    ⨯ Error: The default export is not a React Component in "/login/page"
+[01:11:02.592] Server  ERROR    ⨯ Error: The default export is not a React Component in "/login/page"
+[01:11:02.689] Server  ERROR    ⨯ Error: The default export is not a React Component in "/login/page"
+[01:11:02.792] Server  ERROR    ⨯ Error: The default export is not a React Component in "/login/page"
+[01:11:02.896] Server  ERROR    ⨯ Error: The default export is not a React Component in "/login/page"
+[01:11:03.004] Server  ERROR    ⨯ Error: The default export is not a React Component in "/login/page"
+[01:11:03.108] Server  ERROR    ⨯ Error: The default export is not a React Component in "/login/page"
+[01:11:03.216] Server  ERROR    ⨯ Error: The default export is not a React Component in "/login/page"
+[01:11:03.317] Server  ERROR    ⨯ Error: The default export is not a React Component in "/login/page"
+[01:11:03.426] Server  ERROR    ⨯ Error: The default export is not a React Component in "/login/page"
+[01:11:03.526] Server  ERROR    ⨯ Error: The default export is not a React Component in "/login/page"
+[01:11:03.638] Server  ERROR    ⨯ Error: The default export is not a React Component in "/login/page"
+[01:11:03.736] Server  ERROR    ⨯ Error: The default export is not a React Component in "/login/page"
+[01:11:03.844] Server  ERROR    ⨯ Error: The default export is not a React Component in "/login/page"
+[01:11:03.947] Server  ERROR    ⨯ Error: The default export is not a React Component in "/login/page"
+[01:11:04.061] Server  ERROR    ⨯ Error: The default export is not a React Component in "/login/page"
+[01:11:04.164] Server  ERROR    ⨯ Error: The default export is not a React Component in "/login/page"
+[01:11:04.274] Server  ERROR    ⨯ Error: The default export is not a React Component in "/login/page"
+[01:11:04.377] Server  ERROR    ⨯ Error: The default export is not a React Component in "/login/page"
+[01:11:04.486] Server  ERROR    ⨯ Error: The default export is not a React Component in "/login/page"
+[01:11:04.589] Server  ERROR    ⨯ Error: The default export is not a React Component in "/login/page"
+[01:11:04.703] Server  ERROR    ⨯ Error: The default export is not a React Component in "/login/page"
+[01:11:04.803] Server  ERROR    ⨯ Error: The default export is not a React Component in "/login/page"
+[01:11:04.916] Server  ERROR    ⨯ Error: The default export is not a React Component in "/login/page"
+[01:11:05.023] Server  ERROR    ⨯ Error: The default export is not a React Component in "/login/page"
+[01:11:05.140] Server  ERROR    ⨯ Error: The default export is not a React Component in "/login/page"
+[01:11:05.256] Server  ERROR    ⨯ Error: The default export is not a React Component in "/login/page"
+[01:11:05.414] Server  ERROR    ⨯ Error: The default export is not a React Component in "/login/page"
+[01:11:05.520] Server  ERROR    ⨯ Error: The default export is not a React Component in "/login/page"
+[01:11:05.634] Server  ERROR    ⨯ Error: The default export is not a React Component in "/login/page"
+[01:11:05.736] Server  ERROR    ⨯ Error: The default export is not a React Component in "/login/page"
+[01:11:05.859] Server  ERROR    ⨯ Error: The default export is not a React Component in "/login/page"
+[01:11:05.965] Server  ERROR    ⨯ Error: The default export is not a React Component in "/login/page"
+[01:11:06.080] Server  ERROR    ⨯ Error: The default export is not a React Component in "/login/page"
+[01:11:06.188] Server  ERROR    ⨯ Error: The default export is not a React Component in "/login/page"
+[01:11:06.314] Server  ERROR    ⨯ Error: The default export is not a React Component in "/login/page"
+[01:11:06.441] Server  ERROR    ⨯ Error: The default export is not a React Component in "/login/page"
+[01:11:06.559] Server  ERROR    ⨯ Error: The default export is not a React Component in "/login/page"
+[01:11:06.668] Server  ERROR    ⨯ Error: The default export is not a React Component in "/login/page"
+[01:11:06.792] Server  ERROR    ⨯ Error: The default export is not a React Component in "/login/page"
+[01:11:06.898] Server  ERROR    ⨯ Error: The default export is not a React Component in "/login/page"
+[01:11:07.024] Server  ERROR    ⨯ Error: The default export is not a React Component in "/login/page"
+[01:11:07.130] Server  ERROR    ⨯ Error: The default export is not a React Component in "/login/page"
+[01:11:07.131] Server  LOG      ✓ Compiled in 0ms
+[01:11:07.226] Browser ERROR   uncaughtError: Error: The default export is not a React Component in "/login/page"
+[01:12:42.236] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[01:12:42.748] Browser ERROR   uncaughtError: Error: Hydration failed because the server rendered text didn't match the client. As a result this tree will be regenerated on the client. This can happen if a SSR-ed Client Component used:
 
 - A server/client branch `if (typeof window !== 'undefined')`.
 - Variable input such as `Date.now()` or `Math.random()` which changes each time it's called.
@@ -400,37 +624,48 @@ It can also happen if the client has a browser extension installed which messes 
 
 It can also happen if the client has a browser extension installed which messes with the HTML before React loaded.
 
-%s%s https://react.dev/link/hydration-mismatch 
+https://react.dev/link/hydration-mismatch
 
   ...
-    <HotReload globalError={[...]} webSocket={WebSocket} staticIndicatorState={{pathname:null, ...}}>
-      <AppDevOverlayErrorBoundary globalError={[...]}>
-        <ReplaySsrOnlyErrors>
-        <DevRootHTTPAccessFallbackBoundary>
-          <HTTPAccessFallbackBoundary notFound={<NotAllowedRootHTTPFallbackError>}>
-            <HTTPAccessFallbackErrorBoundary pathname="/" notFound={<NotAllowedRootHTTPFallbackError>} ...>
-              <RedirectBoundary>
-                <RedirectErrorBoundary router={{...}}>
-                  <Head>
-                  <__next_root_layout_boundary__>
-                    <SegmentViewNode type="layout" pagePath="/Documents...">
-                      <SegmentTrieNode>
-                      <link>
-                      <script>
-                      <script>
-                      <RootLayout>
-                        <html lang="en">
-                          <body
-                            className="geist_a71539c9-module__T19VSG__variable geist_mono_8d43a2aa-module__8Li5zG__var..."
--                           cz-shortcut-listen="true"
-                          >
-                  ...
+    <HTTPAccessFallbackBoundary notFound={<NotAllowedRootHTTPFallbackError>}>
+      <HTTPAccessFallbackErrorBoundary pathname="/login" notFound={<NotAllowedRootHTTPFallbackError>} ...>
+        <RedirectBoundary>
+          <RedirectErrorBoundary router={{...}}>
+            <Head>
+            <__next_root_layout_boundary__>
+              <SegmentViewNode type="layout" pagePath="layout.tsx">
+                <SegmentTrieNode>
+                <link>
+                <script>
+                <script>
+                <RootLayout>
+                  <html lang="en">
+                    <body className="poppins_6b..." style={{...}}>
+                      <ThemeProvider>
+                        <Header>
+                          <header className="sticky top...">
+                            <div className="mx-auto fl...">
+                              <LinkComponent>
+                              <nav>
+                              <div className="hidden ite...">
+                                <a>
+                                <a>
+                                <a>
+                                <a>
+                                <button
+                                  onClick={function ThemeProvider.useCallback[toggleMode]}
++                                 aria-label="Switch to dark theme"
+-                                 aria-label="Switch to light theme"
+                                  className="flex h-9 items-center justify-center rounded-full border border-[var(--bo..."
+                                >
++                                 Moon
+-                                 Sun
+                              ...
+                        ...
+            ...
 
-[01:52:39.549] Server  LOG      ✓ Compiled in 172ms
-[01:54:58.068] Server  LOG      ✓ Compiled in 195ms
-[02:00:48.523] Server  LOG      ✓ Compiled in 62ms
-[02:02:25.896] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
-[02:02:26.110] Browser ERROR   A tree hydrated but some attributes of the server rendered HTML didn't match the client properties. This won't be patched up. This can happen if a SSR-ed Client Component used:
+[01:13:02.058] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[01:13:02.058] Browser ERROR   uncaughtError: Error: Hydration failed because the server rendered text didn't match the client. As a result this tree will be regenerated on the client. This can happen if a SSR-ed Client Component used:
 
 - A server/client branch `if (typeof window !== 'undefined')`.
 - Variable input such as `Date.now()` or `Math.random()` which changes each time it's called.
@@ -440,278 +675,43 @@ It can also happen if the client has a browser extension installed which messes 
 
 It can also happen if the client has a browser extension installed which messes with the HTML before React loaded.
 
-%s%s https://react.dev/link/hydration-mismatch 
+https://react.dev/link/hydration-mismatch
 
   ...
-    <HotReload globalError={[...]} webSocket={WebSocket} staticIndicatorState={{pathname:null, ...}}>
-      <AppDevOverlayErrorBoundary globalError={[...]}>
-        <ReplaySsrOnlyErrors>
-        <DevRootHTTPAccessFallbackBoundary>
-          <HTTPAccessFallbackBoundary notFound={<NotAllowedRootHTTPFallbackError>}>
-            <HTTPAccessFallbackErrorBoundary pathname="/" notFound={<NotAllowedRootHTTPFallbackError>} ...>
-              <RedirectBoundary>
-                <RedirectErrorBoundary router={{...}}>
-                  <Head>
-                  <__next_root_layout_boundary__>
-                    <SegmentViewNode type="layout" pagePath="/Documents...">
-                      <SegmentTrieNode>
-                      <link>
-                      <script>
-                      <script>
-                      <RootLayout>
-                        <html lang="en">
-                          <body
-                            className="geist_a71539c9-module__T19VSG__variable geist_mono_8d43a2aa-module__8Li5zG__var..."
--                           cz-shortcut-listen="true"
-                          >
-                  ...
+    <HTTPAccessFallbackBoundary notFound={<NotAllowedRootHTTPFallbackError>}>
+      <HTTPAccessFallbackErrorBoundary pathname="/admin/das..." notFound={<NotAllowedRootHTTPFallbackError>} ...>
+        <RedirectBoundary>
+          <RedirectErrorBoundary router={{...}}>
+            <Head>
+            <__next_root_layout_boundary__>
+              <SegmentViewNode type="layout" pagePath="layout.tsx">
+                <SegmentTrieNode>
+                <link>
+                <script>
+                <script>
+                <RootLayout>
+                  <html lang="en">
+                    <body className="poppins_6b..." style={{...}}>
+                      <ThemeProvider>
+                        <Header>
+                          <header className="sticky top...">
+                            <div className="mx-auto fl...">
+                              <LinkComponent>
+                              <nav>
+                              <div className="hidden ite...">
+                                <a>
+                                <a>
+                                <a>
+                                <a>
+                                <button
+                                  onClick={function ThemeProvider.useCallback[toggleMode]}
++                                 aria-label="Switch to dark theme"
+-                                 aria-label="Switch to light theme"
+                                  className="flex h-9 items-center justify-center rounded-full border border-[var(--bo..."
+                                >
++                                 Moon
+-                                 Sun
+                              ...
+                        ...
+            ...
 
-[02:03:41.378] Server  WARN     ⚠ Fast Refresh had to perform a full reload when ./Documents/Data/blogfly/app/providers/ThemeProvider.tsx changed. Read more: https://nextjs.org/docs/messages/fast-refresh-reload
-[02:03:41.406] Server  LOG      ✓ Compiled in 39ms
-[02:03:42.655] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
-[02:04:08.805] Server  WARN     ⚠ Fast Refresh had to perform a full reload when ./Documents/Data/blogfly/app/providers/ThemeProvider.tsx changed. Read more: https://nextjs.org/docs/messages/fast-refresh-reload
-[02:04:08.829] Server  LOG      ✓ Compiled in 52ms
-[02:04:09.708] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
-[02:11:44.308] Server  LOG      ✓ Compiled in 120ms
-[02:12:10.883] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
-[02:14:10.425] Server  LOG      ✓ Compiled in 156ms
-[02:14:19.402] Server  LOG      ✓ Compiled in 27ms
-[02:14:28.943] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
-[02:14:29.147] Browser ERROR   A tree hydrated but some attributes of the server rendered HTML didn't match the client properties. This won't be patched up. This can happen if a SSR-ed Client Component used:
-
-- A server/client branch `if (typeof window !== 'undefined')`.
-- Variable input such as `Date.now()` or `Math.random()` which changes each time it's called.
-- Date formatting in a user's locale which doesn't match the server.
-- External changing data without sending a snapshot of it along with the HTML.
-- Invalid HTML tag nesting.
-
-It can also happen if the client has a browser extension installed which messes with the HTML before React loaded.
-
-%s%s https://react.dev/link/hydration-mismatch 
-
-  ...
-    <HotReload globalError={[...]} webSocket={WebSocket} staticIndicatorState={{pathname:null, ...}}>
-      <AppDevOverlayErrorBoundary globalError={[...]}>
-        <ReplaySsrOnlyErrors>
-        <DevRootHTTPAccessFallbackBoundary>
-          <HTTPAccessFallbackBoundary notFound={<NotAllowedRootHTTPFallbackError>}>
-            <HTTPAccessFallbackErrorBoundary pathname="/" notFound={<NotAllowedRootHTTPFallbackError>} ...>
-              <RedirectBoundary>
-                <RedirectErrorBoundary router={{...}}>
-                  <Head>
-                  <__next_root_layout_boundary__>
-                    <SegmentViewNode type="layout" pagePath="/Documents...">
-                      <SegmentTrieNode>
-                      <link>
-                      <script>
-                      <script>
-                      <RootLayout>
-                        <html lang="en">
-                          <body
-                            className="geist_a71539c9-module__T19VSG__variable geist_mono_8d43a2aa-module__8Li5zG__var..."
--                           cz-shortcut-listen="true"
-                          >
-                  ...
-
-[02:17:12.267] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
-[02:17:12.604] Browser ERROR   A tree hydrated but some attributes of the server rendered HTML didn't match the client properties. This won't be patched up. This can happen if a SSR-ed Client Component used:
-
-- A server/client branch `if (typeof window !== 'undefined')`.
-- Variable input such as `Date.now()` or `Math.random()` which changes each time it's called.
-- Date formatting in a user's locale which doesn't match the server.
-- External changing data without sending a snapshot of it along with the HTML.
-- Invalid HTML tag nesting.
-
-It can also happen if the client has a browser extension installed which messes with the HTML before React loaded.
-
-%s%s https://react.dev/link/hydration-mismatch 
-
-  ...
-    <HotReload globalError={[...]} webSocket={WebSocket} staticIndicatorState={{pathname:null, ...}}>
-      <AppDevOverlayErrorBoundary globalError={[...]}>
-        <ReplaySsrOnlyErrors>
-        <DevRootHTTPAccessFallbackBoundary>
-          <HTTPAccessFallbackBoundary notFound={<NotAllowedRootHTTPFallbackError>}>
-            <HTTPAccessFallbackErrorBoundary pathname="/" notFound={<NotAllowedRootHTTPFallbackError>} ...>
-              <RedirectBoundary>
-                <RedirectErrorBoundary router={{...}}>
-                  <Head>
-                  <__next_root_layout_boundary__>
-                    <SegmentViewNode type="layout" pagePath="/Documents...">
-                      <SegmentTrieNode>
-                      <link>
-                      <script>
-                      <script>
-                      <RootLayout>
-                        <html lang="en">
-                          <body
-                            className="geist_a71539c9-module__T19VSG__variable geist_mono_8d43a2aa-module__8Li5zG__var..."
--                           cz-shortcut-listen="true"
-                          >
-                  ...
-
-[02:18:46.197] Server  LOG      ✓ Compiled in 149ms
-[02:18:55.802] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
-[02:20:32.415] Server  LOG      ✓ Compiled in 92ms
-[02:20:41.303] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
-[02:20:41.698] Browser ERROR   A tree hydrated but some attributes of the server rendered HTML didn't match the client properties. This won't be patched up. This can happen if a SSR-ed Client Component used:
-
-- A server/client branch `if (typeof window !== 'undefined')`.
-- Variable input such as `Date.now()` or `Math.random()` which changes each time it's called.
-- Date formatting in a user's locale which doesn't match the server.
-- External changing data without sending a snapshot of it along with the HTML.
-- Invalid HTML tag nesting.
-
-It can also happen if the client has a browser extension installed which messes with the HTML before React loaded.
-
-%s%s https://react.dev/link/hydration-mismatch 
-
-  ...
-    <HotReload globalError={[...]} webSocket={WebSocket} staticIndicatorState={{pathname:null, ...}}>
-      <AppDevOverlayErrorBoundary globalError={[...]}>
-        <ReplaySsrOnlyErrors>
-        <DevRootHTTPAccessFallbackBoundary>
-          <HTTPAccessFallbackBoundary notFound={<NotAllowedRootHTTPFallbackError>}>
-            <HTTPAccessFallbackErrorBoundary pathname="/" notFound={<NotAllowedRootHTTPFallbackError>} ...>
-              <RedirectBoundary>
-                <RedirectErrorBoundary router={{...}}>
-                  <Head>
-                  <__next_root_layout_boundary__>
-                    <SegmentViewNode type="layout" pagePath="/Documents...">
-                      <SegmentTrieNode>
-                      <link>
-                      <script>
-                      <script>
-                      <RootLayout>
-                        <html lang="en">
-                          <body
-                            className="geist_a71539c9-module__T19VSG__variable geist_mono_8d43a2aa-module__8Li5zG__var..."
--                           cz-shortcut-listen="true"
-                          >
-                  ...
-
-[02:22:26.147] Server  LOG      ✓ Compiled in 58ms
-[02:23:21.233] Server  LOG      ✓ Compiled in 145ms
-[02:23:32.807] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
-[02:23:33.162] Browser ERROR   A tree hydrated but some attributes of the server rendered HTML didn't match the client properties. This won't be patched up. This can happen if a SSR-ed Client Component used:
-
-- A server/client branch `if (typeof window !== 'undefined')`.
-- Variable input such as `Date.now()` or `Math.random()` which changes each time it's called.
-- Date formatting in a user's locale which doesn't match the server.
-- External changing data without sending a snapshot of it along with the HTML.
-- Invalid HTML tag nesting.
-
-It can also happen if the client has a browser extension installed which messes with the HTML before React loaded.
-
-%s%s https://react.dev/link/hydration-mismatch 
-
-  ...
-    <HotReload globalError={[...]} webSocket={WebSocket} staticIndicatorState={{pathname:null, ...}}>
-      <AppDevOverlayErrorBoundary globalError={[...]}>
-        <ReplaySsrOnlyErrors>
-        <DevRootHTTPAccessFallbackBoundary>
-          <HTTPAccessFallbackBoundary notFound={<NotAllowedRootHTTPFallbackError>}>
-            <HTTPAccessFallbackErrorBoundary pathname="/" notFound={<NotAllowedRootHTTPFallbackError>} ...>
-              <RedirectBoundary>
-                <RedirectErrorBoundary router={{...}}>
-                  <Head>
-                  <__next_root_layout_boundary__>
-                    <SegmentViewNode type="layout" pagePath="/Documents...">
-                      <SegmentTrieNode>
-                      <link>
-                      <script>
-                      <script>
-                      <RootLayout>
-                        <html lang="en">
-                          <body
-                            className="geist_a71539c9-module__T19VSG__variable geist_mono_8d43a2aa-module__8Li5zG__var..."
--                           cz-shortcut-listen="true"
-                          >
-                  ...
-
-[02:24:01.403] Server  LOG      ✓ Compiled in 157ms
-[02:24:09.058] Server  LOG      ✓ Compiled in 31ms
-[02:25:01.268] Server  LOG      ✓ Compiled in 135ms
-[02:25:40.304] Server  LOG      ✓ Compiled in 48ms
-[02:33:52.768] Server  LOG      ✓ Compiled in 161ms
-[02:34:05.605] Server  LOG      ✓ Compiled in 289ms
-[02:34:05.748] Server  LOG      ✓ Compiled in 0ms
-[02:34:08.120] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
-[02:34:09.080] Browser ERROR   A tree hydrated but some attributes of the server rendered HTML didn't match the client properties. This won't be patched up. This can happen if a SSR-ed Client Component used:
-
-- A server/client branch `if (typeof window !== 'undefined')`.
-- Variable input such as `Date.now()` or `Math.random()` which changes each time it's called.
-- Date formatting in a user's locale which doesn't match the server.
-- External changing data without sending a snapshot of it along with the HTML.
-- Invalid HTML tag nesting.
-
-It can also happen if the client has a browser extension installed which messes with the HTML before React loaded.
-
-%s%s https://react.dev/link/hydration-mismatch 
-
-  ...
-    <HotReload globalError={[...]} webSocket={WebSocket} staticIndicatorState={{pathname:null, ...}}>
-      <AppDevOverlayErrorBoundary globalError={[...]}>
-        <ReplaySsrOnlyErrors>
-        <DevRootHTTPAccessFallbackBoundary>
-          <HTTPAccessFallbackBoundary notFound={<NotAllowedRootHTTPFallbackError>}>
-            <HTTPAccessFallbackErrorBoundary pathname="/" notFound={<NotAllowedRootHTTPFallbackError>} ...>
-              <RedirectBoundary>
-                <RedirectErrorBoundary router={{...}}>
-                  <Head>
-                  <__next_root_layout_boundary__>
-                    <SegmentViewNode type="layout" pagePath="/Documents...">
-                      <SegmentTrieNode>
-                      <link>
-                      <script>
-                      <script>
-                      <RootLayout>
-                        <html lang="en">
-                          <body
-                            className="geist_a71539c9-module__T19VSG__variable geist_mono_8d43a2aa-module__8Li5zG__var..."
--                           cz-shortcut-listen="true"
-                          >
-                  ...
-
-[02:35:48.746] Server  LOG      ✓ Compiled in 183ms
-[02:41:26.894] Server  LOG      ✓ Compiled in 1336ms
-[02:41:30.743] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
-[02:41:30.821] Server  LOG      ✓ Compiled in 32ms
-[02:41:31.391] Browser ERROR   A tree hydrated but some attributes of the server rendered HTML didn't match the client properties. This won't be patched up. This can happen if a SSR-ed Client Component used:
-
-- A server/client branch `if (typeof window !== 'undefined')`.
-- Variable input such as `Date.now()` or `Math.random()` which changes each time it's called.
-- Date formatting in a user's locale which doesn't match the server.
-- External changing data without sending a snapshot of it along with the HTML.
-- Invalid HTML tag nesting.
-
-It can also happen if the client has a browser extension installed which messes with the HTML before React loaded.
-
-%s%s https://react.dev/link/hydration-mismatch 
-
-  ...
-    <HotReload globalError={[...]} webSocket={WebSocket} staticIndicatorState={{pathname:null, ...}}>
-      <AppDevOverlayErrorBoundary globalError={[...]}>
-        <ReplaySsrOnlyErrors>
-        <DevRootHTTPAccessFallbackBoundary>
-          <HTTPAccessFallbackBoundary notFound={<NotAllowedRootHTTPFallbackError>}>
-            <HTTPAccessFallbackErrorBoundary pathname="/" notFound={<NotAllowedRootHTTPFallbackError>} ...>
-              <RedirectBoundary>
-                <RedirectErrorBoundary router={{...}}>
-                  <Head>
-                  <__next_root_layout_boundary__>
-                    <SegmentViewNode type="layout" pagePath="/Documents...">
-                      <SegmentTrieNode>
-                      <link>
-                      <script>
-                      <script>
-                      <RootLayout>
-                        <html lang="en">
-                          <body
-                            className="geist_a71539c9-module__T19VSG__variable geist_mono_8d43a2aa-module__8Li5zG__var..."
--                           cz-shortcut-listen="true"
-                          >
-                  ...
-
-[02:47:42.261] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
-[02:47:42.642] Server  LOG      ✓ Compiled in 28ms

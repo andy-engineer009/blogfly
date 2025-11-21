@@ -74,7 +74,7 @@ const applyTheme = (mode: ThemeMode, accent: string) => {
   root.style.setProperty("--background", isLight ? "#f8fafc" : "#0f172a");
   root.style.setProperty("--surface", isLight ? "#ffffff" : "#111827");
   root.style.setProperty("--card", isLight ? "#f1f5f9" : "#1f2937");
-  root.style.setProperty("--foreground", isLight ? "#0f172a" : "#e2e8f0");
+  root.style.setProperty("--foreground", isLight ? "#212623" : "#e2e8f0");
   root.style.setProperty("--muted", isLight ? "#64748b" : "#94a3b8");
   root.style.setProperty("--border-color", isLight ? "#e2e8f0" : "#1f2937");
   root.style.setProperty("--primary", accent);

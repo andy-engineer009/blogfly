@@ -2,6 +2,7 @@
 
 import Link from "next/link";
 import { useState } from "react";
+import { useTheme } from "@/app/providers/ThemeProvider";
 
 const navLinks = [
   { label: "Home", href: "/" },
@@ -28,6 +29,9 @@ const socialLinks = [
 
 export default function Header() {
   const [isOpen, setIsOpen] = useState(false);
+  const { mode, toggleMode } = useTheme();
+  const isDarkMode = mode === "dark";
+  const themeLabel = isDarkMode ? "Switch to light theme" : "Switch to dark theme";
 
   return (
     <header className="sticky top-0 z-20 bg-[var(--card)] px-4 py-4 shadow-md shadow-black/10 backdrop-blur lg:px-8">
@@ -53,7 +57,7 @@ export default function Header() {
           ))}
         </nav>
 
-        {/* Desktop Social Icons */}
+        {/* Desktop Social Icons + Theme Switch */}
         <div className="hidden items-center gap-4 lg:flex">
           {socialLinks.map((social) => (
             <a
@@ -65,6 +69,14 @@ export default function Header() {
               {social.icon}
             </a>
           ))}
+
+          <button
+            onClick={toggleMode}
+            aria-label={themeLabel}
+            className="flex h-9 items-center justify-center rounded-full border border-[var(--border-color)] px-3 text-xs font-semibold uppercase tracking-[0.3em] text-[var(--foreground)] transition hover:bg-[var(--accent)] hover:text-white"
+          >
+            {isDarkMode ? "Sun" : "Moon"}
+          </button>
         </div>
 
         {/* Mobile Burger */}
@@ -139,18 +151,28 @@ export default function Header() {
               </ul>
             </div>
 
-            {/* Social Icons */}
-            <div className="flex justify-center gap-4">
-              {socialLinks.map((social) => (
-                <a
-                  key={social.label}
-                  href={social.href}
-                  aria-label={social.label}
-                  className="flex h-10 w-10 items-center justify-center rounded-full border-2 border-white/30 bg-white/10 text-lg font-semibold text-white transition hover:bg-white/20"
-                >
-                  {social.icon}
-                </a>
-              ))}
+            {/* Social Icons + Theme Switch */}
+            <div className="flex flex-col items-center gap-4">
+              <div className="flex justify-center gap-4">
+                {socialLinks.map((social) => (
+                  <a
+                    key={social.label}
+                    href={social.href}
+                    aria-label={social.label}
+                    className="flex h-10 w-10 items-center justify-center rounded-full border-2 border-white/30 bg-white/10 text-lg font-semibold text-white transition hover:bg-white/20"
+                  >
+                    {social.icon}
+                  </a>
+                ))}
+              </div>
+
+              <button
+                onClick={toggleMode}
+                aria-label={themeLabel}
+                className="flex h-10 items-center justify-center rounded-full border-2 border-white/30 px-6 text-xs font-semibold uppercase tracking-[0.5em] text-white transition hover:bg-white/20"
+              >
+                {isDarkMode ? "Sun" : "Moon"}
+              </button>
             </div>
           </div>
         </div>

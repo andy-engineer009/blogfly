@@ -249,7 +249,7 @@ export default function Home() {
             </div>
 
             <div className="hidden w-full lg:flex lg:w-[30%]">
-              <div className="mx-auto flex w-full max-w-xs flex-col items-center justify-center gap-4 rounded-[1.5rem] border border-[#e5e7eb] bg-white p-6 text-center shadow-[0_20px_60px_rgba(15,23,42,0.08)]">
+              <div className="mx-auto flex w-full max-w-xs flex-col items-center  gap-4 rounded-[1.5rem] border border-[#e5e7eb] bg-white p-6 text-center shadow-[0_20px_60px_rgba(15,23,42,0.08)]">
                 <span className="text-xs uppercase tracking-[0.4em] text-[var(--muted)]">
                   Sponsored
                 </span>

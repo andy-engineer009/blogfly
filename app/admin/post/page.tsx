@@ -3,6 +3,7 @@
 import Link from "next/link";
 import { useMemo, useState } from "react";
 import Pagination from "@/components/Pagination";
+import ConfirmationModal from "@/components/ConfirmationModal";
 
 const allPosts = [
   {
@@ -102,6 +103,8 @@ const POSTS_PER_PAGE = 6;
 export default function PostPage() {
   const [layout, setLayout] = useState<"table" | "card">("table");
   const [page, setPage] = useState(1);
+  const [isDeleteModalOpen, setIsDeleteModalOpen] = useState(false);
+  const [selectedPost, setSelectedPost] = useState<{ id: string; title: string } | null>(null);
 
   const totalPages = Math.ceil(allPosts.length / POSTS_PER_PAGE);
   const visiblePosts = useMemo(() => {
@@ -115,6 +118,25 @@ export default function PostPage() {
       : status === "draft"
       ? "bg-yellow-500/10 text-yellow-400"
       : "bg-red-500/10 text-red-400";
+
+  const handleDeleteClick = (post: { id: string; title: string }) => {
+    setSelectedPost(post);
+    setIsDeleteModalOpen(true);
+  };
+
+  const handleDeleteConfirm = () => {
+    if (selectedPost) {
+      // TODO: Implement actual delete logic here
+      console.log("Deleting post:", selectedPost.id);
+      // Example: You would call an API or update state here
+      // await deletePost(selectedPost.id);
+    }
+  };
+
+  const handleDeleteCancel = () => {
+    setIsDeleteModalOpen(false);
+    setSelectedPost(null);
+  };
 
   return (
     <div className="space-y-8">
@@ -209,18 +231,22 @@ export default function PostPage() {
                           />
                         </svg>
                       </button>
-                      <button className="flex items-center gap-1 rounded-full border border-white/20 px-3 py-1 text-white/90 transition hover:border-white hover:text-white">
+                      <button
+                        onClick={() => handleDeleteClick({ id: post.id, title: post.title })}
+                        className="flex items-center gap-1 rounded-full border border-red-500/20 bg-red-500/10 px-3 py-1 text-red-400 transition hover:border-red-500 hover:bg-red-500/20"
+                        aria-label={`Delete ${post.title}`}
+                      >
                         <svg className="h-3.5 w-3.5" viewBox="0 0 24 24" fill="none">
                           <path
                             d="M18 6 6 18"
-                            stroke="#ef4444"
+                            stroke="currentColor"
                             strokeWidth="1.5"
                             strokeLinecap="round"
                             strokeLinejoin="round"
                           />
                           <path
                             d="M6 6 18 18"
-                            stroke="#ef4444"
+                            stroke="currentColor"
                             strokeWidth="1.5"
                             strokeLinecap="round"
                             strokeLinejoin="round"
@@ -258,7 +284,11 @@ export default function PostPage() {
                 <button className="rounded-full border border-[var(--border-color)] px-3 py-1 text-[var(--foreground)] transition hover:border-[var(--accent)] hover:text-[var(--accent)]">
                   Edit
                 </button>
-                <button className="rounded-full border border-[var(--border-color)] px-3 py-1 text-[var(--foreground)] transition hover:border-red-500 hover:text-red-500">
+                <button
+                  onClick={() => handleDeleteClick({ id: post.id, title: post.title })}
+                  className="rounded-full border border-red-500/20 bg-red-500/10 px-3 py-1 text-red-400 transition hover:border-red-500 hover:bg-red-500/20"
+                  aria-label={`Delete ${post.title}`}
+                >
                   Delete
                 </button>
               </div>
@@ -268,6 +298,22 @@ export default function PostPage() {
       )}
 
       <Pagination currentPage={page} totalPages={totalPages} onPageChange={(nextPage) => setPage(Math.min(totalPages, Math.max(1, nextPage)))} />
+
+      {/* Delete Confirmation Modal */}
+      <ConfirmationModal
+        isOpen={isDeleteModalOpen}
+        onClose={handleDeleteCancel}
+        onConfirm={handleDeleteConfirm}
+        title="Delete Post"
+        message={
+          selectedPost
+            ? `Are you sure you want to delete "${selectedPost.title}"? This action cannot be undone.`
+            : "Are you sure you want to delete this post?"
+        }
+        confirmText="Delete"
+        cancelText="Cancel"
+        confirmVariant="danger"
+      />
     </div>
   );
 }

@@ -6,12 +6,46 @@ import { usePathname } from "next/navigation";
 type NavItem = {
   label: string;
   href: string;
+  icon: React.ReactNode;
 };
 
 const navItems: NavItem[] = [
-  { label: "Dashboard", href: "/admin/dashboard" },
-  { label: "Categories", href: "/admin/categories" },
-  { label: "Posts", href: "/admin/post" },
+  {
+    label: "Dashboard",
+    href: "/admin/dashboard",
+    icon: (
+      <svg className="h-5 w-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 12l2-2m0 0l7-7 7 7M5 10v10a1 1 0 001 1h3m10-11l2 2m-2-2v10a1 1 0 01-1 1h-3m-6 0a1 1 0 001-1v-4a1 1 0 011-1h2a1 1 0 011 1v4a1 1 0 001 1m-6 0h6" />
+      </svg>
+    ),
+  },
+  {
+    label: "Categories",
+    href: "/admin/categories",
+    icon: (
+      <svg className="h-5 w-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M7 7h.01M7 3h5c.512 0 1.024.195 1.414.586l7 7a2 2 0 010 2.828l-7 7a2 2 0 01-2.828 0l-7-7A1.994 1.994 0 013 12V7a4 4 0 014-4z" />
+      </svg>
+    ),
+  },
+  {
+    label: "Posts",
+    href: "/admin/post",
+    icon: (
+      <svg className="h-5 w-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z" />
+      </svg>
+    ),
+  },
+  {
+    label: "Home Manager",
+    href: "/admin/home-manager",
+    icon: (
+      <svg className="h-5 w-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 12l2-2m0 0l7-7 7 7M5 10v10a1 1 0 001 1h3m10-11l2 2m-2-2v10a1 1 0 01-1 1h-3m-6 0a1 1 0 001-1v-4a1 1 0 011-1h2a1 1 0 011 1v4a1 1 0 001 1m-6 0h6" />
+      </svg>
+    ),
+  },
 ];
 
 type AdminSidebarProps = {
@@ -24,38 +58,47 @@ export function AdminSidebar({ isOpen = true, onClose }: AdminSidebarProps) {
 
   return (
     <>
+      {/* Mobile Overlay */}
       <div
-        className={`fixed inset-0 z-30 bg-black/40 transition-opacity sm:hidden ${
+        className={`fixed inset-0 z-30 bg-black/60 backdrop-blur-sm transition-opacity duration-300 sm:hidden ${
           isOpen ? "opacity-100" : "pointer-events-none opacity-0"
         }`}
         aria-hidden="true"
         onClick={onClose}
       />
 
+      {/* Sidebar */}
       <aside
-        className={`fixed inset-y-0 left-0 z-40 flex w-72 flex-col gap-8 border-r border-[var(--border-color)] bg-[#0f172a] px-6 py-10 text-[var(--muted)] transition-transform sm:static sm:block ${
+        className={`fixed inset-y-0 left-0 z-40 flex w-80 flex-col border-r border-white/10 bg-gradient-to-b from-[#0f172a] via-[#1e293b] to-[#0f172a] shadow-2xl transition-transform duration-300 sm:static sm:block ${
           isOpen ? "translate-x-0" : "-translate-x-full sm:translate-x-0"
         }`}
-      > 
-        <div className="flex items-center justify-between">
-          <div>
-            <p className="text-[0.75rem] font-medium uppercase tracking-[0.3em] text-white/70 sm:tracking-[0.3em]">
-              Admin
-            </p>
-            <h1 className="text-3xl font-semibold text-white">Blogfly</h1>
+      >
+        {/* Header */}
+        <div className="flex items-center justify-between border-b border-white/10 px-6 py-6">
+          <div className="flex items-center gap-3">
+            <div className="flex h-10 w-10 items-center justify-center rounded-xl bg-gradient-to-br from-[var(--accent)] to-[#fb4fa0] shadow-lg">
+              <span className="text-xl font-bold text-white">B</span>
+            </div>
+            <div>
+              <p className="text-xs font-medium uppercase tracking-wider text-white/60">Admin Panel</p>
+              <h1 className="text-xl font-bold text-white">Blogfly</h1>
+            </div>
           </div>
 
           <button
             type="button"
-            className="sm:hidden rounded-full border border-white/30 p-1 text-white/70 transition hover:bg-white/10"
+            className="sm:hidden rounded-lg p-2 text-white/70 transition-colors hover:bg-white/10 hover:text-white"
             onClick={onClose}
             aria-label="Close menu"
           >
-            ✕
+            <svg className="h-6 w-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" />
+            </svg>
           </button>
         </div>
 
-        <nav className="flex flex-1 flex-col gap-3 text-base font-semibold text-white">
+        {/* Navigation */}
+        <nav className="flex flex-1 flex-col gap-2 px-4 py-6">
           {navItems.map((item) => {
             const isActive = pathname?.startsWith(item.href);
 
@@ -63,25 +106,45 @@ export function AdminSidebar({ isOpen = true, onClose }: AdminSidebarProps) {
               <Link
                 key={item.href}
                 href={item.href}
+                onClick={() => {
+                  // Close mobile menu on navigation
+                  if (onClose && window.innerWidth < 640) {
+                    onClose();
+                  }
+                }}
                 aria-current={isActive ? "page" : undefined}
-                className={`rounded-[1rem] border px-4 py-3 transition ${
+                className={`group relative flex items-center gap-3 rounded-xl px-4 py-3 text-sm font-medium transition-all duration-200 ${
                   isActive
-                    ? "border-white bg-white/10"
-                    : "border-transparent hover:border-white/60 hover:bg-white/10"
+                    ? "bg-gradient-to-r from-[var(--accent)]/20 to-[var(--accent)]/10 text-white shadow-lg shadow-[var(--accent)]/20"
+                    : "text-white/70 hover:bg-white/5 hover:text-white"
                 }`}
               >
-                {item.label}
+                <div
+                  className={`flex items-center justify-center transition-colors ${
+                    isActive ? "text-[var(--accent)]" : "text-white/60 group-hover:text-white"
+                  }`}
+                >
+                  {item.icon}
+                </div>
+                <span className="flex-1">{item.label}</span>
+                {isActive && (
+                  <div className="absolute right-2 h-2 w-2 rounded-full bg-[var(--accent)] shadow-lg shadow-[var(--accent)]/50" />
+                )}
               </Link>
             );
           })}
         </nav>
 
-        <div className="mt-auto w-full">
+        {/* Footer - Logout */}
+        <div className="border-t border-white/10 px-4 py-6">
           <button
             type="button"
-            className="w-full rounded-[1rem] border border-white/40 bg-white/5 px-4 py-3 text-sm font-semibold text-white transition hover:bg-white/10"
+            className="group flex w-full items-center justify-center gap-3 rounded-xl border border-red-500/30 bg-red-500/10 px-4 py-3 text-sm font-semibold text-red-400 transition-all duration-200 hover:border-red-500/50 hover:bg-red-500/20 hover:text-red-300"
           >
-            Logout
+            <svg className="h-5 w-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 16l4-4m0 0l-4-4m4 4H7m6 4v1a3 3 0 01-3 3H6a3 3 0 01-3-3V7a3 3 0 013-3h4a3 3 0 013 3v1" />
+            </svg>
+            <span>Logout</span>
           </button>
         </div>
       </aside>

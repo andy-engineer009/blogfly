@@ -86,19 +86,24 @@ export default function AddPostPage() {
 
   return (
     <div className="space-y-6">
-      <header className="flex flex-col gap-3 rounded-[1.25rem] border border-[var(--border-color)] bg-white/80 px-6 py-6 shadow-[0_20px_40px_rgba(15,23,42,0.1)] sm:flex-row sm:items-center sm:justify-between">
-        <div className="flex items-center gap-3">
+       <header className="flex flex-col gap-4 rounded-2xl border border-[var(--border-color)] bg-gradient-to-br from-[var(--surface)] via-[var(--surface)] to-[var(--card)] p-6 shadow-lg sm:flex-row sm:items-center sm:justify-between sm:p-8">
+        <div className="flex items-center gap-4">
           <Link
             href="/admin/post"
-            className="rounded-full border border-[var(--border-color)] px-3 py-2 text-xs text-[var(--foreground)] transition hover:border-[var(--accent)] hover:text-[var(--accent)]"
+            className="group flex items-center justify-center rounded-xl border border-[var(--border-color)] bg-[var(--surface)] p-2.5 text-[var(--foreground)] transition-all duration-200 hover:border-[var(--accent)] hover:bg-[var(--accent)]/10 hover:text-[var(--accent)]"
+            aria-label="Back to categories"
           >
-            ← Back
+            <svg className="h-5 w-5 transition-transform duration-200 group-hover:-translate-x-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M10 19l-7-7m0 0l7-7m-7 7h18" />
+            </svg>
           </Link>
           <div>
-            <h1 className="text-3xl font-semibold text-[var(--foreground)]">Add post</h1>
+            <p className="text-xs font-medium uppercase tracking-wider text-[var(--muted)]">Post Management</p>
+            <h1 className="mt-1 text-2xl font-bold text-[var(--foreground)] sm:text-3xl">Add Post</h1>
           </div>
         </div>
       </header>
+
 
       <section className="rounded-[1.25rem] border border-[var(--border-color)] bg-[var(--surface)] px-6 py-8 shadow-[0_20px_40px_rgba(15,23,42,0.1)]">
         <form onSubmit={formik.handleSubmit} className="flex flex-col gap-6">

@@ -139,7 +139,7 @@ const latestStories = [
 
 export default function Home() {
   return (
-    <div className="min-h-screen bg-[var(--background)] px-4 py-16 text-[var(--foreground)] sm:px-6 lg:px-16">
+    <div className="min-h-screen bg-[var(--background)] px-4 py-4 sm:py-16 text-[var(--foreground)] sm:px-6 lg:px-16">
       <div className="mx-auto w-full">
         {/* 1 column on mobile, 50/50 split from lg upwards using flex */}
         <section className="flex flex-col gap-4 lg:gap-6 lg:flex-row lg:items-stretch">

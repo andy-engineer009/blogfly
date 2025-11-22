@@ -1,126 +1,170 @@
 "use client";
 
-import Link from "next/link";
 import { useMemo, useState } from "react";
 import Pagination from "@/components/Pagination";
-
-const allPosts = [
+import Link from "next/link";
+const allCategories = [
   {
-    id: "P-101",
-    title: "Why every founder needs a launch narrative",
-    author: "Cara Lee",
-    status: "published",
-    published: "Feb 05, 2025",
-    reads: "34k",
-    category: "Product",
+    id: "C-001",
+    name: "Announcements",
+    posts: 34,
+    status: "active",
+    description: "Platform updates, launches, and news.",
   },
   {
-    id: "P-102",
-    title: "Behind the scenes of remote design sprints",
-    author: "Elena Torres",
-    status: "draft",
-    published: "Mar 10, 2025",
-    reads: "12k",
-    category: "Design",
+    id: "C-002",
+    name: "Product",
+    posts: 58,
+    status: "active",
+    description: "Roadmap releases and case studies.",
   },
   {
-    id: "P-103",
-    title: "Scaling community feedback loops",
-    author: "Marcus Lee",
-    status: "published",
-    published: "Jan 28, 2025",
-    reads: "8.4k",
-    category: "Community",
+    id: "C-003",
+    name: "Strategy",
+    posts: 19,
+    status: "inactive",
+    description: "Go-to-market and planning insights.",
   },
   {
-    id: "P-104",
-    title: "How to write release notes people read",
-    author: "Lena Howell",
-    status: "published",
-    published: "Dec 19, 2024",
-    reads: "6.1k",
-    category: "Product",
+    id: "C-004",
+    name: "Culture",
+    posts: 12,
+    status: "active",
+    description: "Team rituals and studio stories.",
   },
   {
-    id: "P-105",
-    title: "Designing launch-day rituals",
-    author: "Noah Green",
-    status: "archived",
-    published: "Nov 05, 2024",
-    reads: "3.2k",
-    category: "Culture",
+    id: "C-005",
+    name: "Wellness",
+    posts: 24,
+    status: "active",
+    description: "Mindfulness, health, and balance.",
   },
   {
-    id: "P-106",
-    title: "How to keep editors in sync with engineers",
-    author: "Priya Sharma",
-    status: "draft",
-    published: "Apr 01, 2025",
-    reads: "1.1k",
-    category: "Product",
+    id: "C-006",
+    name: "Finance",
+    posts: 11,
+    status: "inactive",
+    description: "Revenue, pricing, and sustainability.",
   },
   {
-    id: "P-107",
-    title: "Narratives that help people understand AI",
-    author: "Elliot Zhang",
-    status: "published",
-    published: "Feb 20, 2025",
-    reads: "20k",
-    category: "AI",
+    id: "C-007",
+    name: "Analytics",
+    posts: 26,
+    status: "active",
+    description: "Data dashboards and decision frameworks.",
   },
   {
-    id: "P-108",
-    title: "Building obsession-free analytics dashboards",
-    author: "Nathan Cole",
-    status: "published",
-    published: "Jan 11, 2025",
-    reads: "9.4k",
-    category: "Analytics",
+    id: "C-008",
+    name: "Customer",
+    posts: 17,
+    status: "active",
+    description: "CX, support, and retention notes.",
   },
   {
-    id: "P-109",
-    title: "Running thoughtful office hours for writers",
-    author: "Chloe Martinez",
-    status: "draft",
-    published: "Mar 22, 2025",
-    reads: "2.8k",
-    category: "Culture",
+    id: "C-009",
+    name: "Design",
+    posts: 21,
+    status: "active",
+    description: "Visual language and product feel.",
   },
   {
-    id: "P-110",
-    title: "Community rituals to keep readers engaged",
-    author: "Anya Ruiz",
-    status: "published",
-    published: "Feb 14, 2025",
-    reads: "7.5k",
-    category: "Community",
+    id: "C-010",
+    name: "Tech",
+    posts: 42,
+    status: "active",
+    description: "Engineering updates and infrastructure.",
+  },
+  {
+    id: "C-011",
+    name: "Security",
+    posts: 8,
+    status: "inactive",
+    description: "Hardening and trust stories.",
+  },
+  {
+    id: "C-012",
+    name: "Careers",
+    posts: 13,
+    status: "active",
+    description: "Hiring, culture, and talent.",
+  },
+  {
+    id: "C-013",
+    name: "Community",
+    posts: 9,
+    status: "active",
+    description: "Events, podcasts, and collabs.",
+  },
+  {
+    id: "C-014",
+    name: "Lifestyle",
+    posts: 15,
+    status: "active",
+    description: "Work-from-anywhere guides.",
+  },
+  {
+    id: "C-015",
+    name: "Education",
+    posts: 10,
+    status: "inactive",
+    description: "Learning resources and tips.",
+  },
+  {
+    id: "C-016",
+    name: "Sustainability",
+    posts: 5,
+    status: "inactive",
+    description: "Climate & impact thinking.",
+  },
+  {
+    id: "C-017",
+    name: "AI",
+    posts: 36,
+    status: "active",
+    description: "Generative tools and experimentation.",
+  },
+  {
+    id: "C-018",
+    name: "Travel",
+    posts: 18,
+    status: "active",
+    description: "Remote work and local rituals.",
+  },
+  {
+    id: "C-019",
+    name: "Food",
+    posts: 22,
+    status: "active",
+    description: "Chef interviews and tasting notes.",
+  },
+  {
+    id: "C-020",
+    name: "Lifestyle",
+    posts: 14,
+    status: "inactive",
+    description: "Daily routines and wellbeing.",
   },
 ];
 
-const POSTS_PER_PAGE = 6;
+const POSTS_PER_PAGE = 10;
 
-export default function PostPage() {
+export default function CategoriesPage() {
   const [layout, setLayout] = useState<"table" | "card">("table");
   const [page, setPage] = useState(1);
 
-  const totalPages = Math.ceil(allPosts.length / POSTS_PER_PAGE);
-  const visiblePosts = useMemo(() => {
-    const start = (page - 1) * POSTS_PER_PAGE;
-    return allPosts.slice(start, start + POSTS_PER_PAGE);
-  }, [page]);
+  const totalPages = Math.ceil(allCategories.length / POSTS_PER_PAGE);
 
-  const statusClass = (status: string) =>
-    status === "published"
-      ? "bg-emerald-500/10 text-emerald-400"
-      : status === "draft"
-      ? "bg-yellow-500/10 text-yellow-400"
-      : "bg-red-500/10 text-red-400";
+  const visibleCategories = useMemo(() => {
+    const start = (page - 1) * POSTS_PER_PAGE;
+    return allCategories.slice(start, start + POSTS_PER_PAGE);
+  }, [page]);
 
   return (
     <div className="space-y-8">
       <header className="flex flex-col gap-4 rounded-[1.5rem] border border-[var(--border-color)] bg-white/70 px-6 py-6 shadow-[0_15px_30px_rgba(15,23,42,0.08)] sm:flex-row sm:items-center sm:justify-between">
         <div>
-          <h1 className="text-2xl font-bold text-[var(--foreground)]">Posts</h1>
+          {/* <p className="text-xs uppercase tracking-[0.4em] text-[var(--muted)]">Content control</p> */}
+          <h1 className="text-2xl font-bold text-[var(--foreground)]">Categories</h1>
         </div>
         <div className="flex flex-wrap gap-2 items-center">
           <button
@@ -150,10 +194,10 @@ export default function PostPage() {
             </svg>
           </button>
           <Link
-            href="/admin/post/add"
-            className="rounded-full border border-[var(--accent)] bg-[var(--accent)] px-4 py-2 text-[0.65rem] font-semibold text-white transition hover:bg-[#fb4fa0]"
+            href="/admin/categories/add"
+            className="rounded-full border border-[var(--accent)] bg-[var(--accent)] px-4 py-2 text-[0.65rem] font-semibold uppercase tracking-[0.4em] text-white transition hover:bg-[#fb4fa0]"
           >
-            Add post
+            Add category
           </Link>
         </div>
       </header>
@@ -164,29 +208,27 @@ export default function PostPage() {
             <thead className="border-b border-[var(--border-color)] bg-white text-[0.65rem] uppercase tracking-[0.35em] text-[var(--muted)]">
               <tr>
                 <th className="px-6 py-4 text-left">ID</th>
-                <th className="px-6 py-4 text-left">Title</th>
-                <th className="px-6 py-4 text-left">Author</th>
-                <th className="px-6 py-4 text-left">Category</th>
-                <th className="px-6 py-4 text-left">Published</th>
+                <th className="px-6 py-4 text-left">Name</th>
+                <th className="px-6 py-4 text-left">Posts</th>
                 <th className="px-6 py-4 text-left">Status</th>
                 <th className="px-6 py-4 text-left">Actions</th>
               </tr>
             </thead>
             <tbody>
-              {visiblePosts.map((post) => (
-                <tr key={post.id} className="border-b border-[var(--border-color)] last:border-b-0">
-                  <td className="px-6 py-4 font-semibold text-[var(--foreground)]">{post.id}</td>
-                  <td className="px-6 py-4 text-[var(--foreground)]">{post.title}</td>
-                  <td className="px-6 py-4 text-[var(--muted)]">{post.category}</td>
-                  <td className="px-6 py-4 text-[var(--muted)]">{post.author}</td>
-                  <td className="px-6 py-4 text-[var(--muted)]">{post.published}</td>
+              {visibleCategories.map((category) => (
+                <tr key={category.id} className="border-b border-[var(--border-color)] last:border-b-0">
+                  <td className="px-6 py-4 font-semibold text-[var(--foreground)]">{category.id}</td>
+                  <td className="px-6 py-4 text-[var(--foreground)]">{category.name}</td>
+                  <td className="px-6 py-4 text-[var(--muted)]">{category.posts} posts</td>
                   <td className="px-6 py-4">
                     <span
-                      className={`inline-flex rounded-full px-2 py-0.5 text-[0.65rem] font-semibold uppercase tracking-[0.3em] ${statusClass(
-                        post.status,
-                      )}`}
+                      className={`inline-flex rounded-full px-2 py-0.5 text-[0.65rem] font-semibold uppercase tracking-[0.3em] ${
+                        category.status === "active"
+                          ? "bg-emerald-500/10 text-emerald-400"
+                          : "bg-red-500/10 text-red-400"
+                      }`}
                     >
-                      {post.status}
+                      {category.status}
                     </span>
                   </td>
                   <td className="px-6 py-4 text-[0.7rem]">
@@ -236,24 +278,29 @@ export default function PostPage() {
         </div>
       ) : (
         <div className="grid gap-4 sm:grid-cols-2">
-          {visiblePosts.map((post) => (
-              <article
-              key={post.id}
+          {visibleCategories.map((category) => (
+            <article
+              key={category.id}
               className="flex flex-col gap-3 rounded-[1.25rem] border border-[var(--border-color)] bg-white/80 p-5 shadow-[0_15px_30px_rgba(15,23,42,0.15)]"
             >
-              <div className="text-[0.65rem] font-semibold text-[var(--muted)]">{post.id}</div>
-              <h3 className="text-2xl font-bold text-[var(--foreground)]">{post.title}</h3>
-              <p className="text-sm text-[var(--muted)]">
-                <span className="font-semibold uppercase tracking-[0.3em] text-[var(--muted)]">Category:</span>{" "}
-                {post.category}
-              </p>
+              <div className="text-[0.65rem] font-semibold uppercase tracking-[0.4em] text-[var(--muted)]">
+                {category.id}
+              </div>
+              <h3 className="text-2xl font-bold text-[var(--foreground)]">{category.name}</h3>
               <div className="flex items-center gap-2 text-sm text-[var(--muted)]">
-                <span>{post.reads} reads</span>
+                <span>{category.posts} posts</span>
                 <span>·</span>
-                <span className={`rounded-full px-2 py-0.5 text-[0.65rem] font-semibold uppercase tracking-[0.3em] ${statusClass(post.status)}`}>
-                  {post.status}
+                <span
+                  className={`rounded-full px-2 py-0.5 text-[0.65rem] font-semibold uppercase tracking-[0.3em] ${
+                    category.status === "active"
+                      ? "bg-emerald-500/10 text-emerald-400"
+                      : "bg-red-500/10 text-red-400"
+                  }`}
+                >
+                  {category.status}
                 </span>
               </div>
+              <p className="text-sm text-[var(--muted)]">{category.description}</p>
               <div className="flex flex-wrap gap-2 text-[0.75rem]">
                 <button className="rounded-full border border-[var(--border-color)] px-3 py-1 text-[var(--foreground)] transition hover:border-[var(--accent)] hover:text-[var(--accent)]">
                   Edit
@@ -267,7 +314,11 @@ export default function PostPage() {
         </div>
       )}
 
-      <Pagination currentPage={page} totalPages={totalPages} onPageChange={(nextPage) => setPage(Math.min(totalPages, Math.max(1, nextPage)))} />
+      <Pagination
+        currentPage={page}
+        totalPages={totalPages}
+        onPageChange={(nextPage) => setPage(Math.min(totalPages, Math.max(1, nextPage)))}
+      />
     </div>
   );
 }

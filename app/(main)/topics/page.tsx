@@ -294,12 +294,12 @@ export default function TopicPages() {
         <header className="space-y-2">
           <p className="text-xs uppercase tracking-[0.35em] text-[var(--muted)]">Topics</p>
           <h1 className="text-3xl font-bold tracking-tight text-[var(--foreground)] sm:text-4xl">
-            Latest dispatches
+            Latest Stories
           </h1>
-          <p className="max-w-2xl text-sm leading-relaxed text-[var(--muted)]">
+          {/* <p className="max-w-2xl text-sm leading-relaxed text-[var(--muted)]">
             Browse the latest 10 stories from Blogfly each page. Tap through to explore every category
             with an eye on readability and calm pacing.
-          </p>
+          </p> */}
         </header>
 
         <section className="space-y-6">
@@ -325,3 +325,4 @@ export default function TopicPages() {
     </div>
   );
 }
+

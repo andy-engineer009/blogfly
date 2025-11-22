@@ -27,7 +27,7 @@ export default function PostPage({ params }: { params: { category?: string; id?:
       <div className="mx-auto max-w-4xl space-y-8">
         <div className="space-y-4">
           <div className="text-xs uppercase tracking-[0.1em] text-[#0a8935]">{category}</div>
-          <h1 className="text-[22px] font-[700] leading-[50px]  text-[var(--foreground)] sm:text-[34px]">
+          <h1 className="text-[22px] font-[700] sm:leading-[50px] leading-[34px]  text-[var(--foreground)] sm:text-[34px]">
             {/* {title} */}
             Despite Chinese hacks, Trump’s FCC votes to scrap cybersecurity rules
           </h1>
@@ -53,3 +53,4 @@ export default function PostPage({ params }: { params: { category?: string; id?:
     </div>
   );
 }
+

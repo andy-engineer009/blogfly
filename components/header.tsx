@@ -34,12 +34,12 @@ export default function Header() {
   const themeLabel = isDarkMode ? "Switch to light theme" : "Switch to dark theme";
 
   return (
-    <header className="sticky top-0 z-20 bg-[var(--card)] px-4 py-4 shadow-md shadow-black/10 backdrop-blur lg:px-8">
+    <header className="sticky top-0 z-20 bg-[var(--header-bg-color)] px-4 py-4 shadow-md shadow-black/10 backdrop-blur lg:px-8">
       <div className="mx-auto flex w-full max-w-7xl items-center justify-between">
         {/* Logo */}
         <Link
           href="/"
-          className="text-xl font-bold uppercase tracking-[0.3em] text-[var(--foreground)] lg:text-2xl"
+          className="text-xl font-bold uppercase tracking-[0.3em] text-[var(--header-text-color)] lg:text-2xl"
         >
           Blogfly
         </Link>
@@ -50,7 +50,7 @@ export default function Header() {
             <Link
               key={link.href}
               href={link.href}
-              className="text-sm font-semibold uppercase tracking-[0.2em] text-[var(--muted)] transition hover:text-[var(--accent)]"
+              className="text-sm font-semibold uppercase tracking-[0.2em] text-[var(--header-text-color)] transition hover:text-[var(--accent)]"
             >
               {link.label}
             </Link>
@@ -73,7 +73,7 @@ export default function Header() {
           <button
             onClick={toggleMode}
             aria-label={themeLabel}
-            className="flex h-9 items-center justify-center rounded-full border border-[var(--border-color)] px-3 text-xs font-semibold uppercase tracking-[0.3em] text-[var(--foreground)] transition hover:bg-[var(--accent)] hover:text-white"
+            className="flex h-9 items-center justify-center rounded-full border border-[var(--border-color)] px-3 text-xs font-semibold uppercase tracking-[0.3em] text-white transition hover:bg-[var(--accent)] hover:text-white"
           >
             {isDarkMode ? "Sun" : "Moon"}
           </button>

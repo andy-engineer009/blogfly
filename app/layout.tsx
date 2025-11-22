@@ -2,8 +2,6 @@ import type { Metadata } from "next";
 import { Poppins } from "next/font/google";
 import "./globals.css";
 import { ThemeProvider } from "@/app/providers/ThemeProvider";
-import Header from "@/components/header";
-import Footer from "@/components/footer";
 
 const poppins = Poppins({
   weight: ["100", "200", "300", "400", "500", "600", "700", "800", "900"],
@@ -11,11 +9,8 @@ const poppins = Poppins({
   subsets: ["latin"],
   variable: "--font-poppins",
 });
-
-
-
 export const metadata: Metadata = {
-  title: "Blogfly · Admin-controlled storytelling",
+  title: "Blogfly · Blogging Platform",
   description:
     "A resale-ready blog platform with centralized theming and a private admin surface.",
 };
@@ -32,9 +27,7 @@ export default function RootLayout({
         style={{ fontFamily: "var(--font-poppins), sans-serif" }}
       >
         <ThemeProvider>
-          <Header />
           {children}
-          <Footer />
         </ThemeProvider>
       </body>
     </html>

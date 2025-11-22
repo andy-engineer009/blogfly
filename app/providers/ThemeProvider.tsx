@@ -80,6 +80,11 @@ const applyTheme = (mode: ThemeMode, accent: string) => {
   root.style.setProperty("--primary", accent);
   root.style.setProperty("--secondary", isLight ? "#38bdf8" : "#22d3ee");
   root.style.setProperty("--accent", accent);
+  root.style.setProperty("--header-bg-color", isLight ? "#212623" : "#0f172a");
+  root.style.setProperty("--header-text-color", isLight ? "#e2e8f0" : "#f8fafc");
+  root.style.setProperty("--footer-bg-color", isLight ? "#212623" : "#0f172a");
+
+
 };
 
 export const ThemeProvider = ({ children }: { children: React.ReactNode }) => {

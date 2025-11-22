@@ -1,7 +1,17 @@
 {
   "/(auth)/login/page": "app/(auth)/login/page.js",
+  "/(main)/[category]/[id]/page": "app/(main)/[category]/[id]/page.js",
+  "/(main)/[category]/page": "app/(main)/[category]/page.js",
+  "/(main)/about/page": "app/(main)/about/page.js",
+  "/(main)/page": "app/(main)/page.js",
+  "/(main)/topics/page": "app/(main)/topics/page.js",
   "/[category]/[id]/page": "app/[category]/[id]/page.js",
   "/[category]/page": "app/[category]/page.js",
+  "/admin/categories/add/page": "app/admin/categories/add/page.js",
+  "/admin/categories/page": "app/admin/categories/page.js",
+  "/admin/dashboard/page": "app/admin/dashboard/page.js",
+  "/admin/post/add/page": "app/admin/post/add/page.js",
+  "/admin/post/page": "app/admin/post/page.js",
   "/page": "app/page.js",
   "/topics/page": "app/topics/page.js"
 }

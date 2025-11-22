@@ -48,7 +48,7 @@ const latestStories = [
   {
     id: "space-starship",
     label: "Space",
-    title: "SpaceX’s upgraded Starship suffers explosion during testing",
+    title: "Despite Chinese hacks, Trump’s FCC votes to scrap cybersecurity rules for phone and internet companies",
     author: "Sean O'Kane",
     timeAgo: "32 minutes ago",
     image:
@@ -57,7 +57,7 @@ const latestStories = [
   {
     id: "security-fcc",
     label: "Security",
-    title: "Despite Chinese hacks, Trump’s FCC votes to scrap cybersecurity rules",
+    title: "Salesforce says some of its customers’ data was accessed after Gainsight breach",
     author: "Zack Whittaker",
     timeAgo: "2 hours ago",
     image:
@@ -66,7 +66,7 @@ const latestStories = [
   {
     id: "lifestyle-minimal",
     label: "Lifestyle",
-    title: "How minimalist design helps teams ship faster",
+    title: "Despite Chinese hacks, Trump’s FCC votes to scrap cybersecurity rules for phone and internet companies",
     author: "Priya Sharma",
     timeAgo: "3 hours ago",
     image:
@@ -75,7 +75,7 @@ const latestStories = [
   {
     id: "product-ai-tooling",
     label: "Product",
-    title: "What founders can learn from the rise of AI-first tooling",
+    title: "Salesforce says some of its customers’ data was accessed after Gainsight breach",
     author: "Marcus Lee",
     timeAgo: "4 hours ago",
     image:
@@ -93,7 +93,7 @@ const latestStories = [
   {
     id: "analytics-dashboards",
     label: "Analytics",
-    title: "Data dashboards that executives can't ignore",
+    title: "Salesforce says some of its customers’ data was accessed after Gainsight breachignore",
     author: "Nathan Cole",
     timeAgo: "6 hours ago",
     image:
@@ -142,51 +142,87 @@ export default function Home() {
     <div className="min-h-screen bg-[var(--background)] px-4 py-16 text-[var(--foreground)] sm:px-6 lg:px-16">
       <div className="mx-auto w-full">
         {/* 1 column on mobile, 50/50 split from lg upwards using flex */}
-        <section className="flex flex-col gap-8 lg:flex-row lg:items-stretch">
-          <article className="w-full rounded-[2rem] bg-white p-0 shadow-[0_25px_60px_rgba(15,23,42,0.15)] lg:w-3/5">
+        <section className="flex flex-col gap-4 lg:gap-6 lg:flex-row lg:items-stretch">
+          <article className="w-full overflow-hidden rounded-[1.5rem] bg-white shadow-[0_20px_50px_rgba(15,23,42,0.1)] lg:w-2/3">
             <div
-              className="relative h-[420px] overflow-hidden rounded-[2rem] h-full"
+              className="relative min-h-[500px] overflow-hidden bg-cover bg-center lg:min-h-[600px]"
               style={{ backgroundImage: `url(${heroStory.image})` }}
             >
-              <div className="absolute inset-0 bg-gradient-to-tr from-black/80 via-black/40 to-transparent" />
-              <div className="absolute bottom-6 left-6 right-6 flex flex-col gap-3">
-                <span className="inline-flex items-center rounded-full bg-orange-100 px-3 py-1 text-[0.65rem] font-semibold uppercase tracking-[0.4em] text-orange-700">
+              <div className="absolute inset-0 bg-gradient-to-t from-black/90 via-black/50 to-transparent" />
+              <div className="absolute top-6 left-6">
+                <span className="inline-flex items-center rounded-full bg-white/20 backdrop-blur-sm px-4 py-1.5 text-xs font-semibold uppercase tracking-wider text-white">
                   {heroStory.category}
                 </span>
-                <h1 className="text-3xl font-black leading-tight text-white md:text-4xl">
+              </div>
+              <div className="absolute bottom-0 left-0 right-0 p-6 lg:p-8">
+                <h1 className="mb-4 text-2xl font-bold leading-tight text-white sm:text-3xl lg:text-4xl">
                   {heroStory.title}
                 </h1>
-                <div className="flex flex-wrap items-center gap-4 text-[0.7rem] font-semibold uppercase tracking-[0.4em] text-white/75">
-                  <span className="flex items-center gap-2">
-                    <span className="h-2 w-2 rounded-full bg-white" />
-                    {heroStory.author}
-                  </span>
+                <div className="flex flex-wrap items-center gap-3 text-sm text-white/90">
+                  <span>{heroStory.author}</span>
+                  <span className="text-white/50">·</span>
                   <span>{heroStory.date}</span>
                 </div>
               </div>
             </div>
           </article>
 
-          <aside className="w-full space-y-4 lg:w-2/5">
-            {relatedStories.map((story) => (
+          <aside className="w-full space-y-4 lg:w-1/3">
+            {relatedStories.slice(0, 2).map((story, index) => (
               <article
-                key={story.title}
-                className="flex w-full items-center gap-3"
+                key={`${story.title}-${index}`}
+                className="group relative overflow-hidden rounded-[1.5rem] bg-white shadow-[0_20px_50px_rgba(15,23,42,0.1)] transition-transform hover:scale-[1.02]"
               >
                 <div
-                  className="h-20 w-20 flex-shrink-0 rounded-[1rem] bg-cover bg-center"
+                  className="relative min-h-[280px] overflow-hidden bg-cover bg-center sm:min-h-[300px]"
                   style={{ backgroundImage: `url(${story.image})` }}
-                />
-                <div className="flex-1 space-y-1">
-                  <span className="inline-flex w-fit rounded-full bg-[#eef2ff] px-3 py-1 text-[0.6rem] font-semibold uppercase tracking-[0.4em] text-[#4f46e5]">
-                    {story.label}
-                  </span>
-                  <h3 className="text-base font-semibold text-[var(--foreground)]">
-                    {story.title}
-                  </h3>
-                  <p className="text-[0.65rem] uppercase tracking-[0.4em] text-[var(--muted)]">
-                    By {story.author} · {story.date}
-                  </p>
+                >
+                  <div className="absolute inset-0 bg-gradient-to-t from-black/90 via-black/60 to-transparent" />
+                  <div className="absolute top-4 left-4">
+                    <span className="inline-flex items-center rounded-full bg-white/20 backdrop-blur-sm px-3 py-1 text-[0.7rem] font-semibold uppercase tracking-wider text-white">
+                      {story.label}
+                    </span>
+                  </div>
+                  <div className="absolute bottom-0 left-0 right-0 p-5 lg:p-6">
+                    <h3 className="mb-3 text-lg font-bold leading-tight text-white sm:text-xl">
+                      {story.title}
+                    </h3>
+                    <div className="flex flex-wrap items-center gap-2 text-xs text-white/90">
+                      <span>{story.author}</span>
+                      <span className="text-white/50">·</span>
+                      <span>{story.date}</span>
+                    </div>
+                  </div>
+                </div>
+              </article>
+            ))}
+          </aside>
+          <aside className="w-full space-y-4 lg:w-1/3">
+            {relatedStories.slice(0, 2).map((story, index) => (
+              <article
+                key={`${story.title}-${index}`}
+                className="group relative overflow-hidden rounded-[1.5rem] bg-white shadow-[0_20px_50px_rgba(15,23,42,0.1)] transition-transform hover:scale-[1.02]"
+              >
+                <div
+                  className="relative min-h-[280px] overflow-hidden bg-cover bg-center sm:min-h-[300px]"
+                  style={{ backgroundImage: `url(${story.image})` }}
+                >
+                  <div className="absolute inset-0 bg-gradient-to-t from-black/90 via-black/60 to-transparent" />
+                  <div className="absolute top-4 left-4">
+                    <span className="inline-flex items-center rounded-full bg-white/20 backdrop-blur-sm px-3 py-1 text-[0.7rem] font-semibold uppercase tracking-wider text-white">
+                      {story.label}
+                    </span>
+                  </div>
+                  <div className="absolute bottom-0 left-0 right-0 p-5 lg:p-6">
+                    <h3 className="mb-3 text-lg font-bold leading-tight text-white sm:text-xl">
+                      {story.title}
+                    </h3>
+                    <div className="flex flex-wrap items-center gap-2 text-xs text-white/90">
+                      <span>{story.author}</span>
+                      <span className="text-white/50">·</span>
+                      <span>{story.date}</span>
+                    </div>
+                  </div>
                 </div>
               </article>
             ))}
@@ -195,7 +231,7 @@ export default function Home() {
 
         <section className="mt-10">
           <div className="flex flex-wrap gap-6">
-            <h2 className="flex items-center gap-[0.5rem] text-midlarge md:text-[80px] font-[800] text-left">
+            <h2 className="flex items-center gap-[0.5rem] text-[32px] md:text-[80px] font-[800] text-left">
               Latest Stories
               <svg
                 className="hidden lg:block relative -bottom-[1rem]"
@@ -233,7 +269,7 @@ export default function Home() {
             </h2>
           </div>
 
-          <div className="mt-12 flex flex-col gap-6 lg:flex-row">
+          <div className="mt-5 md:mt-12 flex flex-col gap-6 lg:flex-row">
             <div className="w-full lg:w-[70%] space-y-6">
               {latestStories.map((story) => (
                 <PostCard
@@ -254,7 +290,7 @@ export default function Home() {
                   Sponsored
                 </span>
                 <p className="text-lg font-semibold text-[var(--foreground)]">
-                   Ads
+                  Ads
                 </p>
               </div>
             </div>
@@ -264,3 +300,4 @@ export default function Home() {
     </div>
   );
 }
+

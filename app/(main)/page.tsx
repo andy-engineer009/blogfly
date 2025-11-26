@@ -1,46 +1,59 @@
 import { PostCard } from "@/components/PostCard";
+import Link from "next/link";
+import Image from "next/image";
 
-const heroStory = {
-  category: "Gadgets",
-  title: "The Reason Why Everyone Love Apple MacBook",
-  author: "John Doe",
-  date: "12 August 2020",
-  image:
-    "https://images.unsplash.com/photo-1524504388940-b1c1722653e1?auto=format&fit=crop&w=900&q=80",
-};
+// Keep the same data for now, but ideally this comes from a CMS/API
+const heroStories = [
+  {
+    category: "Gadgets",
+    title: "The Reason Why Everyone Love Apple MacBook",
+    author: "John Doe",
+    date: "12 Aug 2020",
+    image:
+      "https://images.unsplash.com/photo-1524504388940-b1c1722653e1?auto=format&fit=crop&w=1200&q=80",
+  },
+  {
+    category: "Architecture",
+    title: "How Modern Architecture Is Changing Our Lives",
+    author: "Jane Smith",
+    date: "11 Aug 2020",
+    image:
+      "https://images.unsplash.com/photo-1487958449943-2429e8be8625?auto=format&fit=crop&w=1200&q=80",
+  },
+];
 
 const relatedStories = [
   {
     label: "Tech",
     title: "What Will Virtual Reality Be Like In The Next 50 Years?",
     author: "John Doe",
-    date: "12 August 2020",
+    date: "12 Aug",
     image:
-      "https://images.unsplash.com/photo-1485827404703-89b55fcc595e?auto=format&fit=crop&w=600&q=80",
+      "https://images.unsplash.com/photo-1485827404703-89b55fcc595e?auto=format&fit=crop&w=800&q=80",
   },
   {
     label: "Robot",
     title: "The Mayans’ Lost Guide To Artificial Intelligence",
     author: "John Doe",
-    date: "12 August 2020",
+    date: "12 Aug",
     image:
-      "https://images.unsplash.com/photo-1504593811423-6dd665756598?auto=format&fit=crop&w=600&q=80",
+      "https://images.unsplash.com/photo-1504593811423-6dd665756598?auto=format&fit=crop&w=800&q=80",
   },
   {
-    label: "Laptop",
-    title: "How Product Development Can Increase Your Profit!",
-    author: "John Doe",
-    date: "12 August 2020",
+    label: "Design",
+    title: "Why Minimalist UI Design is Taking Over 2024",
+    author: "Sarah Jenkins",
+    date: "11 Aug",
     image:
-      "https://images.unsplash.com/photo-1545239351-1141bd82e8a6?auto=format&fit=crop&w=600&q=80",
+      "https://images.unsplash.com/photo-1545239351-1141bd82e8a6?auto=format&fit=crop&w=800&q=80",
   },
   {
-    label: "Laptop",
-    title: "How Product Development Can Increase Your Profit!",
-    author: "John Doe",
-    date: "12 August 2020",
+    label: "Future",
+    title: "The Next Generation of Space Travel",
+    author: "Elon Musk",
+    date: "10 Aug",
     image:
-      "https://images.unsplash.com/photo-1545239351-1141bd82e8a6?auto=format&fit=crop&w=600&q=80",
+      "https://images.unsplash.com/photo-1451187580459-43490279c0fa?auto=format&fit=crop&w=800&q=80",
   },
 ];
 
@@ -48,36 +61,36 @@ const latestStories = [
   {
     id: "space-starship",
     label: "Space",
-    title: "Despite Chinese hacks, Trump’s FCC votes to scrap cybersecurity rules for phone and internet companies",
+    title: "Despite Chinese hacks, Trump’s FCC votes to scrap cybersecurity rules",
     author: "Sean O'Kane",
-    timeAgo: "32 minutes ago",
+    timeAgo: "32 min ago",
     image:
       "https://images.unsplash.com/photo-1469474968028-56623f02e42e?auto=format&fit=crop&w=800&q=80",
   },
   {
     id: "security-fcc",
     label: "Security",
-    title: "Salesforce says some of its customers’ data was accessed after Gainsight breach",
+    title: "Salesforce says some of its customers’ data was accessed",
     author: "Zack Whittaker",
-    timeAgo: "2 hours ago",
+    timeAgo: "2h ago",
     image:
       "https://images.unsplash.com/photo-1524504388940-b1c1722653e1?auto=format&fit=crop&w=800&q=80",
   },
   {
     id: "lifestyle-minimal",
     label: "Lifestyle",
-    title: "Despite Chinese hacks, Trump’s FCC votes to scrap cybersecurity rules for phone and internet companies",
+    title: "Living the minimal life in a maximum world",
     author: "Priya Sharma",
-    timeAgo: "3 hours ago",
+    timeAgo: "3h ago",
     image:
       "https://images.unsplash.com/photo-1487412720507-e7ab37603c6f?auto=format&fit=crop&w=800&q=80",
   },
   {
     id: "product-ai-tooling",
     label: "Product",
-    title: "Salesforce says some of its customers’ data was accessed after Gainsight breach",
+    title: "The best AI tooling for modern product teams",
     author: "Marcus Lee",
-    timeAgo: "4 hours ago",
+    timeAgo: "4h ago",
     image:
       "https://images.unsplash.com/photo-1485827404703-89b55fcc595e?auto=format&fit=crop&w=800&q=80",
   },
@@ -86,151 +99,112 @@ const latestStories = [
     label: "Food",
     title: "Why every chef is now a storyteller on the web",
     author: "Chloe Martinez",
-    timeAgo: "5 hours ago",
+    timeAgo: "5h ago",
     image:
       "https://images.unsplash.com/photo-1498575207490-34b60d3b04e4?auto=format&fit=crop&w=800&q=80",
-  },
-  {
-    id: "analytics-dashboards",
-    label: "Analytics",
-    title: "Salesforce says some of its customers’ data was accessed after Gainsight breachignore",
-    author: "Nathan Cole",
-    timeAgo: "6 hours ago",
-    image:
-      "https://images.unsplash.com/photo-1472214103451-9374bd1c798e?auto=format&fit=crop&w=800&q=80",
-  },
-  {
-    id: "strategy-narrative",
-    label: "Strategy",
-    title: "How to build a narrative-driven go-to-market plan",
-    author: "Anya Ruiz",
-    timeAgo: "7 hours ago",
-    image:
-      "https://images.unsplash.com/photo-1504593811423-6dd665756598?auto=format&fit=crop&w=800&q=80",
   },
   {
     id: "tech-customer-service",
     label: "Tech",
     title: "The status of generative AI in customer service this quarter",
     author: "Elliot Zhang",
-    timeAgo: "8 hours ago",
+    timeAgo: "8h ago",
     image:
       "https://images.unsplash.com/photo-1498050108023-c5249f4df085?auto=format&fit=crop&w=800&q=80",
-  },
-  {
-    id: "lifestyle-balanced",
-    label: "Lifestyle",
-    title: "Designing a balanced work-from-anywhere schedule",
-    author: "Arielle T.",
-    timeAgo: "9 hours ago",
-    image:
-      "https://images.unsplash.com/photo-1500530855697-b586d89ba3ee?auto=format&fit=crop&w=800&q=80",
-  },
-  {
-    id: "product-release-notes",
-    label: "Product",
-    title: "Building loyalty through thoughtful release notes",
-    author: "Marcus Lee",
-    timeAgo: "10 hours ago",
-    image:
-      "https://images.unsplash.com/photo-1529333166437-7750a6dd5a70?auto=format&fit=crop&w=800&q=80",
   },
 ];
 
 export default function Home() {
   return (
-    <div className="min-h-screen bg-[var(--background)] px-4 py-4 sm:py-16 text-[var(--foreground)] sm:px-6 lg:px-16">
-      <div className="mx-auto w-full">
-        {/* 1 column on mobile, 50/50 split from lg upwards using flex */}
-        <section className="flex flex-col gap-4 lg:gap-6 lg:flex-row lg:items-stretch">
-          <article className="w-full overflow-hidden rounded-[1.5rem] bg-white shadow-[0_20px_50px_rgba(15,23,42,0.1)] lg:w-2/3">
-            <div
-              className="relative min-h-[500px] overflow-hidden bg-cover bg-center lg:min-h-[600px]"
-              style={{ backgroundImage: `url(${heroStory.image})` }}
-            >
-              <div className="absolute inset-0 bg-gradient-to-t from-black/90 via-black/50 to-transparent" />
-              <div className="absolute top-6 left-6">
-                <span className="inline-flex items-center rounded-full bg-white/20 backdrop-blur-sm px-4 py-1.5 text-xs font-semibold uppercase tracking-wider text-white">
-                  {heroStory.category}
-                </span>
+    <main className="min-h-screen bg-[var(--background)] text-[var(--foreground)]">
+      <div className=" mx-auto px-4 py-8 sm:px-6 lg:px-8 lg:py-12">
+        {/* Hero Section */}
+        <section className="mb-16 grid gap-4 lg:grid-cols-2 lg:h-[600px]">
+          {/* Div A: Left Column (Main Hero - 1 Card) */}
+          <div className="group relative w-full h-[500px] lg:h-full overflow-hidden rounded-3xl">
+            <Image
+              src={heroStories[0].image}
+              alt={heroStories[0].title}
+              fill
+              priority
+              className="object-cover transition-transform duration-700 group-hover:scale-105"
+            />
+            <div className="absolute inset-0 bg-gradient-to-t from-black/90 via-black/40 to-transparent" />
+            <div className="absolute bottom-0 left-0 right-0 p-6 md:p-10">
+              <span className="mb-4 inline-block rounded-full bg-white/20 px-4 py-1.5 text-xs font-bold uppercase tracking-wider text-white backdrop-blur-md">
+                {heroStories[0].category}
+              </span>
+              <h1 className="mb-4 text-2xl font-bold leading-tight text-white sm:text-3xl md:text-4xl lg:text-5xl">
+                {heroStories[0].title}
+              </h1>
+              <div className="flex items-center gap-4 text-sm font-medium text-white/90">
+                <span>{heroStories[0].author}</span>
+                <span className="text-white/40">•</span>
+                <span>{heroStories[0].date}</span>
               </div>
-              <div className="absolute bottom-0 left-0 right-0 p-6 lg:p-8">
-                <h1 className="mb-4 text-2xl font-bold leading-tight text-white sm:text-3xl lg:text-4xl">
-                  {heroStory.title}
-                </h1>
-                <div className="flex flex-wrap items-center gap-3 text-sm text-white/90">
-                  <span>{heroStory.author}</span>
-                  <span className="text-white/50">·</span>
-                  <span>{heroStory.date}</span>
+            </div>
+          </div>
+
+          {/* Div B: Right Column (Split Rows) */}
+          <div className="flex flex-col gap-4 h-auto lg:h-full">
+            {/* Row 1: Full Width Card */}
+            <div className="group relative w-full h-[300px] lg:h-[60%] overflow-hidden rounded-3xl">
+              <Image
+                src={heroStories[1].image}
+                alt={heroStories[1].title}
+                fill
+                className="object-cover transition-transform duration-700 group-hover:scale-105"
+              />
+              <div className="absolute inset-0 bg-gradient-to-t from-black/90 via-black/40 to-transparent" />
+              <div className="absolute bottom-0 left-0 right-0 p-6 md:p-8">
+                <span className="mb-3 inline-block rounded-full bg-white/20 px-3 py-1 text-xs font-bold uppercase tracking-wider text-white backdrop-blur-md">
+                  {heroStories[1].category}
+                </span>
+                <h2 className="mb-2 text-xl font-bold leading-tight text-white lg:text-3xl">
+                  {heroStories[1].title}
+                </h2>
+                <div className="flex items-center gap-3 text-xs font-medium text-white/90">
+                  <span>{heroStories[1].author}</span>
+                  <span>•</span>
+                  <span>{heroStories[1].date}</span>
                 </div>
               </div>
             </div>
-          </article>
 
-          <aside className="w-full space-y-4 lg:w-1/3">
-            {relatedStories.slice(0, 2).map((story, index) => (
-              <article
-                key={`${story.title}-${index}`}
-                className="group relative overflow-hidden rounded-[1.5rem] bg-white shadow-[0_20px_50px_rgba(15,23,42,0.1)] transition-transform hover:scale-[1.02]"
-              >
+            {/* Row 2: Two Cards (50% / 50%) */}
+            <div className="grid grid-cols-2 gap-4 h-[200px] lg:h-[40%]">
+              {relatedStories.slice(0, 2).map((story, index) => (
                 <div
-                  className="relative min-h-[280px] overflow-hidden bg-cover bg-center sm:min-h-[300px]"
-                  style={{ backgroundImage: `url(${story.image})` }}
+                  key={index}
+                  className="group relative h-full overflow-hidden rounded-3xl"
                 >
-                  <div className="absolute inset-0 bg-gradient-to-t from-black/90 via-black/60 to-transparent" />
-                  <div className="absolute top-4 left-4">
-                    <span className="inline-flex items-center rounded-full bg-white/20 backdrop-blur-sm px-3 py-1 text-[0.7rem] font-semibold uppercase tracking-wider text-white">
+                  <Image
+                    src={story.image}
+                    alt={story.title}
+                    fill
+                    className="object-cover transition-transform duration-700 group-hover:scale-105"
+                  />
+                  <div className="absolute inset-0 bg-black/20 transition-colors group-hover:bg-black/40" />
+                  <div className="absolute inset-0 bg-gradient-to-t from-black/90 via-transparent to-transparent" />
+                  
+                  <div className="absolute bottom-0 left-0 right-0 p-4 lg:p-5">
+                    <span className="mb-2 inline-block rounded-full bg-white/20 px-2.5 py-0.5 text-[10px] font-bold uppercase tracking-wider text-white backdrop-blur-md">
                       {story.label}
                     </span>
-                  </div>
-                  <div className="absolute bottom-0 left-0 right-0 p-5 lg:p-6">
-                    <h3 className="mb-3 text-lg font-bold leading-tight text-white sm:text-xl">
+                    <h3 className="line-clamp-2 text-sm font-bold leading-snug text-white lg:text-base">
                       {story.title}
                     </h3>
-                    <div className="flex flex-wrap items-center gap-2 text-xs text-white/90">
-                      <span>{story.author}</span>
-                      <span className="text-white/50">·</span>
-                      <span>{story.date}</span>
-                    </div>
                   </div>
                 </div>
-              </article>
-            ))}
-          </aside>
-          <aside className="w-full space-y-4 lg:w-1/3">
-            {relatedStories.slice(0, 2).map((story, index) => (
-              <article
-                key={`${story.title}-${index}`}
-                className="group relative overflow-hidden rounded-[1.5rem] bg-white shadow-[0_20px_50px_rgba(15,23,42,0.1)] transition-transform hover:scale-[1.02]"
-              >
-                <div
-                  className="relative min-h-[280px] overflow-hidden bg-cover bg-center sm:min-h-[300px]"
-                  style={{ backgroundImage: `url(${story.image})` }}
-                >
-                  <div className="absolute inset-0 bg-gradient-to-t from-black/90 via-black/60 to-transparent" />
-                  <div className="absolute top-4 left-4">
-                    <span className="inline-flex items-center rounded-full bg-white/20 backdrop-blur-sm px-3 py-1 text-[0.7rem] font-semibold uppercase tracking-wider text-white">
-                      {story.label}
-                    </span>
-                  </div>
-                  <div className="absolute bottom-0 left-0 right-0 p-5 lg:p-6">
-                    <h3 className="mb-3 text-lg font-bold leading-tight text-white sm:text-xl">
-                      {story.title}
-                    </h3>
-                    <div className="flex flex-wrap items-center gap-2 text-xs text-white/90">
-                      <span>{story.author}</span>
-                      <span className="text-white/50">·</span>
-                      <span>{story.date}</span>
-                    </div>
-                  </div>
-                </div>
-              </article>
-            ))}
-          </aside>
+              ))}
+            </div>
+          </div>
         </section>
 
-        <section className="mt-10">
-          <div className="flex flex-wrap gap-6">
+        {/* Latest Stories Section */}
+        <section className="flex flex-col gap-12 lg:flex-row">
+          <div className="w-full space-y-8 lg:w-2/3">
+            <div className="flex items-end justify-between border-b border-[var(--border-color)] pb-4">
             <h2 className="flex items-center gap-[0.5rem] text-[32px] md:text-[80px] font-[800] text-left">
               Latest Stories
               <svg
@@ -267,10 +241,12 @@ export default function Home() {
                 </defs>
               </svg>
             </h2>
-          </div>
-
-          <div className="mt-5 md:mt-12 flex flex-col gap-6 lg:flex-row">
-            <div className="w-full lg:w-[70%] space-y-6">
+              <Link href="/topics" className="text-sm font-medium text-[var(--muted)] hover:text-[var(--foreground)]">
+                View All →
+              </Link>
+            </div>
+            
+            <div className="flex flex-col gap-4">
               {latestStories.map((story) => (
                 <PostCard
                   key={story.id}
@@ -283,21 +259,41 @@ export default function Home() {
                 />
               ))}
             </div>
+          </div>
 
-            <div className="hidden w-full lg:flex lg:w-[30%]">
-              <div className="mx-auto flex w-full max-w-xs flex-col items-center  gap-4 rounded-[1.5rem] border border-[#e5e7eb] bg-white p-6 text-center shadow-[0_20px_60px_rgba(15,23,42,0.08)]">
-                <span className="text-xs uppercase tracking-[0.4em] text-[var(--muted)]">
-                  Sponsored
-                </span>
-                <p className="text-lg font-semibold text-[var(--foreground)]">
-                  Ads
+          {/* Sidebar */}
+          <div className="w-full lg:w-1/3 pl-0 lg:pl-12">
+            <div className="sticky top-24 space-y-12">
+              
+              {/* Ad Unit */}
+              <div className="flex min-h-[300px] w-full flex-col items-center justify-center rounded-3xl border border-dashed border-[var(--border-color)] bg-[var(--card-bg)] p-8 text-center">
+                <span className="text-xs font-bold uppercase tracking-widest text-[var(--muted)]">Advertisement</span>
+                <div className="mt-4 text-lg font-medium text-[var(--foreground)]">
+                  Place your ad here
+                </div>
+              </div>
+
+              {/* Newsletter Signup */}
+              <div className="rounded-3xl bg-neutral-900 p-8 text-white dark:bg-white dark:text-black">
+                <h3 className="text-xl font-bold">Subscribe to our newsletter</h3>
+                <p className="mt-2 text-sm text-neutral-400 dark:text-neutral-600">
+                  Get the latest posts delivered right to your inbox.
                 </p>
+                <div className="mt-6 flex gap-2">
+                  <input 
+                    type="email" 
+                    placeholder="Your email" 
+                    className="w-full rounded-full bg-white/10 px-4 py-3 text-sm text-white placeholder:text-white/40 focus:outline-none focus:ring-2 focus:ring-white/20 dark:bg-black/5 dark:text-black dark:placeholder:text-black/40"
+                  />
+                  <button className="rounded-full bg-white px-6 py-3 text-sm font-bold text-black transition hover:bg-white/90 dark:bg-black dark:text-white">
+                    Join
+                  </button>
+                </div>
               </div>
             </div>
           </div>
         </section>
       </div>
-    </div>
+    </main>
   );
 }
-

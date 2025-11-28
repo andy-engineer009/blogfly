@@ -12,7 +12,7 @@ export default function Footer() {
   ];
 
   const column2Links = [
-    { label: "Terms of Service", href: "/terms" },
+    { label: "Terms & Conditions", href: "/terms" },
     { label: "Privacy Policy", href: "/privacy" },
     { label: "RSS Terms of Use", href: "/rss" },
   ];

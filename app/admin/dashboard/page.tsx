@@ -1,7 +1,7 @@
 const stats = [
   {
-    label: "Total Categories",
-    value: "16",
+    label: "कुल कैटेगरियाँ ", // Total Categories
+    value: "20",
     icon: (
       <svg className="h-6 w-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
         <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M7 7h.01M7 3h5c.512 0 1.024.195 1.414.586l7 7a2 2 0 010 2.828l-7 7a2 2 0 01-2.828 0l-7-7A1.994 1.994 0 013 12V7a4 4 0 014-4z" />
@@ -10,11 +10,11 @@ const stats = [
     gradient: "from-blue-500/20 via-blue-600/20 to-purple-600/20",
     iconBg: "bg-blue-500/20",
     iconColor: "text-blue-400",
-    change: "+3 this month",
+    change: "इस महीने +3", // +3 this month
   },
   {
-    label: "Total Posts",
-    value: "248",
+    label: "कुल पोस्ट", // Total Posts
+    value: "10",
     icon: (
       <svg className="h-6 w-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
         <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z" />
@@ -23,11 +23,11 @@ const stats = [
     gradient: "from-emerald-500/20 via-teal-600/20 to-cyan-600/20",
     iconBg: "bg-emerald-500/20",
     iconColor: "text-emerald-400",
-    change: "+24 this week",
+    change: "इस हफ्ते +24", // +24 this week
   },
   {
-    label: "Published Posts",
-    value: "198",
+    label: "प्रकाशित पोस्ट", // Published Posts
+    value: "10",
     icon: (
       <svg className="h-6 w-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
         <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
@@ -36,11 +36,11 @@ const stats = [
     gradient: "from-green-500/20 via-green-600/20 to-emerald-600/20",
     iconBg: "bg-green-500/20",
     iconColor: "text-green-400",
-    change: "84% published",
+    change: "84% प्रकाशित", // 84% published
   },
   {
-    label: "Draft Posts",
-    value: "50",
+    label: "ड्राफ्ट पोस्ट", // Draft Posts
+    value: "0",
     icon: (
       <svg className="h-6 w-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
         <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" />
@@ -49,23 +49,23 @@ const stats = [
     gradient: "from-yellow-500/20 via-amber-600/20 to-orange-600/20",
     iconBg: "bg-yellow-500/20",
     iconColor: "text-yellow-400",
-    change: "16% in draft",
+    change: "16% ड्राफ्ट में", // 16% in draft
   },
 ];
 
 export default function DashboardPage() {
   return (
     <div className="space-y-6 sm:space-y-8">
-      {/* Header */}
+      {/* Header (कमेंटेड आउट, लेकिन अगर इसे अनकमेंट किया जाता तो यह टेक्स्ट बदल जाता) */}
       {/* <header className="rounded-2xl border border-[var(--border-color)] bg-gradient-to-br from-[var(--surface)] via-[var(--surface)] to-[var(--card)] p-6 shadow-lg sm:p-8">
         <div className="flex items-start justify-between gap-4">
     <div>
-            <p className="text-xs font-medium uppercase tracking-wider text-[var(--muted)]">Welcome back</p>
+            <p className="text-xs font-medium uppercase tracking-wider text-[var(--muted)]">वापस स्वागत है</p>
             <h1 className="mt-2 text-3xl font-bold text-[var(--foreground)] sm:text-4xl lg:text-5xl">
-              Dashboard
+              डैशबोर्ड
             </h1>
             <p className="mt-3 max-w-2xl text-sm leading-relaxed text-[var(--muted)] sm:text-base">
-              Monitor your platform health at a glance. Track key metrics and manage your content efficiently.
+              एक नज़र में अपने प्लेटफॉर्म के स्वास्थ्य पर नजर रखें। प्रमुख मेट्रिक्स को ट्रैक करें और अपनी सामग्री को कुशलतापूर्वक प्रबंधित करें।
             </p>
           </div>
           <div className="hidden items-center gap-2 rounded-xl border border-[var(--border-color)] bg-[var(--surface)] px-4 py-2 sm:flex">
@@ -97,7 +97,7 @@ export default function DashboardPage() {
                   {stat.icon}
                 </div>
                 <div className={`rounded-lg ${stat.iconBg} px-2 py-1 text-xs font-semibold ${stat.iconColor} opacity-0 transition-opacity duration-300 group-hover:opacity-100`}>
-                  Live
+                  लाइव {/* Live */}
                 </div>
               </div>
 
@@ -133,8 +133,8 @@ export default function DashboardPage() {
             </svg>
           </div>
           <div className="flex-1">
-            <p className="font-semibold text-[var(--foreground)]">Create New Post</p>
-            <p className="text-xs text-[var(--muted)] sm:text-sm">Write and publish a new blog post</p>
+            <p className="font-semibold text-[var(--foreground)]">नई पोस्ट बनाएं</p> {/* Create New Post */}
+            <p className="text-xs text-[var(--muted)] sm:text-sm">एक नया ब्लॉग पोस्ट लिखें और प्रकाशित करें</p> {/* Write and publish a new blog post */}
           </div>
           <svg className="h-5 w-5 text-[var(--muted)] transition-transform duration-300 group-hover:translate-x-1 group-hover:text-[var(--accent)]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
             <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
@@ -151,8 +151,8 @@ export default function DashboardPage() {
             </svg>
           </div>
           <div className="flex-1">
-            <p className="font-semibold text-[var(--foreground)]">Add Category</p>
-            <p className="text-xs text-[var(--muted)] sm:text-sm">Create a new content category</p>
+            <p className="font-semibold text-[var(--foreground)]">कैटेगरी जोड़ें</p> {/* Add Category */}
+            <p className="text-xs text-[var(--muted)] sm:text-sm">एक नई कंटेंट कैटेगरी बनाएं</p> {/* Create a new content category */}
           </div>
           <svg className="h-5 w-5 text-[var(--muted)] transition-transform duration-300 group-hover:translate-x-1 group-hover:text-[var(--accent)]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
             <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
@@ -169,8 +169,8 @@ export default function DashboardPage() {
             </svg>
           </div>
           <div className="flex-1">
-            <p className="font-semibold text-[var(--foreground)]">Manage Homepage</p>
-            <p className="text-xs text-[var(--muted)] sm:text-sm">Configure homepage content</p>
+            <p className="font-semibold text-[var(--foreground)]">होमपेज प्रबंधित करें</p> {/* Manage Homepage */}
+            <p className="text-xs text-[var(--muted)] sm:text-sm">होमपेज कंटेंट को कॉन्फ़िगर करें</p> {/* Configure homepage content */}
           </div>
           <svg className="h-5 w-5 text-[var(--muted)] transition-transform duration-300 group-hover:translate-x-1 group-hover:text-[var(--accent)]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
             <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
@@ -179,4 +179,4 @@ export default function DashboardPage() {
       </section>
     </div>
   );
-}   
+}

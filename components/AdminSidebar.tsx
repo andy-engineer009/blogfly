@@ -1,4 +1,4 @@
- "use client";
+"use client";
 
 import Link from "next/link";
 import { usePathname } from "next/navigation";
@@ -15,7 +15,7 @@ type NavItem = {
 
 const navItems: NavItem[] = [
   {
-    label: "Dashboard",
+    label: "डैशबोर्ड", // Dashboard
     href: "/admin/dashboard",
     icon: (
       <svg className="h-5 w-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -24,7 +24,7 @@ const navItems: NavItem[] = [
     ),
   },
   {
-    label: "Categories",
+    label: "कैटेगरियाँ", // Categories
     href: "/admin/categories",
     icon: (
       <svg className="h-5 w-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -33,7 +33,7 @@ const navItems: NavItem[] = [
     ),
   },
   {
-    label: "Posts",
+    label: "पोस्ट्स", // Posts
     href: "/admin/post",
     icon: (
       <svg className="h-5 w-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -42,7 +42,7 @@ const navItems: NavItem[] = [
     ),
   },
   {
-    label: "Home Manager",
+    label: "होम मैनेजर", // Home Manager
     href: "/admin/home-manager",
     icon: (
       <svg className="h-5 w-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -88,8 +88,8 @@ export function AdminSidebar({ isOpen = true, onClose }: AdminSidebarProps) {
               <span className="text-xl font-bold text-white">B</span>
             </div> */}
             <div>
-              <p className="text-xs font-medium uppercase tracking-wider text-white/60">Admin Panel</p>
-              <h1 className="text-xl font-bold text-white">Your Logo Here</h1>
+              <p className="text-xs font-medium uppercase tracking-wider text-white/60">एडमिन पैनल</p> {/* Admin Panel */}
+              <h1 className="text-xl font-bold text-white">आपका लोगो यहाँ</h1> {/* Your Logo Here */}
             </div>
           </div>
 
@@ -155,7 +155,7 @@ export function AdminSidebar({ isOpen = true, onClose }: AdminSidebarProps) {
             <svg className="h-5 w-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
               <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 16l4-4m0 0l-4-4m4 4H7m6 4v1a3 3 0 01-3 3H6a3 3 0 01-3-3V7a3 3 0 013-3h4a3 3 0 013 3v1" />
             </svg>
-            <span>Logout</span>
+            <span>लॉगआउट</span> {/* Logout */}
           </button>
         </div>
       </aside>
@@ -164,4 +164,3 @@ export function AdminSidebar({ isOpen = true, onClose }: AdminSidebarProps) {
 }
 
 export default AdminSidebar;
-

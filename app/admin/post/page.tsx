@@ -1,105 +1,27 @@
 "use client";
 
 import Link from "next/link";
+import Image from "next/image";
 import { useMemo, useState } from "react";
 import Pagination from "@/components/Pagination";
 import ConfirmationModal from "@/components/ConfirmationModal";
 import { apiService } from "@/lib/apiService";
+import { allBlogPosts } from "@/lib/blogData";
 
-const allPosts = [
-  {
-    id: "P-101",
-    title: "Why every founder needs a launch narrative",
-    author: "Cara Lee",
-    status: "active",
-    published: "Feb 05, 2025",
-    reads: "34k",
-    category: "Product",
-  },
-  {
-    id: "P-102",
-    title: "Behind the scenes of remote design sprints",
-    author: "Elena Torres",
-    status: "inactive",
-    published: "Mar 10, 2025",
-    reads: "12k",
-    category: "Design",
-  },
-  {
-    id: "P-103",
-    title: "Scaling community feedback loops",
-    author: "Marcus Lee",
-    status: "active",
-    published: "Jan 28, 2025",
-    reads: "8.4k",
-    category: "Community",
-  },
-  {
-    id: "P-104",
-    title: "How to write release notes people read",
-    author: "Lena Howell",
-    status: "active",
-    published: "Dec 19, 2024",
-    reads: "6.1k",
-    category: "Product",
-  },
-  {
-    id: "P-105",
-    title: "Designing launch-day rituals",
-    author: "Noah Green",
-    status: "inactive",
-    published: "Nov 05, 2024",
-    reads: "3.2k",
-    category: "Culture",
-  },
-  {
-    id: "P-106",
-    title: "How to keep editors in sync with engineers",
-    author: "Priya Sharma",
-    status: "inactive",
-    published: "Apr 01, 2025",
-    reads: "1.1k",
-    category: "Product",
-  },
-  {
-    id: "P-107",
-    title: "Narratives that help people understand AI",
-    author: "Elliot Zhang",
-    status: "active",
-    published: "Feb 20, 2025",
-    reads: "20k",
-    category: "AI",
-  },
-  {
-    id: "P-108",
-    title: "Building obsession-free analytics dashboards",
-    author: "Nathan Cole",
-    status: "active",
-    published: "Jan 11, 2025",
-    reads: "9.4k",
-    category: "Analytics",
-  },
-  {
-    id: "P-109",
-    title: "Running thoughtful office hours for writers",
-    author: "Chloe Martinez",
-    status: "inactive",
-    published: "Mar 22, 2025",
-    reads: "2.8k",
-    category: "Culture",
-  },
-  {
-    id: "P-110",
-    title: "Community rituals to keep readers engaged",
-    author: "Anya Ruiz",
-    status: "active",
-    published: "Feb 14, 2025",
-    reads: "7.5k",
-    category: "Community",
-  },
-];
+// Convert blog posts to admin format with status
+const allPosts = allBlogPosts.map((post, index) => ({
+  id: post.id,
+  title: post.title,
+  author: post.author,
+  status: index % 3 === 0 ? "inactive" : "active" as "active" | "inactive",
+  published: post.date || post.timeAgo || "हाल ही में",
+  reads: `${Math.floor(Math.random() * 50) + 1}k`,
+  category: post.category,
+  label: post.label,
+  image: post.image,
+}));
 
-const POSTS_PER_PAGE = 6;
+const POSTS_PER_PAGE = 10;
 
 // Simple modal configuration type - each action sets up its own modal
 type ModalConfig = {
@@ -197,8 +119,8 @@ export default function PostPage() {
             </svg>
           </div>
     <div>
-            <p className="text-xs font-medium uppercase tracking-wider text-[var(--muted)]">Post Management</p>
-            <h1 className="mt-1 text-2xl font-bold text-[var(--foreground)] sm:text-3xl">Posts</h1>
+            <p className="text-xs font-medium uppercase tracking-wider text-[var(--muted)]">पोस्ट मैनेजमेंट</p>
+            <h1 className="mt-1 text-2xl font-bold text-[var(--foreground)] sm:text-3xl">पोस्ट्स</h1>
           </div>
         </div>
         
@@ -241,8 +163,8 @@ export default function PostPage() {
             <svg className="h-5 w-5 transition-transform duration-200 group-hover:scale-110" fill="none" stroke="currentColor" viewBox="0 0 24 24">
               <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 4v16m8-8H4" />
             </svg>
-            <span className="hidden sm:inline">Add Post</span>
-            <span className="sm:hidden">Add</span>
+            <span className="hidden sm:inline">पोस्ट जोड़ें</span>
+            <span className="sm:hidden">जोड़ें</span>
           </Link>
         </div>
       </header>
@@ -255,12 +177,12 @@ export default function PostPage() {
               <thead className="border-b border-[var(--border-color)] bg-[var(--surface)]/50">
                 <tr>
                   <th className="px-4 py-4 text-left text-xs font-semibold uppercase tracking-wider text-[var(--muted)] sm:px-6">ID</th>
-                  <th className="px-4 py-4 text-left text-xs font-semibold uppercase tracking-wider text-[var(--muted)] sm:px-6">Title</th>
-                  <th className="hidden px-4 py-4 text-left text-xs font-semibold uppercase tracking-wider text-[var(--muted)] sm:table-cell sm:px-6">Author</th>
-                  <th className="hidden px-4 py-4 text-left text-xs font-semibold uppercase tracking-wider text-[var(--muted)] md:table-cell md:px-6">Category</th>
-                  <th className="hidden px-4 py-4 text-left text-xs font-semibold uppercase tracking-wider text-[var(--muted)] lg:table-cell lg:px-6">Published</th>
-                  <th className="px-4 py-4 text-left text-xs font-semibold uppercase tracking-wider text-[var(--muted)] sm:px-6">Status</th>
-                  <th className="px-4 py-4 text-left text-xs font-semibold uppercase tracking-wider text-[var(--muted)] sm:px-6">Actions</th>
+                  <th className="px-4 py-4 text-left text-xs font-semibold uppercase tracking-wider text-[var(--muted)] sm:px-6">शीर्षक</th>
+                  <th className="hidden px-4 py-4 text-left text-xs font-semibold uppercase tracking-wider text-[var(--muted)] sm:table-cell sm:px-6">लेखक</th>
+                  <th className="hidden px-4 py-4 text-left text-xs font-semibold uppercase tracking-wider text-[var(--muted)] md:table-cell md:px-6">कैटेगरी</th>
+                  <th className="hidden px-4 py-4 text-left text-xs font-semibold uppercase tracking-wider text-[var(--muted)] lg:table-cell lg:px-6">प्रकाशित</th>
+                  <th className="px-4 py-4 text-left text-xs font-semibold uppercase tracking-wider text-[var(--muted)] sm:px-6">स्थिति</th>
+                  <th className="px-4 py-4 text-left text-xs font-semibold uppercase tracking-wider text-[var(--muted)] sm:px-6">कार्रवाई</th>
                 </tr>
               </thead>
               <tbody className="divide-y divide-[var(--border-color)]">
@@ -271,8 +193,19 @@ export default function PostPage() {
                   >
                     <td className="px-4 py-4 text-sm font-semibold text-[var(--foreground)] sm:px-6">{post.id}</td>
                     <td className="px-4 py-4 text-sm font-medium text-[var(--foreground)] sm:px-6">
-                      <div className="max-w-xs truncate" title={post.title}>
-                        {post.title}
+                      <div className="flex items-center gap-3">
+                        <div className="relative h-12 w-16 flex-shrink-0 overflow-hidden rounded-lg">
+                          <Image
+                            src={post.image}
+                            alt={post.title}
+                            fill
+                            className="object-cover"
+                            sizes="64px"
+                          />
+                        </div>
+                        <div className="max-w-xs truncate" title={post.title}>
+                          {post.title}
+                        </div>
                       </div>
                     </td>
                     <td className="hidden px-4 py-4 text-sm text-[var(--muted)] sm:table-cell sm:px-6">{post.author}</td>
@@ -295,14 +228,15 @@ export default function PostPage() {
                     </td>
                     <td className="px-4 py-4 sm:px-6">
                       <div className="flex items-center gap-2">
-                        <button
+                        <Link
+                          href={`/admin/post/edit/${post.id}`}
                           className="group/edit flex items-center justify-center rounded-lg border border-[var(--border-color)] bg-[var(--surface)] p-2 text-[#000] transition-all duration-200 hover:border-emerald-400 hover:bg-emerald-400/10"
                           aria-label={`Edit ${post.title}`}
                         >
                           <svg className="h-4 w-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                             <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M11 5H6a2 2 0 00-2 2v11a2 2 0 002 2h11a2 2 0 002-2v-5m-1.414-9.414a2 2 0 112.828 2.828L11.828 15H9v-2.828l8.586-8.586z" />
                           </svg>
-                        </button>
+                        </Link>
                         <button
                           onClick={() => handleDeleteClick({ id: post.id, title: post.title })}
                           className="group/delete flex items-center justify-center rounded-lg border border-[var(--border-color)] bg-[var(--surface)] p-2 text-red-400 transition-all duration-200 hover:border-red-400 hover:bg-red-400/10"
@@ -338,6 +272,17 @@ export default function PostPage() {
               
               {/* Content */}
               <div className="relative z-10">
+                {/* Image */}
+                <div className="mb-4 relative h-48 w-full overflow-hidden rounded-xl">
+                  <Image
+                    src={post.image}
+                    alt={post.title}
+                    fill
+                    className="object-cover"
+                    sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
+                  />
+                </div>
+                
                 {/* Header */}
                 <div className="mb-4 flex items-start justify-between">
                   <div className="flex-1">
@@ -401,7 +346,8 @@ export default function PostPage() {
 
                 {/* Actions */}
                 <div className="flex items-center gap-2 border-t border-[var(--border-color)] pt-4">
-                  <button
+                  <Link
+                    href={`/admin/post/edit/${post.id}`}
                     className="group/edit flex flex-1 items-center justify-center gap-2 rounded-xl border border-[var(--border-color)] bg-[var(--surface)] px-4 py-2.5 text-sm font-semibold text-[#000] transition-all duration-200 hover:border-emerald-400 hover:bg-emerald-400/10"
                     aria-label={`Edit ${post.title}`}
                   >
@@ -409,7 +355,7 @@ export default function PostPage() {
                       <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M11 5H6a2 2 0 00-2 2v11a2 2 0 002 2h11a2 2 0 002-2v-5m-1.414-9.414a2 2 0 112.828 2.828L11.828 15H9v-2.828l8.586-8.586z" />
                     </svg>
                     <span>Edit</span>
-                  </button>
+                  </Link>
                   <button
                     onClick={() => handleDeleteClick({ id: post.id, title: post.title })}
                     className="group/delete flex flex-1 items-center justify-center gap-2 rounded-xl border border-[var(--border-color)] bg-[var(--surface)] px-4 py-2.5 text-sm font-semibold text-red-400 transition-all duration-200 hover:border-red-400 hover:bg-red-400/10"

@@ -104,7 +104,7 @@ export default function Footer() {
     <footer className="bg-[#222222] px-6 py-10 text-white/70 sm:px-10 lg:px-16">
       <div className="mx-auto flex max-w-7xl flex-col gap-8 lg:flex-row lg:gap-12">
         {/* Left Section - Logo, Social Media, Copyright */}
-        <div className="flex flex-col gap-6 lg:w-1/3">
+        <div className="flex flex-col gap-6 lg:w-1/3 items-center">
           {/* Logo - Pixelated BF */}
           <div className="flex items-center gap-2">
             {/* Pixelated B */}
@@ -142,7 +142,7 @@ export default function Footer() {
         </div>
 
         {/* Right Section - Navigation Columns */}
-        <div className="flex flex-col gap-8 sm:flex-row sm:gap-12 lg:w-2/3 lg:justify-end">
+        <div className="flex flex-col gap-8 sm:flex-row sm:gap-12 lg:w-2/3 lg:justify-end hidden">
           {/* Column 1 */}
           <div className="flex flex-col gap-2">
             {column1Links.map((link) => (

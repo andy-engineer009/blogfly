@@ -5,19 +5,19 @@ import { useState, useEffect } from "react";
 import { useTheme } from "@/app/providers/ThemeProvider";
 
 const navLinks = [
-  { label: "Home", href: "/" },
-  { label: "Topics", href: "/topics" },
-  { label: "Trending", href: "/trending" },
-  { label: "About", href: "/about" },
+  { label: "होम", href: "/" },
+  { label: "विषय", href: "/topics" },
+  // { label: "Trending", href: "/trending" },
+  { label: "बारे में", href: "/about" },
 ];
 
 const topics = [
-  "Strategy",
-  "Storytelling",
-  "Product",
-  "Food",
-  "Analytics",
-  "Lifestyle",
+  "स्ट्रैटेजी",
+  "कहानी सुनाना",
+  "प्रोडक्ट",
+  "खाना / फूड",
+  "एनालिटिक्स",
+  "लाइफस्टाइल",
 ];
 
 // Remove unused socialLinks array if it's no longer needed in this simplified header
@@ -183,9 +183,9 @@ export default function Header() {
 
               {/* Mobile Actions */}
               <div className="flex flex-col gap-4">
-                <button className="w-full rounded-full bg-[var(--foreground)] px-4 py-3 text-center text-base font-semibold text-[var(--background)] transition-opacity hover:opacity-90">
+                {/* <button className="w-full rounded-full bg-[var(--foreground)] px-4 py-3 text-center text-base font-semibold text-[var(--background)] transition-opacity hover:opacity-90">
                   Subscribe to Newsletter
-                </button>
+                </button> */}
                  {/* Mobile Theme Toggle removed from here as it is now accessible in the top bar even when menu is open? No, wait. When menu is open, the top bar is covered by the overlay's header which doesn't have the toggle. */}
                  {/* Let's add a theme toggle row here for completeness in mobile view */}
                  <button

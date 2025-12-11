@@ -1,130 +1,107 @@
 import { PostCard } from "@/components/PostCard";
 import Link from "next/link";
 import Image from "next/image";
+import { getBlogPostById, getCategorySlug } from "@/lib/blogData";
 
-// Keep the same data for now, but ideally this comes from a CMS/API
+// Hero stories with IDs
 const heroStories = [
-  {
-    category: "Gadgets",
-    title: "The Reason Why Everyone Love Apple MacBook",
-    author: "John Doe",
-    date: "12 Aug 2020",
-    image:
-      "https://images.unsplash.com/photo-1524504388940-b1c1722653e1?auto=format&fit=crop&w=1200&q=80",
-  },
-  {
-    category: "Architecture",
-    title: "How Modern Architecture Is Changing Our Lives",
-    author: "Jane Smith",
-    date: "11 Aug 2020",
-    image:
-      "https://images.unsplash.com/photo-1487958449943-2429e8be8625?auto=format&fit=crop&w=1200&q=80",
-  },
-];
+  getBlogPostById("cricket-india-world-cup"),
+  getBlogPostById("health-yoga-meditation"),
+].filter(Boolean) as Array<NonNullable<ReturnType<typeof getBlogPostById>>>;
 
+// Related stories with IDs
 const relatedStories = [
-  {
-    label: "Tech",
-    title: "What Will Virtual Reality Be Like In The Next 50 Years?",
-    author: "John Doe",
-    date: "12 Aug",
-    image:
-      "https://images.unsplash.com/photo-1485827404703-89b55fcc595e?auto=format&fit=crop&w=800&q=80",
-  },
-  {
-    label: "Robot",
-    title: "The Mayans’ Lost Guide To Artificial Intelligence",
-    author: "John Doe",
-    date: "12 Aug",
-    image:
-      "https://images.unsplash.com/photo-1504593811423-6dd665756598?auto=format&fit=crop&w=800&q=80",
-  },
-  {
-    label: "Design",
-    title: "Why Minimalist UI Design is Taking Over 2024",
-    author: "Sarah Jenkins",
-    date: "11 Aug",
-    image:
-      "https://images.unsplash.com/photo-1545239351-1141bd82e8a6?auto=format&fit=crop&w=800&q=80",
-  },
-  {
-    label: "Future",
-    title: "The Next Generation of Space Travel",
-    author: "Elon Musk",
-    date: "10 Aug",
-    image:
-      "https://images.unsplash.com/photo-1451187580459-43490279c0fa?auto=format&fit=crop&w=800&q=80",
-  },
-];
+  getBlogPostById("tech-ai-ml"),
+  getBlogPostById("fitness-weight-loss"),
+  getBlogPostById("news-education-policy"),
+  getBlogPostById("health-mental-health"),
+].filter(Boolean) as Array<NonNullable<ReturnType<typeof getBlogPostById>>>;
 
 const latestStories = [
   {
-    id: "space-starship",
-    label: "Space",
-    title: "Despite Chinese hacks, Trump’s FCC votes to scrap cybersecurity rules",
-    author: "Sean O'Kane",
-    timeAgo: "32 min ago",
+    id: "cricket-india-win",
+    label: "क्रिकेट",
+    title: "आईपीएल 2024: मुंबई इंडियंस ने चेन्नई सुपर किंग्स को हराया",
+    author: "विकास गुप्ता",
+    timeAgo: "32 मिनट पहले",
     image:
-      "https://images.unsplash.com/photo-1469474968028-56623f02e42e?auto=format&fit=crop&w=800&q=80",
+      "https://images.unsplash.com/photo-1535131749006-b7f58c99034b?auto=format&fit=crop&w=800&q=80",
   },
   {
-    id: "security-fcc",
-    label: "Security",
-    title: "Salesforce says some of its customers’ data was accessed",
-    author: "Zack Whittaker",
-    timeAgo: "2h ago",
+    id: "tech-ai-update",
+    label: "टेक",
+    title: "ChatGPT का नया अपडेट: अब हिंदी में भी बेहतर काम करता है",
+    author: "नीलम पांडे",
+    timeAgo: "2 घंटे पहले",
     image:
-      "https://images.unsplash.com/photo-1524504388940-b1c1722653e1?auto=format&fit=crop&w=800&q=80",
+      "https://images.unsplash.com/photo-1677442136019-21780ecad995?auto=format&fit=crop&w=800&q=80",
   },
   {
-    id: "lifestyle-minimal",
-    label: "Lifestyle",
-    title: "Living the minimal life in a maximum world",
-    author: "Priya Sharma",
-    timeAgo: "3h ago",
+    id: "fitness-home-workout",
+    label: "फिटनेस",
+    title: "घर पर मजबूत मांसपेशियां बनाने के लिए सर्वोत्तम व्यायाम",
+    author: "अर्जुन मल्होत्रा",
+    timeAgo: "3 घंटे पहले",
     image:
-      "https://images.unsplash.com/photo-1487412720507-e7ab37603c6f?auto=format&fit=crop&w=800&q=80",
+      "https://images.unsplash.com/photo-1571019613454-1cb2f99b2d8b?auto=format&fit=crop&w=800&q=80",
   },
   {
-    id: "product-ai-tooling",
-    label: "Product",
-    title: "The best AI tooling for modern product teams",
-    author: "Marcus Lee",
-    timeAgo: "4h ago",
+    id: "news-education",
+    label: "समाचार",
+    title: "केंद्र सरकार ने नई स्वास्थ्य योजना की घोषणा की",
+    author: "अनिता दास",
+    timeAgo: "4 घंटे पहले",
     image:
-      "https://images.unsplash.com/photo-1485827404703-89b55fcc595e?auto=format&fit=crop&w=800&q=80",
+      "https://images.unsplash.com/photo-1504711434969-e33886168f5c?auto=format&fit=crop&w=800&q=80",
   },
   {
-    id: "food-storytelling",
-    label: "Food",
-    title: "Why every chef is now a storyteller on the web",
-    author: "Chloe Martinez",
-    timeAgo: "5h ago",
+    id: "health-nutrition",
+    label: "स्वास्थ्य",
+    title: "स्वस्थ आहार: प्रोटीन से भरपूर भारतीय खाद्य पदार्थ",
+    author: "डॉ. रीता जैन",
+    timeAgo: "5 घंटे पहले",
     image:
-      "https://images.unsplash.com/photo-1498575207490-34b60d3b04e4?auto=format&fit=crop&w=800&q=80",
+      "https://images.unsplash.com/photo-1490645935967-10de6ba17061?auto=format&fit=crop&w=800&q=80",
   },
   {
-    id: "tech-customer-service",
-    label: "Tech",
-    title: "The status of generative AI in customer service this quarter",
-    author: "Elliot Zhang",
-    timeAgo: "8h ago",
+    id: "cricket-world-cup",
+    label: "क्रिकेट",
+    title: "टी20 विश्व कप 2024: भारत की टीम का पूरा शेड्यूल जारी",
+    author: "मोहित शर्मा",
+    timeAgo: "8 घंटे पहले",
     image:
-      "https://images.unsplash.com/photo-1498050108023-c5249f4df085?auto=format&fit=crop&w=800&q=80",
+      "https://images.unsplash.com/photo-1535131749006-b7f58c99034b?auto=format&fit=crop&w=800&q=80",
   },
 ];
 
 export default function Home() {
+  // Safety check: ensure we have at least 2 hero stories
+  if (heroStories.length < 2) {
+    return (
+      <main className="min-h-screen bg-[var(--background)] text-[var(--foreground)]">
+        <div className="mx-auto px-4 py-8 sm:px-6 lg:px-8 lg:py-12">
+          <p>Loading...</p>
+        </div>
+      </main>
+    );
+  }
+
+  const hero1 = heroStories[0];
+  const hero2 = heroStories[1];
+
   return (
     <main className="min-h-screen bg-[var(--background)] text-[var(--foreground)]">
       <div className=" mx-auto px-4 py-8 sm:px-6 lg:px-8 lg:py-12">
         {/* Hero Section */}
         <section className="mb-16 grid gap-4 lg:grid-cols-2 lg:h-[600px]">
           {/* Div A: Left Column (Main Hero - 1 Card) */}
-          <div className="group relative w-full h-[500px] lg:h-full overflow-hidden rounded-3xl">
+          <Link 
+            href={`/${getCategorySlug(hero1.label)}/${hero1.id}`}
+            className="group relative w-full h-[500px] lg:h-full overflow-hidden rounded-3xl cursor-pointer"
+          >
             <Image
-              src={heroStories[0].image}
-              alt={heroStories[0].title}
+              src={hero1.image}
+              alt={hero1.title}
               fill
               priority
               className="object-cover transition-transform duration-700 group-hover:scale-105"
@@ -132,51 +109,55 @@ export default function Home() {
             <div className="absolute inset-0 bg-gradient-to-t from-black/90 via-black/40 to-transparent" />
             <div className="absolute bottom-0 left-0 right-0 p-6 md:p-10">
               <span className="mb-4 inline-block rounded-full bg-white/20 px-4 py-1.5 text-xs font-bold uppercase tracking-wider text-white backdrop-blur-md">
-                {heroStories[0].category}
+                {hero1.category}
               </span>
               <h1 className="mb-4 text-2xl font-bold leading-tight text-white sm:text-3xl md:text-4xl lg:text-5xl">
-                {heroStories[0].title}
+                {hero1.title}
               </h1>
               <div className="flex items-center gap-4 text-sm font-medium text-white/90">
-                <span>{heroStories[0].author}</span>
+                <span>{hero1.author}</span>
                 <span className="text-white/40">•</span>
-                <span>{heroStories[0].date}</span>
+                <span>{hero1.date}</span>
               </div>
             </div>
-          </div>
+          </Link>
 
           {/* Div B: Right Column (Split Rows) */}
           <div className="flex flex-col gap-4 h-auto lg:h-full">
             {/* Row 1: Full Width Card */}
-            <div className="group relative w-full h-[300px] lg:h-[60%] overflow-hidden rounded-3xl">
+            <Link 
+              href={`/${getCategorySlug(hero2.label)}/${hero2.id}`}
+              className="group relative w-full h-[300px] lg:h-[60%] overflow-hidden rounded-3xl cursor-pointer"
+            >
               <Image
-                src={heroStories[1].image}
-                alt={heroStories[1].title}
+                src={hero2.image}
+                alt={hero2.title}
                 fill
                 className="object-cover transition-transform duration-700 group-hover:scale-105"
               />
               <div className="absolute inset-0 bg-gradient-to-t from-black/90 via-black/40 to-transparent" />
               <div className="absolute bottom-0 left-0 right-0 p-6 md:p-8">
                 <span className="mb-3 inline-block rounded-full bg-white/20 px-3 py-1 text-xs font-bold uppercase tracking-wider text-white backdrop-blur-md">
-                  {heroStories[1].category}
+                  {hero2.category}
                 </span>
                 <h2 className="mb-2 text-xl font-bold leading-tight text-white lg:text-3xl">
-                  {heroStories[1].title}
+                  {hero2.title}
                 </h2>
                 <div className="flex items-center gap-3 text-xs font-medium text-white/90">
-                  <span>{heroStories[1].author}</span>
+                  <span>{hero2.author}</span>
                   <span>•</span>
-                  <span>{heroStories[1].date}</span>
+                  <span>{hero2.date}</span>
                 </div>
               </div>
-            </div>
+            </Link>
 
             {/* Row 2: Two Cards (50% / 50%) */}
             <div className="grid grid-cols-2 gap-4 h-[200px] lg:h-[40%]">
               {relatedStories.slice(0, 2).map((story, index) => (
-                <div
-                  key={index}
-                  className="group relative h-full overflow-hidden rounded-3xl"
+                <Link
+                  key={story.id}
+                  href={`/${getCategorySlug(story.label)}/${story.id}`}
+                  className="group relative h-full overflow-hidden rounded-3xl cursor-pointer"
                 >
                   <Image
                     src={story.image}
@@ -195,7 +176,7 @@ export default function Home() {
                       {story.title}
                     </h3>
                   </div>
-                </div>
+                </Link>
               ))}
             </div>
           </div>
@@ -205,8 +186,9 @@ export default function Home() {
         <section className="flex flex-col gap-12 lg:flex-row">
           <div className="w-full space-y-8 lg:w-2/3">
             <div className="flex items-end justify-between border-b border-[var(--border-color)] pb-4">
-            <h2 className="flex items-center gap-[0.5rem] text-[32px] md:text-[80px] font-[800] text-left">
-              Latest Stories
+            <h2 className="flex items-center gap-[0.5rem] text-[32px] md:text-[50px] font-[800] text-left">
+            नई
+             जानकारी 
               <svg
                 className="hidden lg:block relative -bottom-[1rem]"
                 xmlns="http://www.w3.org/2000/svg"
@@ -242,7 +224,7 @@ export default function Home() {
               </svg>
             </h2>
               <Link href="/topics" className="text-sm font-medium text-[var(--muted)] hover:text-[var(--foreground)]">
-                View All →
+                सभी देखें →
               </Link>
             </div>
             
@@ -267,26 +249,26 @@ export default function Home() {
               
               {/* Ad Unit */}
               <div className="flex min-h-[300px] w-full flex-col items-center justify-center rounded-3xl border border-dashed border-[var(--border-color)] bg-[var(--card-bg)] p-8 text-center">
-                <span className="text-xs font-bold uppercase tracking-widest text-[var(--muted)]">Advertisement</span>
+                <span className="text-xs font-bold uppercase tracking-widest text-[var(--muted)]">विज्ञापन</span>
                 <div className="mt-4 text-lg font-medium text-[var(--foreground)]">
-                  Place your ad here
+                  अपना विज्ञापन यहाँ रखें
                 </div>
               </div>
 
               {/* Newsletter Signup */}
-              <div className="rounded-3xl bg-neutral-900 p-8 text-white dark:bg-white dark:text-black">
-                <h3 className="text-xl font-bold">Subscribe to our newsletter</h3>
+              <div className="rounded-3xl bg-neutral-900 p-8 text-white dark:bg-white dark:text-black hidden">
+                <h3 className="text-xl font-bold">हमारे न्यूज़लेटर की सदस्यता लें</h3>
                 <p className="mt-2 text-sm text-neutral-400 dark:text-neutral-600">
-                  Get the latest posts delivered right to your inbox.
+                  नवीनतम पोस्ट सीधे अपने इनबॉक्स में प्राप्त करें।
                 </p>
                 <div className="mt-6 flex gap-2">
                   <input 
                     type="email" 
-                    placeholder="Your email" 
+                    placeholder="आपका ईमेल" 
                     className="w-full rounded-full bg-white/10 px-4 py-3 text-sm text-white placeholder:text-white/40 focus:outline-none focus:ring-2 focus:ring-white/20 dark:bg-black/5 dark:text-black dark:placeholder:text-black/40"
                   />
                   <button className="rounded-full bg-white px-6 py-3 text-sm font-bold text-black transition hover:bg-white/90 dark:bg-black dark:text-white">
-                    Join
+                    जुड़ें
                   </button>
                 </div>
               </div>

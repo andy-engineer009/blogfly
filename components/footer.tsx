@@ -102,27 +102,19 @@ export default function Footer() {
 
   return (
     <footer className="bg-[#222222] px-6 py-10 text-white/70 sm:px-10 lg:px-16">
-      <div className="mx-auto flex max-w-7xl flex-col gap-8 lg:flex-row lg:gap-12">
+      <div className="mx-auto flex max-w-7xl flex-col gap-8 lg:flex-row lg:gap-12 justify-center items-center">
         {/* Left Section - Logo, Social Media, Copyright */}
-        <div className="flex flex-col gap-6 lg:w-1/3 items-center">
+        <div className="flex flex-col gap-6 lg:w-1/3 items-center justify-center">
           {/* Logo - Pixelated BF */}
           <div className="flex items-center gap-2">
             {/* Pixelated B */}
-            <div className="grid grid-cols-4 grid-rows-3 gap-[1px]">
-              {[1,1,1,1, 1,0,1,1, 1,1,1,1].map((fill, i) => (
-                <div key={`b-${i}`} className={`h-2.5 w-2.5 ${fill ? 'bg-[#32ff00]' : 'bg-transparent'}`} />
-              ))}
-            </div>
-            {/* Pixelated F */}
-            <div className="grid grid-cols-3 grid-rows-3 gap-[1px]">
-              {[1,1,1, 1,0,0, 1,1,0].map((fill, i) => (
-                <div key={`f-${i}`} className={`h-2.5 w-2.5 ${fill ? 'bg-[#32ff00]' : 'bg-transparent'}`} />
-              ))}
+            <div className="flex h-8  px-3 items-center justify-center rounded-lg bg-[var(--foreground)] text-[var(--background)]">
+              <span className="font-bold">YOUR LOGO</span>
             </div>
           </div>
 
           {/* Social Media Icons */}
-          <div className="flex flex-wrap items-center gap-4">
+          <div className="flex flex-wrap items-center gap-4 justify-center">
             {socialLinks.map((social) => (
               <a
                 key={social.name}

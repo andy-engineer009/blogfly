@@ -187,8 +187,7 @@ export default function Home() {
           <div className="w-full space-y-8 lg:w-2/3">
             <div className="flex items-end justify-between border-b border-[var(--border-color)] pb-4">
             <h2 className="flex items-center gap-[0.5rem] text-[32px] md:text-[50px] font-[800] text-left">
-            नई
-             जानकारी 
+            Latest Stories
               <svg
                 className="hidden lg:block relative -bottom-[1rem]"
                 xmlns="http://www.w3.org/2000/svg"
@@ -249,26 +248,26 @@ export default function Home() {
               
               {/* Ad Unit */}
               <div className="flex min-h-[300px] w-full flex-col items-center justify-center rounded-3xl border border-dashed border-[var(--border-color)] bg-[var(--card-bg)] p-8 text-center">
-                <span className="text-xs font-bold uppercase tracking-widest text-[var(--muted)]">विज्ञापन</span>
+                <span className="text-xs font-bold uppercase tracking-widest text-[var(--muted)]">Advertisement (google adsense)</span>
                 <div className="mt-4 text-lg font-medium text-[var(--foreground)]">
-                  अपना विज्ञापन यहाँ रखें
+                  Place your advertisement here
                 </div>
               </div>
 
               {/* Newsletter Signup */}
               <div className="rounded-3xl bg-neutral-900 p-8 text-white dark:bg-white dark:text-black hidden">
-                <h3 className="text-xl font-bold">हमारे न्यूज़लेटर की सदस्यता लें</h3>
+                <h3 className="text-xl font-bold">Subscribe to our newsletter</h3>
                 <p className="mt-2 text-sm text-neutral-400 dark:text-neutral-600">
-                  नवीनतम पोस्ट सीधे अपने इनबॉक्स में प्राप्त करें।
+                  Get the latest posts directly in your inbox.
                 </p>
                 <div className="mt-6 flex gap-2">
                   <input 
                     type="email" 
-                    placeholder="आपका ईमेल" 
+                    placeholder="Your Email" 
                     className="w-full rounded-full bg-white/10 px-4 py-3 text-sm text-white placeholder:text-white/40 focus:outline-none focus:ring-2 focus:ring-white/20 dark:bg-black/5 dark:text-black dark:placeholder:text-black/40"
                   />
                   <button className="rounded-full bg-white px-6 py-3 text-sm font-bold text-black transition hover:bg-white/90 dark:bg-black dark:text-white">
-                    जुड़ें
+                    Subscribe
                   </button>
                 </div>
               </div>

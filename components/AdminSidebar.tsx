@@ -15,7 +15,7 @@ type NavItem = {
 
 const navItems: NavItem[] = [
   {
-    label: "डैशबोर्ड", // Dashboard
+    label: "Dashboard", // Dashboard
     href: "/admin/dashboard",
     icon: (
       <svg className="h-5 w-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -24,7 +24,7 @@ const navItems: NavItem[] = [
     ),
   },
   {
-    label: "कैटेगरियाँ", // Categories
+    label: "Categories", // Categories
     href: "/admin/categories",
     icon: (
       <svg className="h-5 w-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -33,7 +33,7 @@ const navItems: NavItem[] = [
     ),
   },
   {
-    label: "पोस्ट्स", // Posts
+    label: "Posts", // Posts
     href: "/admin/post",
     icon: (
       <svg className="h-5 w-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -42,7 +42,7 @@ const navItems: NavItem[] = [
     ),
   },
   {
-    label: "होम मैनेजर", // Home Manager
+    label: "Home Manager", // Home Manager
     href: "/admin/home-manager",
     icon: (
       <svg className="h-5 w-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -88,8 +88,8 @@ export function AdminSidebar({ isOpen = true, onClose }: AdminSidebarProps) {
               <span className="text-xl font-bold text-white">B</span>
             </div> */}
             <div>
-              <p className="text-xs font-medium uppercase tracking-wider text-white/60">एडमिन पैनल</p> {/* Admin Panel */}
-              <h1 className="text-xl font-bold text-white">आपका लोगो यहाँ</h1> {/* Your Logo Here */}
+                <p className="text-xs font-medium uppercase tracking-wider text-white/60">Admin Panel</p> {/* Admin Panel */}
+              <h1 className="text-xl font-bold text-white">Logo </h1> {/* Your Logo Here */}
             </div>
           </div>
 
@@ -155,7 +155,7 @@ export function AdminSidebar({ isOpen = true, onClose }: AdminSidebarProps) {
             <svg className="h-5 w-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
               <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 16l4-4m0 0l-4-4m4 4H7m6 4v1a3 3 0 01-3 3H6a3 3 0 01-3-3V7a3 3 0 013-3h4a3 3 0 013 3v1" />
             </svg>
-            <span>लॉगआउट</span> {/* Logout */}
+            <span>Logout</span> {/* Logout */}
           </button>
         </div>
       </aside>

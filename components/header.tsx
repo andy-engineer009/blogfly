@@ -5,19 +5,19 @@ import { useState, useEffect } from "react";
 import { useTheme } from "@/app/providers/ThemeProvider";
 
 const navLinks = [
-  { label: "होम", href: "/" },
-  { label: "विषय", href: "/topics" },
+  { label: "Home", href: "/" },
+  { label: "Topics", href: "/topics" },
   // { label: "Trending", href: "/trending" },
-  { label: "बारे में", href: "/about" },
+  { label: "About", href: "/about" },
 ];
 
 const topics = [
-  "स्ट्रैटेजी",
-  "कहानी सुनाना",
-  "प्रोडक्ट",
-  "खाना / फूड",
-  "एनालिटिक्स",
-  "लाइफस्टाइल",
+  "Strategy",
+  "Storytelling",
+  "Product",
+  "Food",
+  "Analytics",
+  "LifeStyle",
 ];
 
 // Remove unused socialLinks array if it's no longer needed in this simplified header
@@ -80,12 +80,12 @@ export default function Header() {
           </button>
 
           <Link href="/" className="flex items-center gap-2" onClick={() => setIsOpen(false)}>
-            <div className="flex h-8 w-8 items-center justify-center rounded-lg bg-[var(--foreground)] text-[var(--background)]">
-              <span className="font-bold">B</span>
+            <div className="flex h-8  px-3 items-center justify-center rounded-lg bg-[var(--foreground)] text-[var(--background)]">
+              <span className="font-bold">YOUR LOGO</span>
             </div>
-            <span className="text-xl font-bold tracking-tight text-[var(--foreground)]">
-              Blogfly
-            </span>
+            {/* <span className="text-xl font-bold tracking-tight text-[var(--foreground)]">
+              Logo
+            </span> */}
           </Link>
         </div>
 

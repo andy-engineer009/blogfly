@@ -119,8 +119,8 @@ export default function PostPage() {
             </svg>
           </div>
     <div>
-            <p className="text-xs font-medium uppercase tracking-wider text-[var(--muted)]">पोस्ट मैनेजमेंट</p>
-            <h1 className="mt-1 text-2xl font-bold text-[var(--foreground)] sm:text-3xl">पोस्ट्स</h1>
+            <p className="text-xs font-medium uppercase tracking-wider text-[var(--muted)]">Posts Management</p>
+            <h1 className="mt-1 text-2xl font-bold text-[var(--foreground)] sm:text-3xl">Posts</h1>
           </div>
         </div>
         
@@ -158,13 +158,13 @@ export default function PostPage() {
           {/* Add Post Button */}
           <Link
             href="/admin/post/add"
-            className="group flex items-center gap-2 rounded-xl bg-gradient-to-r from-[var(--accent)] to-[#fb4fa0] px-5 py-2.5 text-sm font-semibold text-white shadow-lg transition-all duration-200 hover:shadow-xl hover:scale-[1.02]"
+            className="group flex items-center gap-2 rounded-xl bg-[#45bdff] px-5 py-2.5 text-sm font-semibold text-white shadow-lg transition-all duration-200 hover:shadow-xl hover:scale-[1.02]"
           >
             <svg className="h-5 w-5 transition-transform duration-200 group-hover:scale-110" fill="none" stroke="currentColor" viewBox="0 0 24 24">
               <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 4v16m8-8H4" />
             </svg>
-            <span className="hidden sm:inline">पोस्ट जोड़ें</span>
-            <span className="sm:hidden">जोड़ें</span>
+            <span className="hidden sm:inline">Add Post </span>      
+            <span className="sm:hidden">Add Post</span>
           </Link>
         </div>
       </header>
@@ -177,12 +177,12 @@ export default function PostPage() {
               <thead className="border-b border-[var(--border-color)] bg-[var(--surface)]/50">
                 <tr>
                   <th className="px-4 py-4 text-left text-xs font-semibold uppercase tracking-wider text-[var(--muted)] sm:px-6">ID</th>
-                  <th className="px-4 py-4 text-left text-xs font-semibold uppercase tracking-wider text-[var(--muted)] sm:px-6">शीर्षक</th>
-                  <th className="hidden px-4 py-4 text-left text-xs font-semibold uppercase tracking-wider text-[var(--muted)] sm:table-cell sm:px-6">लेखक</th>
-                  <th className="hidden px-4 py-4 text-left text-xs font-semibold uppercase tracking-wider text-[var(--muted)] md:table-cell md:px-6">कैटेगरी</th>
-                  <th className="hidden px-4 py-4 text-left text-xs font-semibold uppercase tracking-wider text-[var(--muted)] lg:table-cell lg:px-6">प्रकाशित</th>
-                  <th className="px-4 py-4 text-left text-xs font-semibold uppercase tracking-wider text-[var(--muted)] sm:px-6">स्थिति</th>
-                  <th className="px-4 py-4 text-left text-xs font-semibold uppercase tracking-wider text-[var(--muted)] sm:px-6">कार्रवाई</th>
+                  <th className="px-4 py-4 text-left text-xs font-semibold uppercase tracking-wider text-[var(--muted)] sm:px-6">Title</th>
+                  <th className="hidden px-4 py-4 text-left text-xs font-semibold uppercase tracking-wider text-[var(--muted)] sm:table-cell sm:px-6">Author</th>
+                  <th className="hidden px-4 py-4 text-left text-xs font-semibold uppercase tracking-wider text-[var(--muted)] md:table-cell md:px-6">Category</th>
+                  <th className="hidden px-4 py-4 text-left text-xs font-semibold uppercase tracking-wider text-[var(--muted)] lg:table-cell lg:px-6">Published</th>
+                  <th className="px-4 py-4 text-left text-xs font-semibold uppercase tracking-wider text-[var(--muted)] sm:px-6">Status</th>
+                  <th className="px-4 py-4 text-left text-xs font-semibold uppercase tracking-wider text-[var(--muted)] sm:px-6">Action</th>
                 </tr>
               </thead>
               <tbody className="divide-y divide-[var(--border-color)]">

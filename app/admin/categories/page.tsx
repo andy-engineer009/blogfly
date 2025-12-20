@@ -53,8 +53,8 @@ export default function CategoriesPage() {
             </svg>
           </div>
     <div>
-            <p className="text-xs font-medium uppercase tracking-wider text-[var(--muted)]">कैटेगरी प्रबंधन</p>
-            <h1 className="mt-1 text-2xl font-bold text-[var(--foreground)] sm:text-3xl">कैटेगरियां</h1>
+            <p className="text-xs font-medium uppercase tracking-wider text-[var(--muted)]">Categories Management</p>
+            <h1 className="mt-1 text-2xl font-bold text-[var(--foreground)] sm:text-3xl">Categories</h1>
           </div>
         </div>
         
@@ -68,7 +68,7 @@ export default function CategoriesPage() {
                   : "text-[var(--muted)] hover:bg-[var(--accent)]/10 hover:text-[var(--accent)]"
               }`}
               onClick={() => setLayout("table")}
-              aria-label="टेबल व्यू"
+              aria-label="Table View"
             >
               <svg className="h-5 w-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 10h18M3 14h18m-9-4v8m-7 0h14a2 2 0 002-2V8a2 2 0 00-2-2H5a2 2 0 00-2 2v8a2 2 0 002 2z" />
@@ -81,7 +81,7 @@ export default function CategoriesPage() {
                   : "text-[var(--muted)] hover:bg-[var(--accent)]/10 hover:text-[var(--accent)]"
               }`}
               onClick={() => setLayout("card")}
-              aria-label="कार्ड व्यू"
+              aria-label="Card View"
             >
               <svg className="h-5 w-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 6a2 2 0 012-2h2a2 2 0 012 2v2a2 2 0 01-2 2H6a2 2 0 01-2-2V6zM14 6a2 2 0 012-2h2a2 2 0 012 2v2a2 2 0 01-2 2h-2a2 2 0 01-2-2V6zM4 16a2 2 0 012-2h2a2 2 0 012 2v2a2 2 0 01-2 2H6a2 2 0 01-2-2v-2zM14 16a2 2 0 012-2h2a2 2 0 012 2v2a2 2 0 01-2 2h-2a2 2 0 01-2-2v-2z" />
@@ -92,13 +92,13 @@ export default function CategoriesPage() {
           {/* Add Category Button */}
           <Link
             href="/admin/categories/add"
-            className="group flex items-center gap-2 rounded-xl bg-gradient-to-r from-[var(--accent)] to-[#fb4fa0] px-5 py-2.5 text-sm font-semibold text-white shadow-lg transition-all duration-200 hover:shadow-xl hover:scale-[1.02]"
+            className="group flex items-center gap-2 rounded-xl bg-[#45bdff] px-5 py-2.5 text-sm font-semibold text-white shadow-lg transition-all duration-200 hover:shadow-xl hover:scale-[1.02]"
           >
             <svg className="h-5 w-5 transition-transform duration-200 group-hover:scale-110" fill="none" stroke="currentColor" viewBox="0 0 24 24">
               <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 4v16m8-8H4" />
             </svg>
-            <span className="hidden sm:inline">नई कैटेगरी जोड़ें</span>
-            <span className="sm:hidden">जोड़ें</span>
+            <span className="hidden sm:inline">Add Category</span>
+            <span className="sm:hidden">Add</span>
           </Link>
         </div>
       </header>
@@ -110,11 +110,11 @@ export default function CategoriesPage() {
             <table className="min-w-full border-collapse">
               <thead className="border-b border-[var(--border-color)] bg-[var(--surface)]/50">
                 <tr>
-                  <th className="px-4 py-4 text-left text-xs font-semibold uppercase tracking-wider text-[var(--muted)] sm:px-6">आईडी</th>
-                  <th className="px-4 py-4 text-left text-xs font-semibold uppercase tracking-wider text-[var(--muted)] sm:px-6">नाम</th>
-                  <th className="hidden px-4 py-4 text-left text-xs font-semibold uppercase tracking-wider text-[var(--muted)] sm:table-cell sm:px-6">पोस्ट</th>
-                  <th className="px-4 py-4 text-left text-xs font-semibold uppercase tracking-wider text-[var(--muted)] sm:px-6">स्थिति</th>
-                  <th className="px-4 py-4 text-left text-xs font-semibold uppercase tracking-wider text-[var(--muted)] sm:px-6">कार्रवाई</th>
+                  <th className="px-4 py-4 text-left text-xs font-semibold uppercase tracking-wider text-[var(--muted)] sm:px-6">ID</th>
+                  <th className="px-4 py-4 text-left text-xs font-semibold uppercase tracking-wider text-[var(--muted)] sm:px-6">Name</th>
+                  <th className="hidden px-4 py-4 text-left text-xs font-semibold uppercase tracking-wider text-[var(--muted)] sm:table-cell sm:px-6">Posts</th>
+                  <th className="px-4 py-4 text-left text-xs font-semibold uppercase tracking-wider text-[var(--muted)] sm:px-6">Status</th>
+                  <th className="px-4 py-4 text-left text-xs font-semibold uppercase tracking-wider text-[var(--muted)] sm:px-6">Action</th>
                 </tr>
               </thead>
               <tbody className="divide-y divide-[var(--border-color)]">
@@ -125,7 +125,7 @@ export default function CategoriesPage() {
                   >
                     <td className="px-4 py-4 text-sm font-semibold text-[var(--foreground)] sm:px-6">{category.id}</td>
                     <td className="px-4 py-4 text-sm font-medium text-[var(--foreground)] sm:px-6">{category.name}</td>
-                    <td className="hidden px-4 py-4 text-sm text-[var(--muted)] sm:table-cell sm:px-6">{category.posts} पोस्ट</td>
+                    <td className="hidden px-4 py-4 text-sm text-[var(--muted)] sm:table-cell sm:px-6">{category.posts} Posts</td>
                     <td className="px-4 py-4 sm:px-6">
                       <span
                         className={`inline-flex rounded-full px-3 py-1 text-xs font-semibold ${
@@ -134,7 +134,7 @@ export default function CategoriesPage() {
                             : "bg-red-500/10 text-red-400"
                         }`}
                       >
-                        {category.status === "active" ? "सक्रिय" : "निष्क्रिय"}
+                        {category.status === "active" ? "Active" : "Inactive"}
                       </span>
                     </td>
                     <td className="px-4 py-4 sm:px-6">
@@ -142,7 +142,7 @@ export default function CategoriesPage() {
                         <Link
                           href={`/admin/categories/edit/${category.id}`}
                           className="group/edit flex items-center justify-center rounded-lg border border-[var(--border-color)] bg-[var(--surface)] p-2 text-emerald-400 transition-all duration-200 hover:border-emerald-400 hover:bg-emerald-400/10"
-                          aria-label=" कैटेगरी संपादित करें"
+                          aria-label=" Edit Category"
                         >
                           <svg className="h-4 w-4" fill="none" stroke="#000" viewBox="0 0 24 24">
                             <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M11 5H6a2 2 0 00-2 2v11a2 2 0 002 2h11a2 2 0 002-2v-5m-1.414-9.414a2 2 0 112.828 2.828L11.828 15H9v-2.828l8.586-8.586z" />
@@ -150,7 +150,7 @@ export default function CategoriesPage() {
                         </Link>
                         <button
                           className="group/delete flex items-center justify-center rounded-lg border border-[var(--border-color)] bg-[var(--surface)] p-2 text-red-400 transition-all duration-200 hover:border-red-400 hover:bg-red-400/10"
-                          aria-label="कैटेगरी हटाएं"
+                          aria-label="Delete Category"
                         >
                           <svg className="h-4 w-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                             <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 7l-.867 12.142A2 2 0 0116.138 21H7.862a2 2 0 01-1.995-1.858L5 7m5 4v6m4-6v6m1-10V4a1 1 0 00-1-1h-4a1 1 0 00-1 1v3M4 7h16" />
@@ -207,7 +207,7 @@ export default function CategoriesPage() {
                     <svg className="h-4 w-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                       <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z" />
                     </svg>
-                    <span>{category.posts} पोस्ट</span>
+                    <span>{category.posts} Posts</span>
                   </div>
                   <span
                     className={`rounded-full px-3 py-1.5 text-xs font-semibold ${
@@ -216,7 +216,7 @@ export default function CategoriesPage() {
                         : "bg-red-500/10 text-red-400"
                     }`}
                   >
-                    {category.status === "active" ? "सक्रिय" : "निष्क्रिय"}
+                    {category.status === "active" ? "Active" : "Inactive"}
                   </span>
                 </div>
 
@@ -228,21 +228,21 @@ export default function CategoriesPage() {
                   <Link
                     href={`/admin/categories/edit/${category.id}`}
                     className="group/edit flex flex-1 items-center justify-center gap-2 rounded-xl border border-[var(--border-color)] bg-[var(--surface)] px-4 py-2.5 text-sm font-semibold text-[#000] transition-all duration-200 hover:border-emerald-400 hover:bg-emerald-400/10"
-                    aria-label="कैटेगरी संपादित करें"
+                    aria-label="Edit Category"
                   >
                     <svg className="h-4 w-4 transition-transform duration-200 group-hover/edit:scale-110" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                       <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M11 5H6a2 2 0 00-2 2v11a2 2 0 002 2h11a2 2 0 002-2v-5m-1.414-9.414a2 2 0 112.828 2.828L11.828 15H9v-2.828l8.586-8.586z" />
                     </svg>
-                    <span>संपादित करें</span>
+                    <span>Edit</span>
                   </Link>
                   <button
                     className="group/delete flex flex-1 items-center justify-center gap-2 rounded-xl border border-[var(--border-color)] bg-[var(--surface)] px-4 py-2.5 text-sm font-semibold text-red-400 transition-all duration-200 hover:border-red-400 hover:bg-red-400/10"
-                    aria-label="कैटेगरी हटाएं"
+                    aria-label="Delete Category"
                   >
                     <svg className="h-4 w-4 transition-transform duration-200 group-hover/delete:scale-110" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                       <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 7l-.867 12.142A2 2 0 0116.138 21H7.862a2 2 0 01-1.995-1.858L5 7m5 4v6m4-6v6m1-10V4a1 1 0 00-1-1h-4a1 1 0 00-1 1v3M4 7h16" />
                     </svg>
-                    <span>हटाएं</span>
+                    <span>Delete</span>
                   </button>
                 </div>
 

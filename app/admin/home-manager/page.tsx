@@ -129,7 +129,7 @@ export default function HomeManagerPage() {
   };
 
   const handleCloseModal = () => {
-    setModalState({ isOpen: false, target: "hero1", title: "ब्लॉग चुनें" });
+    setModalState({ isOpen: false, target: "hero1", title: "Choose Blog" });
   };
 
   const handleSaveConfiguration = async () => {
@@ -159,10 +159,10 @@ export default function HomeManagerPage() {
       }
 
       // Show success message
-      alert("होमपेज कॉन्फ़िगरेशन सफलतापूर्वक सहेजा गया!");
+      alert("Homepage Configuration saved successfully!");
     } catch (error) {
       console.error("Error saving homepage configuration:", error);
-      alert("होमपेज कॉन्फ़िगरेशन सहेजने में विफल। कृपया पुनः प्रयास करें।");
+      alert("Failed to save homepage configuration. Please try again.");
     } finally {
       setIsSaving(false);
     }
@@ -180,7 +180,7 @@ export default function HomeManagerPage() {
       <div className="flex min-h-screen items-center justify-center bg-[var(--background)]">
           <div className="text-center">
           <div className="mx-auto mb-4 h-12 w-12 animate-spin rounded-full border-4 border-[var(--border-color)] border-t-[var(--accent)]"></div>
-          <p className="text-sm text-[var(--muted)]">होमपेज कॉन्फ़िगरेशन लोड हो रहा है...</p>
+          <p className="text-sm text-[var(--muted)]">Homepage Configuration is loading...</p>
         </div>
       </div>
     );
@@ -192,8 +192,8 @@ export default function HomeManagerPage() {
         {/* Header */}
         <div className="mb-8 flex items-center justify-between">
           <div>
-            <h1 className="text-3xl font-bold text-[var(--foreground)]">होमपेज प्रबंधक</h1>
-            <p className="mt-1 text-sm text-[var(--muted)]">अपने होमपेज पर दिखने वाली सामग्री को प्रबंधित करें</p>
+            <h1 className="text-3xl font-bold text-[var(--foreground)]">Homepage Manager</h1>
+            <p className="mt-1 text-sm text-[var(--muted)]">Manage the content that will appear on your homepage</p>
           </div>
         </div>
 
@@ -227,7 +227,7 @@ export default function HomeManagerPage() {
                 <button
                   onClick={() => handleRemoveBlog("hero1")}
                   className="absolute right-4 top-4 rounded-full bg-red-500 p-2 text-white shadow-lg transition hover:bg-red-600 z-10"
-                  aria-label="हीरो ब्लॉग हटाएं"
+                  aria-label="Remove Hero Blog"
                 >
                   <svg className="h-5 w-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" />
@@ -239,12 +239,12 @@ export default function HomeManagerPage() {
                 <svg className="mb-4 h-12 w-12 text-[var(--muted)]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 16l4.586-4.586a2 2 0 012.828 0L16 16m-2-2l1.586-1.586a2 2 0 012.828 0L20 14m-6-6h.01M6 20h12a2 2 0 002-2V6a2 2 0 00-2-2H6a2 2 0 00-2 2v12a2 2 0 002 2z" />
                 </svg>
-                <p className="mb-4 text-lg font-medium text-[var(--foreground)]">कोई हीरो ब्लॉग चयनित नहीं</p>
+                <p className="mb-4 text-lg font-medium text-[var(--foreground)]">No Hero Blog selected</p>
                 <button
-                  onClick={() => handleOpenModal("hero1", "हीरो ब्लॉग चुनें")}
+                  onClick={() => handleOpenModal("hero1", "Choose Hero Blog")}
                   className="rounded-lg bg-[var(--accent)] px-6 py-2.5 text-sm font-semibold text-white transition hover:bg-[#fb4fa0]"
                 >
-                  ब्लॉग चुनें
+                  Choose Blog
                 </button>
               </div>
             )}
@@ -279,7 +279,7 @@ export default function HomeManagerPage() {
                   <button
                     onClick={() => handleRemoveBlog("hero2")}
                     className="absolute right-2 top-2 rounded-full bg-red-500 p-1.5 text-white shadow-lg transition hover:bg-red-600 z-10"
-                    aria-label="ब्लॉग हटाएं"
+                    aria-label="Remove Blog"
                   >
                     <svg className="h-4 w-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                       <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" />
@@ -292,10 +292,10 @@ export default function HomeManagerPage() {
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 6v6m0 0v6m0-6h6m-6 0H6" />
                   </svg>
                   <button
-                    onClick={() => handleOpenModal("hero2", "ब्लॉग चुनें")}
+                    onClick={() => handleOpenModal("hero2", "Choose Blog")}
                     className="mt-2 text-sm font-medium text-[var(--accent)] transition hover:underline"
                   >
-                    ब्लॉग चुनें
+                    Choose Blog
                   </button>
                 </div>
               )}
@@ -328,7 +328,7 @@ export default function HomeManagerPage() {
                         <button
                           onClick={() => handleRemoveBlog(key)}
                           className="absolute right-2 top-2 rounded-full bg-red-500 p-1.5 text-white shadow-lg transition hover:bg-red-600 z-10"
-                          aria-label="ब्लॉग हटाएं"
+                          aria-label="Remove Blog"
                         >
                           <svg className="h-3 w-3" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                             <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" />
@@ -341,10 +341,10 @@ export default function HomeManagerPage() {
                           <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 6v6m0 0v6m0-6h6m-6 0H6" />
                         </svg>
                         <button
-                          onClick={() => handleOpenModal(key, `संबंधित ब्लॉग ${index + 1} चुनें`)}
+                          onClick={() => handleOpenModal(key, `Choose Related Blog ${index + 1}`)}
                           className="mt-1 text-xs font-medium text-[var(--accent)] transition hover:underline"
                         >
-                          चुनें
+                          Choose Blog
                         </button>
                       </div>
                     )}
@@ -360,14 +360,14 @@ export default function HomeManagerPage() {
           <div className="mb-6 flex flex-wrap items-center justify-between gap-4">
             <div className="flex flex-wrap gap-6">
               <h2 className="flex items-center gap-[0.5rem] text-[32px] md:text-[80px] font-[800] text-left">
-                नवीनतम कहानियां
+                Latest Stories
               </h2>
             </div>
             <button
-              onClick={() => handleOpenModal("latest", "नवीनतम कहानियां चुनें")}
+              onClick={() => handleOpenModal("latest", "Choose Latest Stories")}
               className="rounded-lg bg-[var(--accent)] px-5 py-2.5 text-sm font-semibold text-white transition hover:bg-[#fb4fa0]"
             >
-              ब्लॉग जोड़ें
+              Add Blog
             </button>
           </div>
 
@@ -387,7 +387,7 @@ export default function HomeManagerPage() {
                     <button
                       onClick={() => handleRemoveLatestBlog(blog.id)}
                       className="absolute right-2 top-2 rounded-full bg-red-500 p-1.5 text-white shadow-lg transition hover:bg-red-600 z-10"
-                      aria-label={`${blog.title} हटाएं`}
+                      aria-label={`Remove ${blog.title}`}
                     >
                       <svg className="h-4 w-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                         <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" />
@@ -400,13 +400,13 @@ export default function HomeManagerPage() {
                   <svg className="mb-4 h-12 w-12 text-[var(--muted)]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 6v6m0 0v6m0-6h6m-6 0H6" />
                   </svg>
-                  <p className="mb-2 text-lg font-medium text-[var(--foreground)]">कोई ब्लॉग चयनित नहीं</p>
-                  <p className="mb-4 text-sm text-[var(--muted)]">नवीनतम कहानियों के लिए ब्लॉग चुनने के लिए "ब्लॉग जोड़ें" पर क्लिक करें</p>
+                  <p className="mb-2 text-lg font-medium text-[var(--foreground)]">No Blog selected</p>
+                  <p className="mb-4 text-sm text-[var(--muted)]">To choose blogs for latest stories, click "Add Blog"</p>
                   <button
-                    onClick={() => handleOpenModal("latest", "नवीनतम कहानियां चुनें")}
+                    onClick={() => handleOpenModal("latest", "Choose Latest Stories")}
                     className="rounded-lg bg-[var(--accent)] px-6 py-2.5 text-sm font-semibold text-white transition hover:bg-[#fb4fa0]"
                   >
-                    ब्लॉग जोड़ें
+                    Add Blog
                   </button>
                 </div>
               )}
@@ -428,7 +428,7 @@ export default function HomeManagerPage() {
             disabled={isSaving || isLoading}
             className="rounded-lg bg-[var(--accent)] px-8 py-3 text-base font-semibold text-white shadow-lg transition hover:bg-[#fb4fa0] disabled:cursor-not-allowed disabled:opacity-50"
           >
-            {isSaving ? "सहेजा जा रहा है..." : "कॉन्फ़िगरेशन सहेजें"}
+            {isSaving ? "Saving..." : "Save Configuration"}
           </button>
         </div>
 

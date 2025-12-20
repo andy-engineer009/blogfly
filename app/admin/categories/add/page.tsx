@@ -5,7 +5,7 @@ import { useFormik } from "formik";
 import * as Yup from "yup";
 
 const validationSchema = Yup.object({
-  name: Yup.string().trim().required("कैटेगरी का नाम आवश्यक है"),
+  name: Yup.string().trim().required("Category Name is required"),
 });
 
 export default function AddCategoryPage() {
@@ -35,8 +35,8 @@ export default function AddCategoryPage() {
             </svg>
           </Link>
     <div>
-            <p className="text-xs font-medium uppercase tracking-wider text-[var(--muted)]">कैटेगरी प्रबंधन</p>
-            <h1 className="mt-1 text-2xl font-bold text-[var(--foreground)] sm:text-3xl">नई कैटेगरी जोड़ें</h1>
+            <p className="text-xs font-medium uppercase tracking-wider text-[var(--muted)]">Categories Management</p>
+            <h1 className="mt-1 text-2xl font-bold text-[var(--foreground)] sm:text-3xl">Add New Category</h1>
           </div>
         </div>
       </header>
@@ -50,7 +50,7 @@ export default function AddCategoryPage() {
               <svg className="h-5 w-5 text-[var(--accent)]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M7 7h.01M7 3h5c.512 0 1.024.195 1.414.586l7 7a2 2 0 010 2.828l-7 7a2 2 0 01-2.828 0l-7-7A1.994 1.994 0 013 12V7a4 4 0 014-4z" />
               </svg>
-              कैटेगरी का नाम
+              Category Name
               <span className="text-red-500">*</span>
             </label>
             <div className="relative">
@@ -61,7 +61,7 @@ export default function AddCategoryPage() {
                 value={formik.values.name}
                 onChange={formik.handleChange}
                 onBlur={formik.handleBlur}
-                placeholder="उदाहरण: क्रिकेट, फिटनेस, समाचार, स्वास्थ्य, टेक..."
+                placeholder="Example: Cricket, Fitness, News, Health, Tech..."
                 className={`w-full rounded-xl border px-4 py-3.5 text-sm transition-all duration-200 placeholder:text-[var(--muted)] focus:outline-none focus:ring-2 focus:ring-[var(--accent)]/20 sm:px-5 sm:py-4 sm:text-base ${
                   formik.touched.name && formik.errors.name
                     ? "border-red-500/60 bg-red-50/50 focus:border-red-500 focus:ring-red-500/20"
@@ -84,7 +84,7 @@ export default function AddCategoryPage() {
                 <span>{formik.errors.name}</span>
               </div>
             ) : null}
-            <p className="text-xs text-[var(--muted)]">अपनी कैटेगरी के लिए एक स्पष्ट, वर्णनात्मक नाम चुनें</p>
+            <p className="text-xs text-[var(--muted)]">Choose a clear, descriptive name for your category</p>
           </div>
 
           {/* Action Buttons */}
@@ -96,12 +96,12 @@ export default function AddCategoryPage() {
               <svg className="h-5 w-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" />
               </svg>
-              वापिस जाए 
+              Go Back
             </Link>
             <button
               type="submit"
               disabled={formik.isSubmitting}
-              className="group flex items-center justify-center gap-2 rounded-xl bg-gradient-to-r from-[var(--accent)] to-[#fb4fa0] px-8 py-3.5 text-sm font-semibold text-white shadow-lg transition-all duration-200 hover:shadow-xl hover:scale-[1.02] disabled:cursor-not-allowed disabled:opacity-60 disabled:hover:scale-100"
+              className="group flex items-center justify-center gap-2 rounded-xl bg-[#45bdff] px-8 py-3.5 text-sm font-semibold text-white shadow-lg transition-all duration-200 hover:shadow-xl hover:scale-[1.02] disabled:cursor-not-allowed disabled:opacity-60 disabled:hover:scale-100"
             >
               {formik.isSubmitting ? (
                 <>
@@ -116,7 +116,7 @@ export default function AddCategoryPage() {
                   <svg className="h-5 w-5 transition-transform duration-200 group-hover:scale-110" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
                   </svg>
-                  <span>कैटेगरी जोड़ें</span>
+                  <span>Add Category</span>
                 </>
               )}
             </button>

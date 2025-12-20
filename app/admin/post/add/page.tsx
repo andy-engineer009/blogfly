@@ -20,9 +20,9 @@ const categoryOptions = [
 ];
 
 const validationSchema = Yup.object({
-  title: Yup.string().trim().required("ब्लॉग शीर्षक आवश्यक है"),
-  description: Yup.string().trim().required("विवरण आवश्यक है"),
-  category: Yup.string().required("श्रेणी आवश्यक है"),
+  title: Yup.string().trim().required("Title is required"),
+  description: Yup.string().trim().required("Description is required"),
+  category: Yup.string().required("Category is required"),
 });
 
 export default function AddPostPage() {
@@ -94,8 +94,8 @@ export default function AddPostPage() {
             </svg>
           </Link>
           <div>
-            <p className="text-xs font-medium uppercase tracking-wider text-[var(--muted)]">पोस्ट प्रबंधन</p>
-            <h1 className="mt-1 text-2xl font-bold text-[var(--foreground)] sm:text-3xl">नई पोस्ट जोड़ें</h1>
+            <p className="text-xs font-medium uppercase tracking-wider text-[var(--muted)]">Post Management</p>
+            <h1 className="mt-1 text-2xl font-bold text-[var(--foreground)] sm:text-3xl">Add New Post</h1>
           </div>
         </div>
       </header>
@@ -104,7 +104,7 @@ export default function AddPostPage() {
       <section className="rounded-[1.25rem] border border-[var(--border-color)] bg-[var(--surface)] px-6 py-8 shadow-[0_20px_40px_rgba(15,23,42,0.1)]">
         <form onSubmit={formik.handleSubmit} className="flex flex-col gap-6">
           <div className="space-y-2">
-            <label className="block text-sm font-semibold text-[var(--foreground)]">ब्लॉग शीर्षक</label>
+            <label className="block text-sm font-semibold text-[var(--foreground)]">Blog Title</label>
             <textarea
               name="title"
               value={formik.values.title}
@@ -114,7 +114,7 @@ export default function AddPostPage() {
               className={`w-full rounded-2xl border px-4 py-3 text-sm min-h-[90px] focus:border-[var(--accent)] focus:outline-none ${
                 formik.touched.title && formik.errors.title ? "border-red-500/60 bg-white/80" : "border-[var(--border-color)] bg-white"
               }`}
-              placeholder="जो भी कहानी आप कैप्चर करना चाहते हैं"
+              placeholder="Whatever story you want to capture"
             />
             {formik.touched.title && formik.errors.title ? (
               <p className="text-xs text-red-500">{formik.errors.title}</p>
@@ -122,7 +122,7 @@ export default function AddPostPage() {
           </div>
 
           <div className="space-y-2">
-            <label className="block text-sm font-semibold text-[var(--foreground)]">ब्लॉग विवरण</label>
+            <label className="block text-sm font-semibold text-[var(--foreground)]">Blog Description</label>
             <div
               className={`min-h-[140px] rounded-[1rem] border ${
                 formik.touched.description && formik.errors.description ? "border-red-500/60" : "border-[var(--border-color)]"
@@ -141,7 +141,7 @@ export default function AddPostPage() {
 
           <div className="flex flex-col gap-4 rounded-[1rem] border border-[var(--border-color)] bg-white/80 p-4 sm:flex-row sm:items-start">
             <div className="flex-1 space-y-2">
-              <label className="block text-sm font-semibold text-[var(--foreground)]">श्रेणी</label>
+              <label className="block text-sm font-semibold text-[var(--foreground)]">Category</label>
               <Select
                 options={categoryOptions}
                 value={selectedCategory}
@@ -155,32 +155,32 @@ export default function AddPostPage() {
             </div>
 
             <div className="flex-1 space-y-2">
-              <label className="block text-sm font-semibold text-[var(--foreground)]">लेखक का नाम (वैकल्पिक)</label>
+              <label className="block text-sm font-semibold text-[var(--foreground)]">Author Name (Optional)</label>
               <input
                 type="text"
                 name="author"
                 value={formik.values.author}
                 onChange={formik.handleChange}
                 className="w-full rounded-2xl border px-4 py-3 text-sm border-[var(--border-color)] bg-white focus:border-[var(--accent)] focus:outline-none"
-                placeholder="लेखक का नाम..."
+                placeholder="Author Name..."
               />
             </div>
           </div>
 
           <div className="space-y-3">
-            <label className="block text-sm font-semibold text-[var(--foreground)]">कवर छवि अपलोड करें (वैकल्पिक)</label>
+            <label className="block text-sm font-semibold text-[var(--foreground)]">Upload Cover Image (Optional)</label>
             <div className="flex flex-col gap-3 rounded-[1rem] border border-dashed border-[var(--border-color)] bg-white/80 p-4 text-sm text-[var(--muted)] shadow-[0_10px_25px_rgba(15,23,42,0.08)]">
               <p className="text-[0.85rem]">
-                छवि चुनने के लिए खींचें और छोड़ें या क्लिक करें। सोशल प्रीव्यू के लिए अनुशंसित आकार 1200x630px।
+                Drag and drop or click to select the image. Recommended size for social preview is 1200x630px.
               </p>
               <label className="flex cursor-pointer items-center justify-center rounded-xl bg-[var(--surface)] px-4 py-2 text-xs font-semibold uppercase tracking-[0.4em] text-[var(--foreground)] transition hover:border-[var(--accent)] hover:text-[var(--accent)]">
-                फ़ाइल चुनें
+                Choose File
                 <input type="file" accept="image/*" onChange={handleImageChange} className="hidden" />
               </label>
               {fileName ? (
-                <p className="text-xs text-[var(--muted)]">चयनित: {fileName}</p>
+                <p className="text-xs text-[var(--muted)]">Selected: {fileName}</p>
               ) : (
-                <p className="text-xs text-[var(--muted)]">अभी तक कोई छवि चयनित नहीं है</p>
+                <p className="text-xs text-[var(--muted)]">No image selected yet</p>
               )}
             </div>
           </div>
@@ -196,7 +196,7 @@ export default function AddPostPage() {
             disabled={formik.isSubmitting}
             className="inline-flex items-center justify-center rounded-full bg-[var(--accent)] px-6 py-3 text-xs font-semibold text-white transition hover:bg-[#fb4fa0] disabled:cursor-not-allowed disabled:opacity-60"
           >
-            {formik.isSubmitting ? "सहेजा जा रहा है..." : "ब्लॉग प्रकाशित करें"}
+            {formik.isSubmitting ? "Saving..." : "Publish Blog"}
           </button>
         </form>
       </section>

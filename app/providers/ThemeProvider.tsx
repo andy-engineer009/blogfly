@@ -25,7 +25,7 @@ const STORAGE_KEY = "blogfly-theme";
 
 const getInitialMode = (): ThemeMode => {
   if (typeof window === "undefined") {
-    return "dark";
+    return "light";
   }
 
   const stored = localStorage.getItem(STORAGE_KEY);
@@ -38,12 +38,16 @@ const getInitialMode = (): ThemeMode => {
     } catch {
       localStorage.removeItem(STORAGE_KEY);
     }
-  }
+  } 
 
-  const prefersDark =
-    window.matchMedia?.("(prefers-color-scheme: dark)").matches ?? true;
+//   const prefersDark =
+//   window.matchMedia?.("(prefers-color-scheme: dark)").matches ?? true;
 
-  return prefersDark ? "dark" : "light";
+// return prefersDark ? "dark" : "light";
+
+
+  // Default to light mode, ignore system preferences
+  return "light";
 };
 
 const getInitialAccent = (): string => {

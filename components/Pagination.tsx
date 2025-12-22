@@ -78,7 +78,7 @@ export function Pagination({ currentPage, totalPages, onPageChange }: Pagination
                 onClick={() => onPageChange(pageNum)}
                 className={`min-w-[2.5rem] rounded-lg border px-3 py-2 text-sm font-medium transition-colors ${
                   isActive
-                    ? "border-[var(--accent)] bg-[var(--accent)] text-white shadow-sm"
+                    ? "border-[var(--accent)] bg-[#000] text-white shadow-sm"  
                     : "border-[var(--border-color)] bg-[var(--surface)] text-[var(--foreground)] hover:border-[var(--accent)] hover:bg-[var(--accent)]/10"
                 }`}
                 aria-current={isActive ? "page" : undefined}

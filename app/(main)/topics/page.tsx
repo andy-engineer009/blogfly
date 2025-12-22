@@ -27,8 +27,38 @@ export default function TopicPages() {
   }, [page]);
 
   return (
-    <div className="min-h-screen bg-[var(--background)] px-4 py-6 md:py-12 sm:px-6 lg:px-12">
-      <div className="mx-auto max-w-6xl space-y-8">
+    <div className="relative min-h-screen bg-[var(--background)] px-4 py-6 md:py-12 sm:px-6 lg:px-12">
+      {/* Left Sidebar Ad - Fixed Position (Desktop Only) */}
+      {/* <div className="fixed left-4 top-24 z-10 hidden lg:block">
+        <div className="flex h-[600px] w-[160px] flex-col items-center justify-center rounded-3xl border-2 border-[var(--border-color)] bg-[var(--card-bg)] p-4 text-center">
+          <span className="mb-2 text-xs font-bold uppercase tracking-widest text-[var(--muted)]">
+            Google Ads
+          </span>
+          <div className="text-sm font-medium text-[var(--foreground)]">
+            Advertisement
+          </div>
+          <div className="mt-4 text-xs text-[var(--muted)]">
+            160x600
+          </div>
+        </div>
+      </div> */}
+
+      {/* Right Sidebar Ad - Fixed Position (Desktop Only) */}
+      <div className="fixed right-4 top-24 z-10 hidden lg:block">
+        <div className="flex h-[600px] w-[160px] flex-col items-center justify-center rounded-3xl border-2 border-[var(--border-color)] bg-[var(--card-bg)] p-4 text-center">
+          <span className="mb-2 text-xs font-bold uppercase tracking-widest text-[var(--muted)]">
+            Google Ads
+          </span>
+          <div className="text-sm font-medium text-[var(--foreground)]">
+            Advertisement
+          </div>
+          <div className="mt-4 text-xs text-[var(--muted)]">
+            160x600
+          </div>
+        </div>
+      </div>
+
+      <div className="mx-auto max-w-7xl space-y-8">
         {/* <header className="space-y-2">
           <p className="text-xs uppercase tracking-[0.35em] text-[var(--muted)]">विषय</p>
           <h1 className="text-3xl font-bold tracking-tight text-[var(--foreground)] sm:text-4xl">

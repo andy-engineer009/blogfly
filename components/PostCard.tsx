@@ -48,9 +48,9 @@ export function PostCard({ id, label, title, author, timeAgo, image }: PostCardP
       tabIndex={0}
       onClick={handleNavigation}
       onKeyDown={handleKeyDown}
-      className="flex flex-col gap-4 rounded-[4px] border-b border-[var(--border-color)] pb-4 transition hover:shadow-[0_30px_60px_rgba(15,23,42,0.15)] sm:flex-row sm:border-b-0 sm:gap-6 sm:pb-0 cursor-pointer"
+      className="flex  gap-4 rounded-[4px] border-b border-[var(--border-color)] pb-4 transition hover:shadow-[0_30px_60px_rgba(15,23,42,0.15)] flex-row sm:border-b-0 sm:gap-6 sm:pb-0 cursor-pointer"
     >
-      <div className="h-[97px] w-[173px] flex-shrink-0 overflow-hidden rounded-[4px] hidden md:block">
+      <div className="h-[80px] w-[120px] flex-shrink-0 overflow-hidden rounded-[4px] md:h-[97px] md:w-[173px] md:block">
         <Image
           src={image}
           alt={title}
@@ -64,18 +64,18 @@ export function PostCard({ id, label, title, author, timeAgo, image }: PostCardP
 
       <div className="flex flex-1 flex-col ">
         <span
-          className={`inline-flex w-fit py-1 text-[12px] font-semibold tracking-[0.1em] uppercase ${
+          className={`inline-flex w-fit md:py-1 text-[10px] md:text-[12px] font-semibold tracking-[0.1em] uppercase ${
             mode === "light" ? "text-[#0a8935]" : "text-[#4ade80]"
           }`}
         >
           {label}
         </span>
 
-        <h3 className="text-[16px] leading-[26px] font-[600] sm:leading-snug text-[var(--foreground)] sm:text-[18px]">
+        <h3 className="text-[14px] md:text-[16px] leading-[22px] md:leading-[26px] font-[600] sm:leading-snug text-[var(--foreground)] sm:text-[18px]">
           {title}
         </h3>
 
-        <p className="text-xs uppercase tracking-[0.1em] text-[var(--muted)] mt-2">
+        <p className="text-[10px] md:text-xs uppercase tracking-[0.1em] text-[var(--muted)] mt-2">
           By {author} · {timeAgo}
         </p>
       </div>

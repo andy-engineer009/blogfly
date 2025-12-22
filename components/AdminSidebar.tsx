@@ -4,7 +4,7 @@ import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { useRouter } from "next/navigation";
 import ConfirmationModal from "@/components/ConfirmationModal";
-import { useMemo, useState } from "react";
+import { useState } from "react";
 
 
 type NavItem = {
@@ -60,12 +60,30 @@ type AdminSidebarProps = {
 export function AdminSidebar({ isOpen = true, onClose }: AdminSidebarProps) {
   const pathname = usePathname();
   const router = useRouter();
+  const [showLogoutModal, setShowLogoutModal] = useState(false);
+
   const handleLogout = () => {
     router.push("/");
   };
 
+  const handleLogoutClick = () => {
+    setShowLogoutModal(true);
+  };
+
   return (
     <>
+      {/* Logout Confirmation Modal */}
+      <ConfirmationModal
+        isOpen={showLogoutModal}
+        onClose={() => setShowLogoutModal(false)}
+        onConfirm={handleLogout}
+        title="Are you sure you want to logout?"
+        message="You will be redirected to the home page. Any unsaved changes will be lost."
+        confirmText="Yes, Logout"
+        cancelText="Cancel"
+        confirmVariant="danger"
+      />
+
       {/* Mobile Overlay */}
       <div
         className={`fixed inset-0 z-30 bg-black/60 backdrop-blur-sm transition-opacity duration-300 sm:hidden ${
@@ -148,9 +166,7 @@ export function AdminSidebar({ isOpen = true, onClose }: AdminSidebarProps) {
           <button
             type="button"
             className="group flex w-full items-center justify-center gap-3 rounded-xl border border-red-500/30 bg-red-500/10 px-4 py-3 text-sm font-semibold text-red-400 transition-all duration-200 hover:border-red-500/50 hover:bg-red-500/20 hover:text-red-300"
-            onClick={() => {
-              handleLogout();
-            }}
+            onClick={handleLogoutClick}
           >
             <svg className="h-5 w-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
               <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 16l4-4m0 0l-4-4m4 4H7m6 4v1a3 3 0 01-3 3H6a3 3 0 01-3-3V7a3 3 0 013-3h4a3 3 0 013 3v1" />

@@ -31,8 +31,8 @@ export default function LoginPage() {
       <div className="w-full max-w-sm space-y-8">
         {/* Header Section */}
         <div className="flex flex-col items-center text-center space-y-2">
-          <div className="flex h-12 w-12 items-center justify-center rounded-xl bg-[var(--foreground)] text-[var(--background)] mb-4">
-            <span className="text-xl font-bold">B</span>
+          <div className="flex h-12 px-3 items-center justify-center rounded-xl bg-[var(--foreground)] text-[var(--background)] mb-4">
+            <span className="text-xl font-bold">LOGO HERE</span>
           </div>
           <h1 className="text-3xl font-bold tracking-tight text-[var(--foreground)]">
             Welcome back

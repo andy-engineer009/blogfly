@@ -43,7 +43,7 @@ export default function AdminLayout({ children }: { children: React.ReactNode })
             {/* Desktop Header Actions */}
             <div className="hidden items-center gap-3 sm:flex sm:gap-4">
               {/* Search */}
-              <div className="relative hidden md:block">
+              {/* <div className="relative hidden md:block">
                 <svg
                   className="absolute left-3 top-1/2 h-5 w-5 -translate-y-1/2 text-[var(--muted)]"
                   fill="none"
@@ -57,7 +57,7 @@ export default function AdminLayout({ children }: { children: React.ReactNode })
                   placeholder="Search..."
                   className="w-64 rounded-xl border border-[var(--border-color)] bg-[var(--surface)] px-4 py-2 pl-10 text-sm text-[var(--foreground)] placeholder:text-[var(--muted)] focus:border-[var(--accent)] focus:outline-none"
                 />
-              </div>
+              </div> */}
 
               {/* Notifications */}
               {/* <button

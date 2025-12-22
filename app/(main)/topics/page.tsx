@@ -27,18 +27,18 @@ export default function TopicPages() {
   }, [page]);
 
   return (
-    <div className="min-h-screen bg-[var(--background)] px-4 py-12 sm:px-6 lg:px-12">
+    <div className="min-h-screen bg-[var(--background)] px-4 py-6 md:py-12 sm:px-6 lg:px-12">
       <div className="mx-auto max-w-6xl space-y-8">
-        <header className="space-y-2">
+        {/* <header className="space-y-2">
           <p className="text-xs uppercase tracking-[0.35em] text-[var(--muted)]">विषय</p>
           <h1 className="text-3xl font-bold tracking-tight text-[var(--foreground)] sm:text-4xl">
-          {/* Blog */}
+          Blog
           </h1>
-          {/* <p className="max-w-2xl text-sm leading-relaxed text-[var(--muted)]">
+          <p className="max-w-2xl text-sm leading-relaxed text-[var(--muted)]">
             Blogfly से नवीनतम 10 कहानियां ब्राउज़ करें। हर श्रेणी का अन्वेषण करने के लिए टैप करें
             पढ़ने की क्षमता और शांत गति पर ध्यान देते हुए।
-          </p> */}
-        </header>
+          </p>
+        </header> */}
 
         <section className="space-y-6">
           {visiblePosts.map((post) => (

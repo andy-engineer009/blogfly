@@ -1,7 +1,10 @@
+"use client";
+
 import { PostCard } from "@/components/PostCard";
 import Link from "next/link";
 import Image from "next/image";
 import { getBlogPostById, getCategorySlug } from "@/lib/blogData";
+import { WelcomeModal } from "@/components/WelcomeModal";
 
 // Hero stories with IDs
 const heroStories = [
@@ -91,6 +94,7 @@ export default function Home() {
 
   return (
     <main className="min-h-screen bg-[var(--background)] text-[var(--foreground)]">
+      <WelcomeModal />
       <div className=" mx-auto px-4 py-8 sm:px-6 lg:px-8 lg:py-12">
         {/* Hero Section */}
         <section className="mb-16 grid gap-4 lg:grid-cols-2 lg:h-[600px]">
@@ -153,7 +157,7 @@ export default function Home() {
 
             {/* Row 2: Two Cards (50% / 50%) */}
             <div className="grid grid-cols-2 gap-4 h-[200px] lg:h-[40%]">
-              {relatedStories.slice(0, 2).map((story, index) => (
+              {relatedStories.slice(0, 2).map((story) => (
                 <Link
                   key={story.id}
                   href={`/${getCategorySlug(story.label)}/${story.id}`}

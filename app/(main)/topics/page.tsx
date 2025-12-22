@@ -9,86 +9,136 @@ import { allBlogPosts } from "@/lib/blogData";
 const posts = allBlogPosts.map(post => ({
   id: post.id,
   label: post.label,
+  category: post.category,
   title: post.title,
   author: post.author,
   timeAgo: post.timeAgo || post.date || "हाल ही में",
   image: post.image,
 }));
 
+// Get unique categories
+const categories = Array.from(new Set(posts.map(post => post.category)));
+
 const POSTS_PER_PAGE = 10;
 
 export default function TopicPages() {
   const [page, setPage] = useState(1);
+  const [selectedCategory, setSelectedCategory] = useState<string | null>(null);
 
-  const totalPages = Math.ceil(posts.length / POSTS_PER_PAGE);
+  // Filter posts by category
+  const filteredPosts = useMemo(() => {
+    if (!selectedCategory) return posts;
+    return posts.filter(post => post.category === selectedCategory);
+  }, [selectedCategory]);
+
+  const totalPages = Math.ceil(filteredPosts.length / POSTS_PER_PAGE);
   const visiblePosts = useMemo(() => {
     const start = (page - 1) * POSTS_PER_PAGE;
-    return posts.slice(start, start + POSTS_PER_PAGE);
-  }, [page]);
+    return filteredPosts.slice(start, start + POSTS_PER_PAGE);
+  }, [page, filteredPosts]);
+
+  // Reset to page 1 when category changes
+  const handleCategoryChange = (category: string | null) => {
+    setSelectedCategory(category);
+    setPage(1);
+  };
 
   return (
-    <div className="relative min-h-screen bg-[var(--background)] px-4 py-6 md:py-12 sm:px-6 lg:px-12">
-      {/* Left Sidebar Ad - Fixed Position (Desktop Only) */}
-      {/* <div className="fixed left-4 top-24 z-10 hidden lg:block">
-        <div className="flex h-[600px] w-[160px] flex-col items-center justify-center rounded-3xl border-2 border-[var(--border-color)] bg-[var(--card-bg)] p-4 text-center">
-          <span className="mb-2 text-xs font-bold uppercase tracking-widest text-[var(--muted)]">
-            Google Ads
-          </span>
-          <div className="text-sm font-medium text-[var(--foreground)]">
-            Advertisement
+    <div className="min-h-screen bg-[var(--background)] px-4 py-6 sm:px-6 lg:px-8 lg:py-12">
+      <div className="mx-auto grid max-w-[1600px] grid-cols-1 gap-6 lg:grid-cols-12">
+        {/* Left Sidebar Advertisement - Sticky */}
+        <aside className="hidden lg:col-span-2 lg:block">
+          <div className="sticky top-24">
+            <div className="flex min-h-[600px] w-full flex-col items-center justify-center rounded-2xl border border-dashed border-[var(--border-color)] bg-[var(--surface)] p-6 text-center">
+              <span className="mb-2 text-xs font-bold uppercase tracking-widest text-[var(--muted)]">
+                Advertisement
+              </span>
+              <div className="text-sm font-medium text-[var(--foreground)]">
+                Show advertisement here
+              </div>
+              <div className="mt-4 text-xs text-[var(--muted)]">
+                160x600
+              </div>
+            </div>
           </div>
-          <div className="mt-4 text-xs text-[var(--muted)]">
-            160x600
+        </aside>
+
+        {/* Main Content - Blog List (Scrollable) */}
+        <main className="lg:col-span-8">
+          <div className="space-y-8">
+            {/* Categories Filter */}
+            <div className="flex flex-wrap gap-3 overflow-x-auto pb-2">
+              <button
+                onClick={() => handleCategoryChange(null)}
+                className={`flex-shrink-0 rounded-full px-6 py-2.5 text-sm font-semibold transition-all ${
+                  selectedCategory === null
+                    ? "bg-[var(--accent)] text-white shadow-md"
+                    : "bg-[var(--surface)] text-[var(--foreground)] border border-[var(--border-color)] hover:border-[var(--accent)]"
+                }`}
+              >
+                सभी
+              </button>
+              {categories.map((category) => (
+                <button
+                  key={category}
+                  onClick={() => handleCategoryChange(category)}
+                  className={`flex-shrink-0 rounded-full px-6 py-2.5 text-sm font-semibold transition-all ${
+                    selectedCategory === category
+                      ? "bg-[var(--accent)] text-white shadow-md"
+                      : "bg-[var(--surface)] text-[var(--foreground)] border border-[var(--border-color)] hover:border-[var(--accent)]"
+                  }`}
+                >
+                  {category}
+                </button>
+              ))}
+            </div>
+
+            <section className="space-y-6">
+              {visiblePosts.length > 0 ? (
+                visiblePosts.map((post) => (
+                  <PostCard
+                    key={post.id}
+                    id={post.id}
+                    label={post.label}
+                    title={post.title}
+                    author={post.author}
+                    timeAgo={post.timeAgo}
+                    image={post.image}
+                  />
+                ))
+              ) : (
+                <div className="py-12 text-center">
+                  <p className="text-lg text-[var(--muted)]">इस श्रेणी में कोई पोस्ट नहीं मिली</p>
+                </div>
+              )}
+            </section>
+
+            {totalPages > 0 && (
+              <Pagination
+                currentPage={page}
+                totalPages={totalPages}
+                onPageChange={(nextPage) => setPage(Math.min(totalPages, Math.max(1, nextPage)))}
+              />
+            )}
           </div>
-        </div>
-      </div> */}
+        </main>
 
-      {/* Right Sidebar Ad - Fixed Position (Desktop Only) */}
-      <div className="fixed right-4 top-24 z-10 hidden lg:block">
-        <div className="flex h-[600px] w-[160px] flex-col items-center justify-center rounded-3xl border-2 border-[var(--border-color)] bg-[var(--card-bg)] p-4 text-center">
-          <span className="mb-2 text-xs font-bold uppercase tracking-widest text-[var(--muted)]">
-            Google Ads
-          </span>
-          <div className="text-sm font-medium text-[var(--foreground)]">
-            Advertisement
+        {/* Right Sidebar Advertisement - Sticky */}
+        <aside className="hidden lg:col-span-2 lg:block">
+          <div className="sticky top-24">
+            <div className="flex min-h-[600px] w-full flex-col items-center justify-center rounded-2xl border border-dashed border-[var(--border-color)] bg-[var(--surface)] p-6 text-center">
+              <span className="mb-2 text-xs font-bold uppercase tracking-widest text-[var(--muted)]">
+                Advertisement
+              </span>
+              <div className="text-sm font-medium text-[var(--foreground)]">
+                Show advertisement here
+              </div>
+              <div className="mt-4 text-xs text-[var(--muted)]">
+                160x600
+              </div>
+            </div>
           </div>
-          <div className="mt-4 text-xs text-[var(--muted)]">
-            160x600
-          </div>
-        </div>
-      </div>
-
-      <div className="mx-auto max-w-7xl space-y-8">
-        {/* <header className="space-y-2">
-          <p className="text-xs uppercase tracking-[0.35em] text-[var(--muted)]">विषय</p>
-          <h1 className="text-3xl font-bold tracking-tight text-[var(--foreground)] sm:text-4xl">
-          Blog
-          </h1>
-          <p className="max-w-2xl text-sm leading-relaxed text-[var(--muted)]">
-            Blogfly से नवीनतम 10 कहानियां ब्राउज़ करें। हर श्रेणी का अन्वेषण करने के लिए टैप करें
-            पढ़ने की क्षमता और शांत गति पर ध्यान देते हुए।
-          </p>
-        </header> */}
-
-        <section className="space-y-6">
-          {visiblePosts.map((post) => (
-            <PostCard
-              key={post.id}
-              id={post.id}
-              label={post.label}
-              title={post.title}
-              author={post.author}
-              timeAgo={post.timeAgo}
-              image={post.image}
-            />
-          ))}
-        </section>
-
-        <Pagination
-          currentPage={page}
-          totalPages={totalPages}
-          onPageChange={(nextPage) => setPage(Math.min(totalPages, Math.max(1, nextPage)))}
-        />
+        </aside>
       </div>
     </div>
   );

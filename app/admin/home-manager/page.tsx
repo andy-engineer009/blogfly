@@ -14,7 +14,7 @@ const allBlogs: BlogPost[] = allBlogPosts.map(post => ({
   category: post.category,
   image: post.image,
   published: post.date || post.timeAgo || "हाल ही में",
-  status: "published",
+    status: "published",
 }));
 
 // Get current homepage blogs (same as homepage)
@@ -23,6 +23,14 @@ const getCurrentHomepageBlogs = (): SelectedBlogs => {
   const hero2Post = getBlogPostById("health-yoga-meditation");
   const related1Post = getBlogPostById("tech-ai-ml");
   const related2Post = getBlogPostById("fitness-weight-loss");
+  
+  // Top Picks IDs from homepage (first 4 blogs) - fixed array of 4 positions
+  const topPicksIds = allBlogPosts.slice(0, 4).map(post => post.id);
+  // Ensure we have exactly 4 positions (pad with null if needed)
+  const topPicksArray: (string | null)[] = [...topPicksIds];
+  while (topPicksArray.length < 4) {
+    topPicksArray.push(null);
+  }
   
   // Latest stories IDs from homepage
   const latestIds = [
@@ -49,6 +57,7 @@ const getCurrentHomepageBlogs = (): SelectedBlogs => {
   };
 
   return {
+    topPicks: topPicksArray.slice(0, 4) as (string | null)[],
     hero1: convertToBlogPost(hero1Post),
     hero2: convertToBlogPost(hero2Post),
     related1: convertToBlogPost(related1Post),
@@ -58,6 +67,7 @@ const getCurrentHomepageBlogs = (): SelectedBlogs => {
 };
 
 type SelectedBlogs = {
+  topPicks: (string | null)[]; // Fixed array of 4 positions for Top Picks
   hero1: BlogPost | null; // Left column main hero
   hero2: BlogPost | null; // Right column top card
   related1: BlogPost | null; // Right column bottom left
@@ -70,6 +80,7 @@ export default function HomeManagerPage() {
   const currentHomepageBlogs = getCurrentHomepageBlogs();
   
   const [selectedBlogs, setSelectedBlogs] = useState<SelectedBlogs>({
+    topPicks: currentHomepageBlogs.topPicks,
     hero1: currentHomepageBlogs.hero1,
     hero2: currentHomepageBlogs.hero2,
     related1: currentHomepageBlogs.related1,
@@ -82,8 +93,9 @@ export default function HomeManagerPage() {
 
   const [modalState, setModalState] = useState<{
     isOpen: boolean;
-    target: keyof SelectedBlogs | "latest";
+    target: keyof SelectedBlogs | "latest" | "topPicks";
     title: string;
+    topPickIndex?: number; // Position index for top picks (0-3)
   }>({
     isOpen: false,
     target: "hero1",
@@ -94,8 +106,15 @@ export default function HomeManagerPage() {
     return allBlogs.filter((blog) => selectedBlogs.latest.includes(blog.id));
   }, [selectedBlogs.latest]);
 
-  const handleOpenModal = (target: keyof SelectedBlogs | "latest", title: string) => {
-    setModalState({ isOpen: true, target, title });
+  // Get blog objects for top picks positions
+  const getTopPickBlog = (index: number): BlogPost | null => {
+    const blogId = selectedBlogs.topPicks[index];
+    if (!blogId) return null;
+    return allBlogs.find(blog => blog.id === blogId) || null;
+  };
+
+  const handleOpenModal = (target: keyof SelectedBlogs | "latest" | "topPicks", title: string, topPickIndex?: number) => {
+    setModalState({ isOpen: true, target, title, topPickIndex });
   };
 
 
@@ -106,10 +125,28 @@ export default function HomeManagerPage() {
       // Toggle selection for latest stories (multiple selection)
       setSelectedBlogs((prev) => ({
         ...prev,
-        latest: prev.latest.includes(blog.id)
-          ? prev.latest.filter((id) => id !== blog.id)
-          : [...prev.latest, blog.id],
+        [target]: prev[target].includes(blog.id)
+          ? prev[target].filter((id) => id !== blog.id)
+          : [...prev[target], blog.id],
       }));
+    } else if (target === "topPicks") {
+      // Position-based selection for top picks
+      const positionIndex = modalState.topPickIndex !== undefined 
+        ? modalState.topPickIndex 
+        : selectedBlogs.topPicks.findIndex(id => id === null); // Find first empty slot
+      
+      if (positionIndex >= 0 && positionIndex < 4) {
+        setSelectedBlogs((prev) => {
+          const newTopPicks = [...prev.topPicks];
+          newTopPicks[positionIndex] = blog.id;
+          return {
+            ...prev,
+            topPicks: newTopPicks,
+          };
+        });
+        // Close modal after selection
+        handleCloseModal();
+      }
     } else {
       // Single selection for hero and related stories
       setSelectedBlogs((prev) => ({
@@ -138,6 +175,7 @@ export default function HomeManagerPage() {
 
       // Prepare data for API
       const configData = {
+        topPicks: selectedBlogs.topPicks.filter(id => id !== null) as string[], // Filter out nulls for API
         hero1: selectedBlogs.hero1?.id || null,
         hero2: selectedBlogs.hero2?.id || null,
         related1: selectedBlogs.related1?.id || null,
@@ -175,10 +213,21 @@ export default function HomeManagerPage() {
     }));
   };
 
+  const handleRemoveTopPickBlog = (positionIndex: number) => {
+    setSelectedBlogs((prev) => {
+      const newTopPicks = [...prev.topPicks];
+      newTopPicks[positionIndex] = null;
+      return {
+        ...prev,
+        topPicks: newTopPicks,
+      };
+    });
+  };
+
   if (isLoading) {
     return (
       <div className="flex min-h-screen items-center justify-center bg-[var(--background)]">
-          <div className="text-center">
+        <div className="text-center">
           <div className="mx-auto mb-4 h-12 w-12 animate-spin rounded-full border-4 border-[var(--border-color)] border-t-[var(--accent)]"></div>
           <p className="text-sm text-[var(--muted)]">Homepage Configuration is loading...</p>
         </div>
@@ -196,6 +245,65 @@ export default function HomeManagerPage() {
             <p className="mt-1 text-sm text-[var(--muted)]">Manage the content that will appear on your homepage</p>
           </div>
         </div>
+
+        {/* Top Picks Section */}
+        <section className="mb-16">
+          <div className="mb-6 flex flex-wrap items-center justify-between gap-4">
+            <div>
+              <h2 className="text-2xl font-bold text-[var(--foreground)]">Top Picks</h2>
+              <p className="mt-1 text-sm text-[var(--muted)]">Select up to 4 blogs to display in the Top Picks section</p>
+            </div>
+          </div>
+
+          <div className="flex flex-col gap-6 lg:flex-row lg:items-start">
+            {/* Top Picks Articles - Always show 4 fixed boxes */}
+            <div className="flex flex-1 flex-wrap gap-3 sm:gap-4 lg:gap-6 lg:flex-nowrap">
+              {Array.from({ length: 4 }).map((_, index) => {
+                const blog = getTopPickBlog(index);
+                return (
+                  <div key={`top-pick-${index}`} className="group relative flex w-[calc(50%-0.375rem)] flex-shrink-0 flex-col sm:w-[calc(50%-0.5rem)] lg:w-auto lg:flex-1">
+                    {blog ? (
+                      <>
+                        <div className="relative mb-3 aspect-[4/3] w-full h-[120px] overflow-hidden bg-[var(--surface)]">
+                          <Image
+                            src={blog.image}
+                            alt={blog.title}
+                            fill
+                            className="object-cover transition-transform duration-300 group-hover:scale-105"
+                          />
+                          <button
+                            onClick={() => handleRemoveTopPickBlog(index)}
+                            className="absolute right-2 top-2 rounded-full bg-red-500 p-1.5 text-white opacity-0 shadow-lg transition-opacity hover:bg-red-600 group-hover:opacity-100 z-10"
+                            aria-label="Remove Top Pick"
+                          >
+                            <svg className="h-3 w-3" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" />
+                            </svg>
+                          </button>
+                        </div>
+                        <h3 className="line-clamp-2 text-sm font-semibold leading-[26px] text-[var(--foreground)] transition-colors group-hover:text-[var(--accent)] sm:text-base">
+                          {blog.title}
+                        </h3>
+                      </>
+                    ) : (
+                      <div className="flex flex-col items-center justify-center rounded-xl border-2 border-dashed border-[var(--border-color)] bg-[var(--surface)] p-6 h-[120px] mb-3">
+                        <svg className="mb-2 h-8 w-8 text-[var(--muted)]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 6v6m0 0v6m0-6h6m-6 0H6" />
+                        </svg>
+                        <button
+                          onClick={() => handleOpenModal("topPicks", "Choose Top Pick", index)}
+                          className="mt-2 text-xs font-medium text-[var(--accent)] transition hover:underline"
+                        >
+                          Add Blog
+                        </button>
+                      </div>
+                    )}
+                  </div>
+                );
+              })}
+            </div>
+          </div>
+        </section>
 
         {/* Hero Section - Same layout as homepage */}
         <section className="mb-16 grid gap-4 lg:grid-cols-2 lg:h-[600px]">
@@ -266,7 +374,7 @@ export default function HomeManagerPage() {
                   <div className="absolute bottom-0 left-0 right-0 p-6 md:p-8">
                     <span className="mb-3 inline-block rounded-full bg-white/20 px-3 py-1 text-xs font-bold uppercase tracking-wider text-white backdrop-blur-md">
                       {selectedBlogs.hero2.category}
-                    </span>
+                            </span>
                     <h2 className="mb-2 text-xl font-bold leading-tight text-white lg:text-3xl">
                       {selectedBlogs.hero2.title}
                     </h2>
@@ -274,31 +382,31 @@ export default function HomeManagerPage() {
                       <span>{selectedBlogs.hero2.author}</span>
                       <span>•</span>
                       <span>{selectedBlogs.hero2.published}</span>
-                    </div>
-                  </div>
-                  <button
+                          </div>
+                        </div>
+                        <button
                     onClick={() => handleRemoveBlog("hero2")}
                     className="absolute right-2 top-2 rounded-full bg-red-500 p-1.5 text-white shadow-lg transition hover:bg-red-600 z-10"
                     aria-label="Remove Blog"
-                  >
-                    <svg className="h-4 w-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" />
-                    </svg>
-                  </button>
-                </>
-              ) : (
+                        >
+                          <svg className="h-4 w-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" />
+                          </svg>
+                        </button>
+                      </>
+                    ) : (
                 <div className="flex h-full flex-col items-center justify-center border-2 border-dashed border-[var(--border-color)] bg-[var(--surface)] p-6">
-                  <svg className="mb-2 h-8 w-8 text-[var(--muted)]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 6v6m0 0v6m0-6h6m-6 0H6" />
-                  </svg>
-                  <button
+                        <svg className="mb-2 h-8 w-8 text-[var(--muted)]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 6v6m0 0v6m0-6h6m-6 0H6" />
+                        </svg>
+                        <button
                     onClick={() => handleOpenModal("hero2", "Choose Blog")}
-                    className="mt-2 text-sm font-medium text-[var(--accent)] transition hover:underline"
-                  >
-                    Choose Blog
-                  </button>
-                </div>
-              )}
+                          className="mt-2 text-sm font-medium text-[var(--accent)] transition hover:underline"
+                        >
+                          Choose Blog
+                        </button>
+                      </div>
+                    )}
             </div>
 
             {/* Row 2: Two Cards (50% / 50%) */}
@@ -319,11 +427,11 @@ export default function HomeManagerPage() {
                         <div className="absolute inset-0 bg-gradient-to-t from-black/90 via-transparent to-transparent" />
                         <div className="absolute bottom-0 left-0 right-0 p-4 lg:p-5">
                           <span className="mb-2 inline-block rounded-full bg-white/20 px-2.5 py-0.5 text-[10px] font-bold uppercase tracking-wider text-white backdrop-blur-md">
-                            {blog.category}
-                          </span>
+                              {blog.category}
+                            </span>
                           <h3 className="line-clamp-2 text-sm font-bold leading-snug text-white lg:text-base">
-                            {blog.title}
-                          </h3>
+                              {blog.title}
+                            </h3>
                         </div>
                         <button
                           onClick={() => handleRemoveBlog(key)}
@@ -440,7 +548,13 @@ export default function HomeManagerPage() {
           blogs={allBlogs}
           title={modalState.title}
           allowMultiple={modalState.target === "latest"}
-          selectedIds={modalState.target === "latest" ? selectedBlogs.latest : []}
+          selectedIds={
+            modalState.target === "latest"
+              ? selectedBlogs.latest
+              : modalState.target === "topPicks"
+              ? selectedBlogs.topPicks.filter(id => id !== null) as string[]
+              : []
+          }
         />
       </div>
     </div>

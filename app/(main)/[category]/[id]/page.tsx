@@ -25,8 +25,8 @@ export default async function PostPage({ params }: { params: Promise<{ category?
         {/* Left Sidebar Advertisement - Sticky */}
         <aside className="hidden lg:col-span-2 lg:block">
           <div className="sticky top-24">
-            <div className="flex min-h-[600px] w-full flex-col items-center justify-center rounded-2xl border border-dashed border-[var(--border-color)] bg-[var(--surface)] p-6 text-center">
-              <span className="mb-2 text-xs font-bold uppercase tracking-widest text-[var(--muted)]">
+            <div className="flex min-h-[600px] w-full flex-col rounded-2xl border border-dashed border-[var(--border-color)] bg-[var(--surface)] p-6 text-center relative">
+              {/* <span className="mb-2 text-xs font-bold uppercase tracking-widest text-[var(--muted)]">
                 Advertisement
               </span>
               <div className="text-sm font-medium text-[var(--foreground)]">
@@ -34,8 +34,10 @@ export default async function PostPage({ params }: { params: Promise<{ category?
               </div>
               <div className="mt-4 text-xs text-[var(--muted)]">
                 160x600
-              </div>
-            </div>
+              </div> */}
+            <Image src="/image/dubai-2.jpg" alt="xyz" fill className="object-contain w-full" />
+
+            </div> 
           </div>
         </aside>
 
@@ -90,8 +92,8 @@ export default async function PostPage({ params }: { params: Promise<{ category?
         {/* Right Sidebar Advertisement - Sticky */}
         <aside className="hidden lg:col-span-2 lg:block">
           <div className="sticky top-24">
-            <div className="flex min-h-[600px] w-full flex-col items-center justify-center rounded-2xl border border-dashed border-[var(--border-color)] bg-[var(--surface)] p-6 text-center">
-              <span className="mb-2 text-xs font-bold uppercase tracking-widest text-[var(--muted)]">
+            <div className="flex min-h-[600px] w-full flex-col rounded-2xl border border-dashed border-[var(--border-color)] bg-[var(--surface)] p-6 text-center relative">
+              {/* <span className="mb-2 text-xs font-bold uppercase tracking-widest text-[var(--muted)]">
                 Advertisement
               </span>
               <div className="text-sm font-medium text-[var(--foreground)]">
@@ -99,7 +101,9 @@ export default async function PostPage({ params }: { params: Promise<{ category?
               </div>
               <div className="mt-4 text-xs text-[var(--muted)]">
                 160x600
-              </div>
+              </div> */}
+            <Image src="/image/dubai-3.jpg" alt="xyz" fill className="object-contain w-full" />
+
             </div>
           </div>
         </aside>

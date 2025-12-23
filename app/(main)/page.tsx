@@ -228,11 +228,12 @@ export default function Home() {
 
 
         <div className="w-full mb-16">
-          <div className="flex min-h-[200px] w-full flex-col items-center justify-center rounded-2xl border border-dashed border-[var(--border-color)] bg-[var(--surface)] p-8 text-center">
-            <span className="text-xs font-bold uppercase tracking-widest text-[var(--muted)]">Advertisement</span>
+          <div className="flex min-h-[200px] overflow-hidden w-full flex-col items-center justify-center rounded-2xl border border-dashed border-[var(--border-color)] bg-[var(--surface)] p-8 text-center relative">
+            {/* <span className="text-xs font-bold uppercase tracking-widest text-[var(--muted)]">Advertisement</span>
             <div className="mt-2 text-lg font-medium text-[var(--foreground)]">
               Show advertisement here
-            </div>
+            </div> */}
+            <Image src="/image/dubai-1.jpg" alt="Advertisement" fill className="object-contain w-full h-full" />
           </div>
         </div>
   
@@ -370,11 +371,11 @@ export default function Home() {
             <div className="sticky top-24 space-y-12">
               
               {/* Ad Unit */}
-              <div className="flex min-h-[300px] w-full flex-col items-center justify-center rounded-3xl border border-dashed border-[var(--border-color)] bg-[var(--surface)] p-8 text-center">
-                <span className="text-xs font-bold uppercase tracking-widest text-[var(--muted)]">Advertisement (google adsense)</span>
+              <div className="flex min-h-[300px] w-full flex-col items-center justify-center rounded-3xl border border-dashed border-[var(--border-color)] bg-[var(--surface)] p-8 text-center relative">
+                {/* <span className="text-xs font-bold uppercase tracking-widest text-[var(--muted)]">Advertisement (google adsense)</span>
                 <div className="mt-4 text-lg font-medium text-[var(--foreground)]">
-                  Place your advertisement here
-                </div>
+                </div> */}
+                 <Image src="/image/dubai.jpg" alt="xyz" fill className="object-contain w-full h-full" />
               </div>
 
               {/* Newsletter Signup */}
@@ -399,11 +400,12 @@ export default function Home() {
         </section>
 
         <div className="w-full mb-16 mt-14">
-          <div className="flex min-h-[200px] w-full flex-col items-center justify-center rounded-2xl border border-dashed border-[var(--border-color)] bg-[var(--surface)] p-8 text-center">
+          <div className="flex min-h-[200px] w-full flex-col items-center justify-center rounded-2xl border border-dashed border-[var(--border-color)] bg-[var(--surface)] p-8 text-center relative">
             <span className="text-xs font-bold uppercase tracking-widest text-[var(--muted)]">Advertisement</span>
-            <div className="mt-2 text-lg font-medium text-[var(--foreground)]">
+            {/* <div className="mt-2 text-lg font-medium text-[var(--foreground)]">
               Show advertisement here
-            </div>
+            </div> */}
+            <Image src="/image/dubai-6.jpg" alt="Advertisement" fill className="object-contain w-full h-full" />
           </div>
         </div>
       </div>

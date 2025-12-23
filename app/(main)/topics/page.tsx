@@ -4,6 +4,7 @@ import { useMemo, useState } from "react";
 import { PostCard } from "@/components/PostCard";
 import Pagination from "@/components/Pagination";
 import { allBlogPosts } from "@/lib/blogData";
+import Image from "next/image";
 
 // Convert blog posts to the format needed for PostCard
 const posts = allBlogPosts.map(post => ({
@@ -49,8 +50,8 @@ export default function TopicPages() {
         {/* Left Sidebar Advertisement - Sticky */}
         <aside className="hidden lg:col-span-2 lg:block">
           <div className="sticky top-24">
-            <div className="flex min-h-[600px] w-full flex-col items-center justify-center rounded-2xl border border-dashed border-[var(--border-color)] bg-[var(--surface)] p-6 text-center">
-              <span className="mb-2 text-xs font-bold uppercase tracking-widest text-[var(--muted)]">
+            <div className="flex min-h-[600px] w-full flex-col rounded-2xl border border-dashed border-[var(--border-color)] bg-[var(--surface)] p-6 text-center relative">
+              {/* <span className="mb-2 text-xs font-bold uppercase tracking-widest text-[var(--muted)]">
                 Advertisement
               </span>
               <div className="text-sm font-medium text-[var(--foreground)]">
@@ -58,7 +59,8 @@ export default function TopicPages() {
               </div>
               <div className="mt-4 text-xs text-[var(--muted)]">
                 160x600
-              </div>
+              </div> */}
+              <Image src="/image/dubai-ad.jpeg" alt="xyz" fill className="object-contain w-full" />
             </div>
           </div>
         </aside>
@@ -126,8 +128,8 @@ export default function TopicPages() {
         {/* Right Sidebar Advertisement - Sticky */}
         <aside className="hidden lg:col-span-2 lg:block">
           <div className="sticky top-24">
-            <div className="flex min-h-[600px] w-full flex-col items-center justify-center rounded-2xl border border-dashed border-[var(--border-color)] bg-[var(--surface)] p-6 text-center">
-              <span className="mb-2 text-xs font-bold uppercase tracking-widest text-[var(--muted)]">
+            <div className="flex min-h-[600px] w-full flex-col items-center justify-center rounded-2xl border border-dashed border-[var(--border-color)] bg-[var(--surface)] p-6 text-center relative">
+              {/* <span className="mb-2 text-xs font-bold uppercase tracking-widest text-[var(--muted)]">
                 Advertisement
               </span>
               <div className="text-sm font-medium text-[var(--foreground)]">
@@ -135,7 +137,8 @@ export default function TopicPages() {
               </div>
               <div className="mt-4 text-xs text-[var(--muted)]">
                 160x600
-              </div>
+              </div> */}
+              <Image src="/image/hydai-car-ads.jpeg" alt="xyz" fill className="object-contain w-full h-full" />
             </div>
           </div>
         </aside>

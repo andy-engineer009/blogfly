@@ -47,6 +47,17 @@ export default function TopicPages() {
   return (
     <div className="min-h-screen bg-[var(--background)] px-4 py-6 sm:px-6 lg:px-8 lg:py-12">
       <div className="mx-auto grid max-w-[1600px] grid-cols-1 gap-6 lg:grid-cols-12">
+
+      <div className="block md:hidden w-full mb-0 mt-0">
+          <div className="flex min-h-[100px] w-full flex-col items-center justify-center rounded-2xl border border-dashed border-[var(--border-color)] bg-[var(--surface)] p-8 text-center relative">
+            <span className="text-xs font-bold uppercase tracking-widest text-[var(--muted)]">Advertisement</span>
+            {/* <div className="mt-2 text-lg font-medium text-[var(--foreground)]">
+              Show advertisement here
+            </div> */}
+            <Image src="/image/dubai-6.jpg" alt="Advertisement" fill className="object-contain w-full h-full" />
+          </div>
+        </div>
+
         {/* Left Sidebar Advertisement - Sticky */}
         <aside className="hidden lg:col-span-2 lg:block">
           <div className="sticky top-24">

@@ -107,6 +107,16 @@ export default async function PostPage({ params }: { params: Promise<{ category?
             </div>
           </div>
         </aside>
+
+        <div className="block md:hidden w-full mb-0 mt-0">
+          <div className="flex min-h-[100px] w-full flex-col items-center justify-center rounded-2xl border border-dashed border-[var(--border-color)] bg-[var(--surface)] p-8 text-center relative">
+            <span className="text-xs font-bold uppercase tracking-widest text-[var(--muted)]">Advertisement</span>
+            {/* <div className="mt-2 text-lg font-medium text-[var(--foreground)]">
+              Show advertisement here
+            </div> */}
+            <Image src="/image/dubai-6.jpg" alt="Advertisement" fill className="object-contain w-full h-full" />
+          </div>
+        </div>
       </div>
     </div>
   );

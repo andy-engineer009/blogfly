@@ -9,7 +9,7 @@ export function BackButton() {
     <button
       onClick={() => router.back()}
       className="group flex items-center gap-2 text-sm font-medium text-[var(--muted)] hover:text-[var(--foreground)] transition-colors mb-4"
-      aria-label="वापस जाएं"
+      aria-label="Go back"
     >
       <svg
         className="w-5 h-5 transition-transform group-hover:-translate-x-1"
@@ -25,7 +25,7 @@ export function BackButton() {
           d="M15 19l-7-7 7-7"
         />
       </svg>
-      <span>वापस जाएं</span>
+      <span>Go back</span>
     </button>
   );
 }

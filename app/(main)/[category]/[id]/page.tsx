@@ -51,7 +51,7 @@ export default async function PostPage({ params }: { params: Promise<{ category?
                 {blogPost.title}
               </h1>
               <div className="flex flex-wrap items-center gap-2 text-xs uppercase tracking-[0.1em] text-[var(--muted)]">
-                <span>लेखक: {blogPost.author}</span>
+                <span>Author: {blogPost.author}</span>
                 {blogPost.date && (
                   <>
                     <span>·</span>

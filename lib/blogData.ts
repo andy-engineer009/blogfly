@@ -14,194 +14,194 @@ export interface BlogPost {
 export const allBlogPosts: BlogPost[] = [
   {
     id: "cricket-india-world-cup",
-    category: "क्रिकेट",
-    label: "क्रिकेट",
-    title: "भारत ने विश्व कप में ऑस्ट्रेलिया को हराया: विराट कोहली ने शतक बनाया",
-    author: "रोहित शर्मा",
-    date: "12 अगस्त 2024",
+    category: "Cricket",
+    label: "Cricket",
+    title: "India Beat Australia in World Cup: Virat Kohli Scored Century",
+    author: "Rohit Sharma",
+    date: "August 12, 2024",
     image: "https://images.unsplash.com/photo-1535131749006-b7f58c99034b?auto=format&fit=crop&w=1200&q=80",
     content: [
-      "भारतीय क्रिकेट टीम ने आज विश्व कप मैच में ऑस्ट्रेलिया को शानदार जीत दिलाई। विराट कोहली ने अपने शानदार शतक से टीम को जीत दिलाई।",
-      "मैच की शुरुआत में ऑस्ट्रेलिया ने पहले बल्लेबाजी करते हुए 280 रन बनाए। भारतीय गेंदबाजों ने अच्छा प्रदर्शन किया, लेकिन ऑस्ट्रेलिया की बल्लेबाजी मजबूत रही।",
-      "जवाब में भारत ने शानदार शुरुआत की। रोहित शर्मा और शुभमन गिल ने पहले विकेट के लिए 80 रन की साझेदारी की। इसके बाद विराट कोहली ने मैदान में कदम रखा और अपनी शानदार बल्लेबाजी से सभी को हैरान कर दिया।",
-      "विराट कोहली ने 120 गेंदों में 128 रन बनाए, जिसमें 12 चौके और 3 छक्के शामिल थे। उनका यह शतक भारत की जीत में महत्वपूर्ण साबित हुआ।",
-      "अंत में भारत ने 5 विकेट से जीत हासिल की और विश्व कप में अपनी जीत का सिलसिला जारी रखा। यह जीत भारतीय टीम के लिए बहुत महत्वपूर्ण है क्योंकि यह उन्हें सेमीफाइनल में पहुंचने के करीब ले जाती है।"
+      "Indian cricket team won a great match against Australia in the World Cup today. Virat Kohli scored a brilliant century to help the team win.",
+      "At the start of the match, Australia batted first and scored 280 runs. Indian bowlers did well, but Australia's batting was strong.",
+      "In response, India had a great start. Rohit Sharma and Shubman Gill made an 80-run partnership for the first wicket. Then Virat Kohli came to bat and surprised everyone with his great batting.",
+      "Virat Kohli scored 128 runs in 120 balls, with 12 fours and 3 sixes. His century was important for India's win.",
+      "Finally, India won by 5 wickets and continued their winning streak in the World Cup. This win is very important for the Indian team as it takes them closer to the semifinals."
     ]
   },
   {
     id: "health-yoga-meditation",
-    category: "स्वास्थ्य",
-    label: "स्वास्थ्य",
-    title: "योग और ध्यान: स्वस्थ जीवन जीने के लिए सर्वोत्तम तरीके",
-    author: "डॉ. प्रिया सिंह",
-    date: "11 अगस्त 2024",
+    category: "Health",
+    label: "Health",
+    title: "Yoga and Meditation: Best Ways to Live a Healthy Life",
+    author: "Dr. Priya Singh",
+    date: "August 11, 2024",
     image: "https://images.unsplash.com/photo-1506126613408-eca07ce68773?auto=format&fit=crop&w=1200&q=80",
     content: [
-      "योग और ध्यान हमारे जीवन में शांति और स्वास्थ्य लाने के लिए सबसे प्रभावी तरीके हैं। प्रतिदिन योग करने से न केवल शारीरिक स्वास्थ्य बेहतर होता है, बल्कि मानसिक शांति भी मिलती है।",
-      "योग के कई लाभ हैं - यह हमारी मांसपेशियों को मजबूत बनाता है, लचीलापन बढ़ाता है, और तनाव को कम करता है। सुबह के समय योग करना सबसे अच्छा माना जाता है क्योंकि इस समय हमारा मन शांत और तरोताजा होता है।",
-      "ध्यान या मेडिटेशन हमारे मन को शांत करने और आंतरिक शांति पाने का एक शक्तिशाली तरीका है। रोजाना 10-15 मिनट ध्यान करने से हमारी एकाग्रता बढ़ती है और तनाव कम होता है।",
-      "योग और ध्यान को अपनी दिनचर्या में शामिल करने से हमारा जीवन बेहतर होता है। यह न केवल हमारे शारीरिक स्वास्थ्य के लिए अच्छा है, बल्कि हमारे मानसिक और भावनात्मक स्वास्थ्य के लिए भी फायदेमंद है।",
-      "शुरुआत करने के लिए, आप सुबह 15-20 मिनट योग कर सकते हैं और शाम को 10 मिनट ध्यान कर सकते हैं। धीरे-धीरे आप इसे बढ़ा सकते हैं और अपने जीवन में सकारात्मक बदलाव देख सकते हैं।"
+      "Yoga and meditation are the most effective ways to bring peace and health into our lives. Doing yoga daily not only improves physical health but also brings mental peace.",
+      "Yoga has many benefits - it makes our muscles strong, increases flexibility, and reduces stress. Doing yoga in the morning is considered best because our mind is calm and fresh at this time.",
+      "Meditation is a powerful way to calm our mind and find inner peace. Doing 10-15 minutes of meditation daily increases our concentration and reduces stress.",
+      "Including yoga and meditation in our daily routine makes our life better. It is not only good for our physical health but also beneficial for our mental and emotional health.",
+      "To get started, you can do 15-20 minutes of yoga in the morning and 10 minutes of meditation in the evening. Slowly you can increase it and see positive changes in your life."
     ]
   },
   {
     id: "tech-ai-ml",
-    category: "टेक",
-    label: "टेक",
-    title: "AI और मशीन लर्निंग: भविष्य की तकनीक कैसे बदल रही है",
-    author: "अमित कुमार",
-    date: "12 अगस्त",
+    category: "Tech",
+    label: "Tech",
+    title: "AI and Machine Learning: How Future Technology is Changing",
+    author: "Amit Kumar",
+    date: "August 12",
     image: "https://images.unsplash.com/photo-1485827404703-89b55fcc595e?auto=format&fit=crop&w=800&q=80",
     content: [
-      "कृत्रिम बुद्धिमत्ता (AI) और मशीन लर्निंग आज के समय में सबसे तेजी से बढ़ने वाली तकनीकें हैं। ये तकनीकें हमारे जीवन के हर क्षेत्र को प्रभावित कर रही हैं - चाहे वह स्वास्थ्य सेवा हो, शिक्षा हो, या व्यापार हो।",
-      "AI और मशीन लर्निंग के माध्यम से हम ऐसी मशीनें बना सकते हैं जो सीख सकती हैं और अपने आप सुधार कर सकती हैं। यह तकनीक डेटा को विश्लेषण करके पैटर्न खोजती है और उसके आधार पर भविष्यवाणियां करती है।",
-      "चिकित्सा क्षेत्र में AI का उपयोग बीमारियों का पता लगाने और उपचार करने में मदद कर रहा है। शिक्षा के क्षेत्र में, AI छात्रों को व्यक्तिगत शिक्षा प्रदान करने में मदद कर रहा है।",
-      "व्यापार में, AI ग्राहक सेवा को बेहतर बनाने, बिक्री बढ़ाने और प्रक्रियाओं को स्वचालित करने में मदद कर रहा है। यह तकनीक न केवल कंपनियों को अधिक कुशल बना रही है, बल्कि नए अवसर भी पैदा कर रही है।",
-      "भविष्य में AI और मशीन लर्निंग और भी अधिक विकसित होगी और हमारे जीवन को और भी आसान बना देगी। हमें इस तकनीक को अपनाना चाहिए और इसके साथ आगे बढ़ना चाहिए।"
+      "Artificial Intelligence (AI) and Machine Learning are the fastest growing technologies today. These technologies are affecting every area of our lives - whether it's healthcare, education, or business.",
+      "Through AI and Machine Learning, we can create machines that can learn and improve themselves. This technology analyzes data to find patterns and makes predictions based on that.",
+      "In the medical field, AI is helping to detect diseases and provide treatment. In education, AI is helping to provide personalized learning to students.",
+      "In business, AI is helping to improve customer service, increase sales, and automate processes. This technology is not only making companies more efficient but also creating new opportunities.",
+      "In the future, AI and Machine Learning will develop even more and make our lives easier. We should adopt this technology and move forward with it."
     ]
   },
   {
     id: "fitness-weight-loss",
-    category: "फिटनेस",
-    label: "फिटनेस",
-    title: "घर पर वजन कम करने के 10 आसान व्यायाम",
-    author: "राजेश यादव",
-    date: "12 अगस्त",
+    category: "Fitness",
+    label: "Fitness",
+    title: "10 Easy Exercises to Lose Weight at Home",
+    author: "Rajesh Yadav",
+    date: "August 12",
     image: "https://images.unsplash.com/photo-1571019613454-1cb2f99b2d8b?auto=format&fit=crop&w=800&q=80",
     content: [
-      "वजन कम करना और फिट रहना हर किसी का सपना होता है, लेकिन जिम जाने के लिए समय नहीं मिल पाता। अच्छी बात यह है कि आप घर पर ही कई आसान व्यायाम करके अपना वजन कम कर सकते हैं।",
-      "पहला व्यायाम है स्क्वैट्स - यह आपकी जांघों और कूल्हों को मजबूत बनाता है। दूसरा है पुश-अप्स, जो आपकी छाती और बाहों को मजबूत करता है। तीसरा है प्लैंक, जो आपके पूरे शरीर को मजबूत बनाता है।",
-      "चौथा व्यायाम है बर्पीज़, जो एक पूर्ण शरीर का व्यायाम है और कैलोरी जलाने में बहुत प्रभावी है। पांचवां है जंपिंग जैक्स, जो आपके दिल की सेहत के लिए अच्छा है और कैलोरी जलाने में मदद करता है।",
-      "छठा व्यायाम है लंग्स, जो आपकी जांघों को मजबूत बनाता है। सातवां है माउंटेन क्लाइंबर, जो आपके पेट और कंधों को मजबूत करता है। आठवां है साइड प्लैंक, जो आपके पेट की मांसपेशियों को मजबूत बनाता है।",
-      "नौवां व्यायाम है हाई नीज़, जो आपके दिल की सेहत के लिए अच्छा है। दसवां और अंतिम व्यायाम है डेड बग, जो आपके पेट की मांसपेशियों को मजबूत बनाता है। इन व्यायामों को रोजाना 20-30 मिनट करने से आप अपना वजन कम कर सकते हैं और फिट रह सकते हैं।"
+      "Losing weight and staying fit is everyone's dream, but there's no time to go to the gym. The good thing is that you can lose weight by doing many easy exercises at home.",
+      "The first exercise is squats - it makes your thighs and hips strong. Second is push-ups, which make your chest and arms strong. Third is plank, which makes your whole body strong.",
+      "The fourth exercise is burpees, which is a full-body exercise and very effective in burning calories. Fifth is jumping jacks, which is good for your heart health and helps burn calories.",
+      "The sixth exercise is lunges, which makes your thighs strong. Seventh is mountain climbers, which makes your stomach and shoulders strong. Eighth is side plank, which makes your stomach muscles strong.",
+      "The ninth exercise is high knees, which is good for your heart health. The tenth and final exercise is dead bug, which makes your stomach muscles strong. Doing these exercises for 20-30 minutes daily can help you lose weight and stay fit."
     ]
   },
   {
     id: "news-education-policy",
-    category: "समाचार",
-    label: "समाचार",
-    title: "देश में नई शिक्षा नीति: छात्रों के लिए क्या बदलाव",
-    author: "सीमा वर्मा",
-    date: "11 अगस्त",
+    category: "News",
+    label: "News",
+    title: "New Education Policy in Country: What Changes for Students",
+    author: "Seema Verma",
+    date: "August 11",
     image: "https://images.unsplash.com/photo-1504711434969-e33886168f5c?auto=format&fit=crop&w=800&q=80",
     content: [
-      "केंद्र सरकार ने नई शिक्षा नीति लागू की है, जो देश के शिक्षा तंत्र में बड़े बदलाव ला रही है। यह नीति छात्रों को अधिक लचीलापन और विकल्प प्रदान करती है।",
-      "नई शिक्षा नीति के तहत, छात्र अब अपनी रुचि के अनुसार विषय चुन सकते हैं। पहले की तरह साइंस, कॉमर्स और आर्ट्स के बीच कठोर बंटवारा नहीं होगा। छात्र अब विभिन्न विषयों को मिलाकर पढ़ सकते हैं।",
-      "इस नीति में व्यावसायिक शिक्षा पर भी जोर दिया गया है। छात्र अब कक्षा 6 से ही व्यावसायिक कौशल सीख सकेंगे। यह उन्हें भविष्य में नौकरी पाने में मदद करेगा।",
-      "नई शिक्षा नीति में तकनीकी शिक्षा पर भी विशेष ध्यान दिया गया है। छात्रों को कंप्यूटर, कोडिंग और डिजिटल कौशल सिखाए जाएंगे। यह उन्हें डिजिटल युग के लिए तैयार करेगा।",
-      "इस नीति का मुख्य उद्देश्य छात्रों को रटने की बजाय समझने पर जोर देना है। अब परीक्षाओं में रटी हुई बातों की बजाय छात्रों की समझ और रचनात्मकता का मूल्यांकन किया जाएगा। यह बदलाव छात्रों के लिए बहुत फायदेमंद साबित होगा।"
+      "The central government has implemented a new education policy that is bringing big changes to the country's education system. This policy gives students more flexibility and choices.",
+      "Under the new education policy, students can now choose subjects according to their interest. There won't be a strict division between Science, Commerce, and Arts like before. Students can now study different subjects together.",
+      "This policy also focuses on vocational education. Students can now learn vocational skills from class 6. This will help them get jobs in the future.",
+      "The new education policy also pays special attention to technical education. Students will be taught computers, coding, and digital skills. This will prepare them for the digital age.",
+      "The main goal of this policy is to focus on understanding rather than memorizing. Now exams will test students' understanding and creativity instead of memorized facts. This change will be very beneficial for students."
     ]
   },
   {
     id: "health-mental-health",
-    category: "स्वास्थ्य",
-    label: "स्वास्थ्य",
-    title: "मानसिक स्वास्थ्य: तनाव से कैसे निपटें और खुश रहें",
-    author: "डॉ. अनिल शर्मा",
-    date: "10 अगस्त",
+    category: "Health",
+    label: "Health",
+    title: "Mental Health: How to Deal with Stress and Stay Happy",
+    author: "Dr. Anil Sharma",
+    date: "August 10",
     image: "https://images.unsplash.com/photo-1559757148-5c350d0d3c56?auto=format&fit=crop&w=800&q=80",
     content: [
-      "मानसिक स्वास्थ्य हमारे समग्र स्वास्थ्य का एक महत्वपूर्ण हिस्सा है। आज की तेजी से भागती दुनिया में, तनाव और चिंता आम समस्याएं बन गई हैं। लेकिन सही तरीके से निपटने पर हम इन समस्याओं को दूर कर सकते हैं।",
-      "तनाव से निपटने के लिए सबसे पहले हमें अपनी दिनचर्या में बदलाव लाना होगा। नियमित व्यायाम, पर्याप्त नींद और स्वस्थ आहार मानसिक स्वास्थ्य के लिए बहुत महत्वपूर्ण हैं।",
-      "ध्यान और योग भी मानसिक स्वास्थ्य को बेहतर बनाने में मदद करते हैं। रोजाना 10-15 मिनट ध्यान करने से हमारा मन शांत होता है और तनाव कम होता है।",
-      "अपने दोस्तों और परिवार के साथ समय बिताना भी मानसिक स्वास्थ्य के लिए बहुत अच्छा है। जब हम अपनी समस्याओं को किसी के साथ साझा करते हैं, तो हमें बेहतर महसूस होता है।",
-      "यदि तनाव बहुत अधिक है और आप इसे खुद से नहीं संभाल पा रहे हैं, तो मनोवैज्ञानिक या काउंसलर से मदद लेना बहुत महत्वपूर्ण है। मानसिक स्वास्थ्य के बारे में बात करना कोई शर्म की बात नहीं है, बल्कि यह एक बहादुरी का कदम है।"
+      "Mental health is an important part of our overall health. In today's fast-moving world, stress and anxiety have become common problems. But we can overcome these problems by dealing with them in the right way.",
+      "To deal with stress, first we need to make changes in our daily routine. Regular exercise, enough sleep, and healthy diet are very important for mental health.",
+      "Meditation and yoga also help improve mental health. Doing 10-15 minutes of meditation daily calms our mind and reduces stress.",
+      "Spending time with friends and family is also very good for mental health. When we share our problems with someone, we feel better.",
+      "If stress is too much and you can't handle it yourself, it's very important to get help from a psychologist or counselor. Talking about mental health is not something to be ashamed of, it's a brave step."
     ]
   },
   {
     id: "cricket-india-win",
-    category: "क्रिकेट",
-    label: "क्रिकेट",
-    title: "आईपीएल 2024: मुंबई इंडियंस ने चेन्नई सुपर किंग्स को हराया",
-    author: "विकास गुप्ता",
-    timeAgo: "32 मिनट पहले",
+    category: "Cricket",
+    label: "Cricket",
+    title: "IPL 2024: Mumbai Indians Beat Chennai Super Kings",
+    author: "Vikash Gupta",
+    timeAgo: "32 minutes ago",
     image: "https://images.unsplash.com/photo-1535131749006-b7f58c99034b?auto=format&fit=crop&w=800&q=80",
     content: [
-      "मुंबई इंडियंस ने आज रात आईपीएल 2024 के एक रोमांचक मैच में चेन्नई सुपर किंग्स को 5 विकेट से हराया। यह मैच वानखेड़े स्टेडियम में खेला गया और दर्शकों ने एक शानदार मैच देखा।",
-      "चेन्नई सुपर किंग्स ने पहले बल्लेबाजी करते हुए 20 ओवर में 185 रन बनाए। रुतुराज गायकवाड़ ने 65 रन बनाए, जबकि एमएस धोनी ने अंत में 25 रन बनाकर टीम को एक अच्छा स्कोर दिया।",
-      "जवाब में मुंबई इंडियंस ने शानदार शुरुआत की। रोहित शर्मा और ईशान किशन ने पहले विकेट के लिए 90 रन की साझेदारी की। इसके बाद सूर्यकुमार यादव ने 45 रन बनाकर टीम को जीत के करीब पहुंचाया।",
-      "अंतिम ओवर में मुंबई इंडियंस को 12 रन चाहिए थे और हार्दिक पांड्या ने शानदार बल्लेबाजी करते हुए टीम को जीत दिलाई। उन्होंने अंतिम ओवर में 15 रन बनाए और मुंबई इंडियंस ने मैच जीत लिया।",
-      "यह जीत मुंबई इंडियंस के लिए बहुत महत्वपूर्ण है क्योंकि यह उन्हें प्लेऑफ़ में पहुंचने के करीब ले जाती है। दूसरी ओर, चेन्नई सुपर किंग्स को अब अपने अगले मैच में जीत की जरूरत है।"
+      "Mumbai Indians beat Chennai Super Kings by 5 wickets in an exciting match of IPL 2024 tonight. The match was played at Wankhede Stadium and the audience saw a great match.",
+      "Chennai Super Kings batted first and scored 185 runs in 20 overs. Ruturaj Gaikwad scored 65 runs, while MS Dhoni scored 25 runs at the end to give the team a good score.",
+      "In response, Mumbai Indians had a great start. Rohit Sharma and Ishan Kishan made a 90-run partnership for the first wicket. Then Suryakumar Yadav scored 45 runs to take the team close to victory.",
+      "In the final over, Mumbai Indians needed 12 runs and Hardik Pandya played brilliantly to win the match for the team. He scored 15 runs in the final over and Mumbai Indians won the match.",
+      "This win is very important for Mumbai Indians as it takes them closer to the playoffs. On the other hand, Chennai Super Kings now need a win in their next match."
     ]
   },
   {
     id: "tech-ai-update",
-    category: "टेक",
-    label: "टेक",
-    title: "ChatGPT का नया अपडेट: अब हिंदी में भी बेहतर काम करता है",
-    author: "नीलम पांडे",
-    timeAgo: "2 घंटे पहले",
+    category: "Tech",
+    label: "Tech",
+    title: "ChatGPT New Update: Now Works Better in Hindi",
+    author: "Neelam Pandey",
+    timeAgo: "2 hours ago",
     image: "https://images.unsplash.com/photo-1677442136019-21780ecad995?auto=format&fit=crop&w=800&q=80",
     content: [
-      "OpenAI ने ChatGPT का नया अपडेट जारी किया है, जो अब हिंदी भाषा में बेहतर काम करता है। यह अपडेट भारतीय उपयोगकर्ताओं के लिए बहुत अच्छी खबर है।",
-      "नए अपडेट में ChatGPT अब हिंदी में अधिक सटीक और प्राकृतिक जवाब दे सकता है। यह हिंदी व्याकरण को बेहतर तरीके से समझता है और अधिक संदर्भ-उपयुक्त प्रतिक्रियाएं प्रदान करता है।",
-      "इस अपडेट के साथ, ChatGPT अब हिंदी में लेख लिख सकता है, अनुवाद कर सकता है, और जटिल प्रश्नों के जवाब दे सकता है। यह छात्रों, पेशेवरों और व्यापारियों के लिए बहुत उपयोगी साबित होगा।",
-      "ChatGPT का यह अपडेट न केवल हिंदी में बेहतर काम करता है, बल्कि अन्य भारतीय भाषाओं जैसे बंगाली, तमिल, तेलुगू आदि में भी सुधार किया गया है। यह भारतीय भाषाओं के लिए AI तकनीक में एक बड़ा कदम है।",
-      "भविष्य में, OpenAI और भी अधिक भारतीय भाषाओं में ChatGPT को बेहतर बनाने की योजना बना रहा है। यह भारतीय उपयोगकर्ताओं के लिए AI तकनीक को और भी अधिक सुलभ बना देगा।"
+      "OpenAI has released a new update for ChatGPT that now works better in Hindi language. This update is great news for Indian users.",
+      "In the new update, ChatGPT can now give more accurate and natural answers in Hindi. It understands Hindi grammar better and provides more context-appropriate responses.",
+      "With this update, ChatGPT can now write articles in Hindi, translate, and answer complex questions. This will be very useful for students, professionals, and business people.",
+      "This ChatGPT update not only works better in Hindi but also has improvements in other Indian languages like Bengali, Tamil, Telugu, etc. This is a big step in AI technology for Indian languages.",
+      "In the future, OpenAI is planning to make ChatGPT better in even more Indian languages. This will make AI technology more accessible for Indian users."
     ]
   },
   {
     id: "fitness-home-workout",
-    category: "फिटनेस",
-    label: "फिटनेस",
-    title: "घर पर मजबूत मांसपेशियां बनाने के लिए सर्वोत्तम व्यायाम",
-    author: "अर्जुन मल्होत्रा",
-    timeAgo: "3 घंटे पहले",
+    category: "Fitness",
+    label: "Fitness",
+    title: "Best Exercises to Build Strong Muscles at Home",
+    author: "Arjun Malhotra",
+    timeAgo: "3 hours ago",
     image: "https://images.unsplash.com/photo-1571019613454-1cb2f99b2d8b?auto=format&fit=crop&w=800&q=80",
     content: [
-      "मजबूत मांसपेशियां न केवल आपको अच्छा दिखने में मदद करती हैं, बल्कि आपके समग्र स्वास्थ्य के लिए भी बहुत महत्वपूर्ण हैं। अच्छी बात यह है कि आप घर पर ही बिना किसी उपकरण के मजबूत मांसपेशियां बना सकते हैं।",
-      "पुश-अप्स आपकी छाती, कंधों और बाहों को मजबूत बनाने के लिए सबसे अच्छे व्यायाम हैं। आप इन्हें विभिन्न तरीकों से कर सकते हैं - सामान्य पुश-अप्स, वाइड पुश-अप्स, या डायमंड पुश-अप्स।",
-      "स्क्वैट्स आपकी जांघों, कूल्हों और नितंबों को मजबूत बनाने के लिए बहुत प्रभावी हैं। आप सामान्य स्क्वैट्स, जंप स्क्वैट्स, या पिस्टल स्क्वैट्स कर सकते हैं।",
-      "प्लैंक आपके पूरे शरीर को मजबूत बनाने के लिए एक उत्कृष्ट व्यायाम है। यह आपके पेट, कंधों, पीठ और पैरों को मजबूत करता है। आप सामान्य प्लैंक, साइड प्लैंक, या रिवर्स प्लैंक कर सकते हैं।",
-      "लंग्स आपकी जांघों और कूल्हों को मजबूत बनाने के लिए बहुत अच्छे हैं। आप फॉरवर्ड लंग्स, रिवर्स लंग्स, या साइड लंग्स कर सकते हैं। इन व्यायामों को नियमित रूप से करने से आप घर पर ही मजबूत मांसपेशियां बना सकते हैं।"
+      "Strong muscles not only help you look good but are also very important for your overall health. The good thing is that you can build strong muscles at home without any equipment.",
+      "Push-ups are the best exercises to make your chest, shoulders, and arms strong. You can do them in different ways - normal push-ups, wide push-ups, or diamond push-ups.",
+      "Squats are very effective in making your thighs, hips, and glutes strong. You can do normal squats, jump squats, or pistol squats.",
+      "Plank is an excellent exercise to make your whole body strong. It makes your stomach, shoulders, back, and legs strong. You can do normal plank, side plank, or reverse plank.",
+      "Lunges are very good for making your thighs and hips strong. You can do forward lunges, reverse lunges, or side lunges. Doing these exercises regularly can help you build strong muscles at home."
     ]
   },
   {
     id: "news-education",
-    category: "समाचार",
-    label: "समाचार",
-    title: "केंद्र सरकार ने नई स्वास्थ्य योजना की घोषणा की",
-    author: "अनिता दास",
-    timeAgo: "4 घंटे पहले",
+    category: "News",
+    label: "News",
+    title: "Central Government Announces New Health Scheme",
+    author: "Anita Das",
+    timeAgo: "4 hours ago",
     image: "https://images.unsplash.com/photo-1504711434969-e33886168f5c?auto=format&fit=crop&w=800&q=80",
     content: [
-      "केंद्र सरकार ने आज एक नई स्वास्थ्य योजना की घोषणा की है, जो देश के सभी नागरिकों को मुफ्त स्वास्थ्य सेवाएं प्रदान करेगी। यह योजना विशेष रूप से गरीब और मध्यम वर्ग के परिवारों के लिए बनाई गई है।",
-      "इस योजना के तहत, सभी नागरिकों को मुफ्त चिकित्सा जांच, दवाएं और अस्पताल में इलाज मिलेगा। यह योजना विशेष रूप से गंभीर बीमारियों जैसे कैंसर, हृदय रोग और मधुमेह के इलाज पर ध्यान केंद्रित करेगी।",
-      "सरकार ने इस योजना के लिए 50,000 करोड़ रुपये का बजट आवंटित किया है। यह योजना अगले महीने से लागू होगी और देश के सभी जिलों में लागू की जाएगी।",
-      "इस योजना का लाभ उठाने के लिए, नागरिकों को अपने नजदीकी स्वास्थ्य केंद्र में पंजीकरण कराना होगा। पंजीकरण के लिए आधार कार्ड और राशन कार्ड की आवश्यकता होगी।",
-      "यह योजना देश के स्वास्थ्य सेवा क्षेत्र में एक बड़ा बदलाव लाएगी और सभी नागरिकों को गुणवत्तापूर्ण स्वास्थ्य सेवाएं प्रदान करेगी। यह योजना विशेष रूप से ग्रामीण क्षेत्रों के लोगों के लिए बहुत फायदेमंद साबित होगी।"
+      "The central government announced a new health scheme today that will provide free healthcare services to all citizens of the country. This scheme is made especially for poor and middle-class families.",
+      "Under this scheme, all citizens will get free medical checkups, medicines, and hospital treatment. This scheme will focus especially on treating serious diseases like cancer, heart disease, and diabetes.",
+      "The government has allocated a budget of 50,000 crores for this scheme. This scheme will be implemented from next month and will be applied in all districts of the country.",
+      "To benefit from this scheme, citizens will need to register at their nearest health center. Aadhar card and ration card will be required for registration.",
+      "This scheme will bring a big change in the country's healthcare sector and provide quality healthcare services to all citizens. This scheme will prove very beneficial especially for people in rural areas."
     ]
   },
   {
     id: "health-nutrition",
-    category: "स्वास्थ्य",
-    label: "स्वास्थ्य",
-    title: "स्वस्थ आहार: प्रोटीन से भरपूर भारतीय खाद्य पदार्थ",
-    author: "डॉ. रीता जैन",
-    timeAgo: "5 घंटे पहले",
+    category: "Health",
+    label: "Health",
+    title: "Healthy Diet: Protein Rich Indian Foods",
+    author: "Dr. Rita Jain",
+    timeAgo: "5 hours ago",
     image: "https://images.unsplash.com/photo-1490645935967-10de6ba17061?auto=format&fit=crop&w=800&q=80",
     content: [
-      "प्रोटीन हमारे शरीर के लिए बहुत महत्वपूर्ण है - यह हमारी मांसपेशियों को मजबूत बनाता है, हमारे बालों और नाखूनों को स्वस्थ रखता है, और हमारे शरीर की मरम्मत में मदद करता है। भारतीय खाद्य पदार्थों में प्रोटीन की भरपूर मात्रा होती है।",
-      "दालें प्रोटीन का एक उत्कृष्ट स्रोत हैं। अरहर दाल, मूंग दाल, उड़द दाल और मसूर दाल सभी प्रोटीन से भरपूर हैं। इन्हें रोजाना खाने से आपको पर्याप्त प्रोटीन मिल सकता है।",
-      "चना और राजमा भी प्रोटीन के बहुत अच्छे स्रोत हैं। आप इन्हें सलाद, करी या स्नैक्स के रूप में खा सकते हैं। सोयाबीन और टोफू भी प्रोटीन से भरपूर हैं और शाकाहारियों के लिए बहुत अच्छे हैं।",
-      "दूध और दूध से बने उत्पाद जैसे पनीर, दही और छाछ भी प्रोटीन के अच्छे स्रोत हैं। अंडे और चिकन भी प्रोटीन से भरपूर हैं, लेकिन ये शाकाहारी नहीं हैं।",
-      "नट्स और बीज जैसे बादाम, अखरोट, मूंगफली और तिल भी प्रोटीन के अच्छे स्रोत हैं। इन्हें स्नैक्स के रूप में या अपने भोजन में शामिल करके आप अपने प्रोटीन का सेवन बढ़ा सकते हैं। एक संतुलित आहार जिसमें इन सभी खाद्य पदार्थों को शामिल किया गया हो, आपको पर्याप्त प्रोटीन प्रदान करेगा।"
+      "Protein is very important for our body - it makes our muscles strong, keeps our hair and nails healthy, and helps repair our body. Indian foods have plenty of protein.",
+      "Lentils are an excellent source of protein. Toor dal, moong dal, urad dal, and masoor dal are all rich in protein. Eating these daily can give you enough protein.",
+      "Chickpeas and kidney beans are also very good sources of protein. You can eat them as salad, curry, or snacks. Soybeans and tofu are also rich in protein and very good for vegetarians.",
+      "Milk and milk products like paneer, yogurt, and buttermilk are also good sources of protein. Eggs and chicken are also rich in protein, but they are not vegetarian.",
+      "Nuts and seeds like almonds, walnuts, peanuts, and sesame are also good sources of protein. You can increase your protein intake by eating them as snacks or including them in your meals. A balanced diet that includes all these foods will provide you with enough protein."
     ]
   },
   {
     id: "cricket-world-cup",
-    category: "क्रिकेट",
-    label: "क्रिकेट",
-    title: "टी20 विश्व कप 2024: भारत की टीम का पूरा शेड्यूल जारी",
-    author: "मोहित शर्मा",
-    timeAgo: "8 घंटे पहले",
+    category: "Cricket",
+    label: "Cricket",
+    title: "T20 World Cup 2024: India Team Full Schedule Released",
+    author: "Mohit Sharma",
+    timeAgo: "8 hours ago",
     image: "https://images.unsplash.com/photo-1535131749006-b7f58c99034b?auto=format&fit=crop&w=800&q=80",
     content: [
-      "आईसीसी ने टी20 विश्व कप 2024 का पूरा शेड्यूल जारी कर दिया है। भारतीय टीम इस टूर्नामेंट में अपना सर्वश्रेष्ठ प्रदर्शन करने के लिए तैयार है।",
-      "भारत की पहली मैच पाकिस्तान के खिलाफ होगी, जो 15 अक्टूबर को खेला जाएगा। यह मैच हमेशा से ही सबसे रोमांचक मैचों में से एक रहा है और इस बार भी दर्शक एक शानदार मैच की उम्मीद कर रहे हैं।",
-      "इसके बाद भारत की मैच ऑस्ट्रेलिया, इंग्लैंड, न्यूजीलैंड और दक्षिण अफ्रीका के खिलाफ होंगी। भारतीय टीम ने अपनी तैयारी शुरू कर दी है और सभी खिलाड़ी अपने सर्वश्रेष्ठ रूप में हैं।",
-      "भारतीय टीम के कप्तान रोहित शर्मा ने कहा कि टीम इस टूर्नामेंट को जीतने के लिए पूरी तरह से तैयार है। उन्होंने कहा कि टीम में युवा और अनुभवी खिलाड़ियों का सही मिश्रण है।",
-      "टी20 विश्व कप 2024 में भारत की टीम के प्रदर्शन पर सभी की नजरें टिकी हुई हैं। भारतीय प्रशंसक अपनी टीम से इस टूर्नामेंट को जीतने की उम्मीद कर रहे हैं। यह टूर्नामेंट अक्टूबर से दिसंबर तक चलेगा और फाइनल 15 दिसंबर को खेला जाएगा।"
+      "ICC has released the full schedule for T20 World Cup 2024. The Indian team is ready to give their best performance in this tournament.",
+      "India's first match will be against Pakistan, which will be played on October 15. This match has always been one of the most exciting matches and this time too the audience is expecting a great match.",
+      "After that, India will have matches against Australia, England, New Zealand, and South Africa. The Indian team has started their preparation and all players are in their best form.",
+      "Indian team captain Rohit Sharma said that the team is fully ready to win this tournament. He said that the team has the right mix of young and experienced players.",
+      "Everyone's eyes are on the Indian team's performance in T20 World Cup 2024. Indian fans are expecting their team to win this tournament. This tournament will run from October to December and the final will be played on December 15."
     ]
   }
 ];

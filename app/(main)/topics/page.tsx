@@ -13,7 +13,7 @@ const posts = allBlogPosts.map(post => ({
   category: post.category,
   title: post.title,
   author: post.author,
-  timeAgo: post.timeAgo || post.date || "हाल ही में",
+  timeAgo: post.timeAgo || post.date || "Recently",
   image: post.image,
 }));
 
@@ -89,7 +89,7 @@ export default function TopicPages() {
                     : "bg-[var(--surface)] text-[var(--foreground)] border border-[var(--border-color)] hover:border-[var(--accent)]"
                 }`}
               >
-                सभी
+               All
               </button>
               {categories.map((category) => (
                 <button

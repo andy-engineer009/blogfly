@@ -127,7 +127,7 @@ export default function Home() {
                       className="object-cover transition-transform duration-300 group-hover:scale-105"
                     />
                   </div>
-                  <h3 className="line-clamp-3 text-[18px] font-semibold leading-[26px] text-[var(--foreground)] transition-colors group-hover:text-[var(--accent)] sm:text-base">
+                  <h3 className="line-clamp-3 text-[18px] font-semibold leading-[26px] text-[var(--foreground)] transition-colors group-hover:text-green-600 group-hover:underline sm:text-base">
                     {post.title}
                   </h3>
                 </Link>
@@ -189,34 +189,22 @@ export default function Home() {
 
               <div className="space-y-8">
                 {/* List Items */}
-                {[
-                  {
-                    title: "VCs are racing to fund India's first reusable rocket. Who's winning the game?",
-                    author: "Parvathi Benu",
-                    image: "https://images.unsplash.com/photo-1517976487492-5750f3195933?auto=format&fit=crop&w=200&q=80"
-                  },
-                  {
-                    title: "India's air cargo boom leaves most carriers grounded",
-                    author: "Anuj Suvarna",
-                    image: "https://images.unsplash.com/photo-1517976487492-5750f3195933?auto=format&fit=crop&w=200&q=80"
-                  },
-                  {
-                    title: "When the side bet becomes the main game: How Thyrocare went from...",
-                    author: "Shivani Verma",
-                    image: "https://images.unsplash.com/photo-1576091160399-112ba8d25d1d?auto=format&fit=crop&w=200&q=80"
-                  }
-                ].map((item, i) => (
-                  <Link key={i} href="#" className="group flex gap-4">
+                {allBlogPosts.slice(5, 8).map((post) => (
+                  <Link 
+                    key={post.id}
+                    href={`/${getCategorySlug(post.label)}/${post.id}`}
+                    className="group flex gap-4"
+                  >
                     <div className="flex-1">
                       <h3 className="mb-2 text-[18px] font-bold leading-snug text-[var(--foreground)] group-hover:text-green-600 group-hover:underline">
-                        {item.title}
+                        {post.title}
                       </h3>
-                      <p className="text-xs font-medium text-[var(--muted)]">{item.author}</p>
+                      <p className="text-xs font-medium text-[var(--muted)]">{post.author}</p>
                     </div>
-                    <div className="relative h-[93px] w-[93px] flex-shrink-0 overflow-hidden bg-gray-100">
+                    <div className="relative h-[93px] w-[93px] flex-shrink-0 overflow-hidden rounded-lg bg-gray-100">
                       <Image
-                        src={item.image}
-                        alt={item.title}
+                        src={post.image}
+                        alt={post.title}
                         fill
                         className="object-cover transition-transform duration-300 group-hover:scale-105"
                       />
@@ -387,7 +375,7 @@ export default function Home() {
                   <span className="mb-3 inline-block text-xs font-semibold uppercase tracking-wider text-[var(--accent)]">
                     ■ {allBlogPosts[4].category}
                   </span>
-                  <h2 className="mb-3 text-xl font-bold leading-tight text-[var(--foreground)] transition-colors group-hover:text-[var(--accent)] sm:text-2xl">
+                  <h2 className="mb-3 text-xl font-bold leading-tight text-[var(--foreground)] transition-colors group-hover:text-green-600 group-hover:underline sm:text-2xl">
                     {allBlogPosts[4].title}
                   </h2>
                   <p className="text-sm text-[var(--muted)]">{allBlogPosts[4].author}</p>
@@ -416,7 +404,7 @@ export default function Home() {
                       />
                     </div>
                     <div className="flex-1 min-w-0">
-                      <h3 className="line-clamp-2 text-[18px] md:text-[18px] font-semibold leading-tight text-[var(--foreground)] group-hover:text-[var(--accent)] transition-colors">
+                      <h3 className="line-clamp-2 text-[18px] md:text-[18px] font-semibold leading-tight text-[var(--foreground)] group-hover:text-green-600 group-hover:underline transition-colors">
                         {post.title}
                       </h3>
                       <p className="mt-1.5 text-xs text-[var(--muted)]">{post.author}</p>
@@ -479,7 +467,7 @@ export default function Home() {
                 </defs>
               </svg>
             </h2>
-              <Link href="/topics" className="text-sm font-medium text-[var(--muted)] hover:text-[var(--foreground)]">
+              <Link href="/topics" className="group text-sm font-medium text-[var(--muted)] group-hover:text-green-600 group-hover:underline transition-colors">
                 View All 
               </Link>
             </div>

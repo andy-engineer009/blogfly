@@ -1,13 +1,14 @@
 import type { Metadata } from "next";
-import { Poppins } from "next/font/google";
+import { Reddit_Sans } from "next/font/google";
 import "./globals.css";
 import { ThemeProvider } from "@/app/providers/ThemeProvider";
 
-const poppins = Poppins({
-  weight: ["100", "200", "300", "400", "500", "600", "700", "800", "900"],
+const redditSans = Reddit_Sans({
+  weight: ["200", "300", "400", "500", "600", "700", "800", "900"],
   style: ["normal", "italic"],
   subsets: ["latin"],
-  variable: "--font-poppins",
+  variable: "--font-reddit-sans",
+  display: "swap",
 });
 export const metadata: Metadata = {
   title: "Blogfly · Blogging Platform",
@@ -23,8 +24,8 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body
-        className={`${poppins.variable} antialiased bg-[var(--background)] text-[var(--foreground)]`}
-        style={{ fontFamily: "var(--font-poppins), sans-serif" }}
+        className={`${redditSans.variable} antialiased bg-[var(--background)] text-[var(--foreground)]`}
+        style={{ fontFamily: "var(--font-reddit-sans), sans-serif" }}
       >
         <ThemeProvider>
           {children}

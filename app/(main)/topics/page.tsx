@@ -45,7 +45,7 @@ export default function TopicPages() {
   };
 
   return (
-    <div className="min-h-screen bg-[var(--background)] px-4 py-6 sm:px-6 lg:px-8 lg:py-12">
+    <div className="min-h-screen bg-[var(--background)] px-0 py-6  lg:py-12">
       <div className="mx-auto grid max-w-[1600px] grid-cols-1 gap-6 lg:grid-cols-12">
 
       <div className="block md:hidden w-full mb-0 mt-0">

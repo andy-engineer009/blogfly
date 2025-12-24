@@ -1,6 +1,6 @@
 "use client";
 
-import { useState, useMemo, useEffect } from "react";
+import { useState, useMemo } from "react";
 import Image from "next/image";
 import { PostCard } from "@/components/PostCard";
 import BlogSelectionModal, { type BlogPost } from "@/components/BlogSelectionModal";
@@ -56,8 +56,18 @@ const getCurrentHomepageBlogs = (): SelectedBlogs => {
     };
   };
 
+  // The CapTable section - get from homepage if exists
+  const capTableFeaturedPost = getBlogPostById("cricket-india-world-cup"); // Default or from config
+  const capTableListIds = allBlogPosts.slice(5, 8).map(post => post.id); // Next 3 posts
+  const capTableListArray: (string | null)[] = [...capTableListIds];
+  while (capTableListArray.length < 3) {
+    capTableListArray.push(null);
+  }
+
   return {
     topPicks: topPicksArray.slice(0, 4) as (string | null)[],
+    capTableFeatured: convertToBlogPost(capTableFeaturedPost),
+    capTableList: capTableListArray.slice(0, 3) as (string | null)[],
     hero1: convertToBlogPost(hero1Post),
     hero2: convertToBlogPost(hero2Post),
     related1: convertToBlogPost(related1Post),
@@ -68,6 +78,8 @@ const getCurrentHomepageBlogs = (): SelectedBlogs => {
 
 type SelectedBlogs = {
   topPicks: (string | null)[]; // Fixed array of 4 positions for Top Picks
+  capTableFeatured: BlogPost | null; // The CapTable featured article
+  capTableList: (string | null)[]; // Fixed array of 3 positions for CapTable list
   hero1: BlogPost | null; // Left column main hero
   hero2: BlogPost | null; // Right column top card
   related1: BlogPost | null; // Right column bottom left
@@ -81,6 +93,8 @@ export default function HomeManagerPage() {
   
   const [selectedBlogs, setSelectedBlogs] = useState<SelectedBlogs>({
     topPicks: currentHomepageBlogs.topPicks,
+    capTableFeatured: currentHomepageBlogs.capTableFeatured,
+    capTableList: currentHomepageBlogs.capTableList,
     hero1: currentHomepageBlogs.hero1,
     hero2: currentHomepageBlogs.hero2,
     related1: currentHomepageBlogs.related1,
@@ -88,18 +102,19 @@ export default function HomeManagerPage() {
     latest: currentHomepageBlogs.latest,
   });
 
-  const [isLoading, setIsLoading] = useState(false);
+  const [isLoading] = useState(false);
   const [isSaving, setIsSaving] = useState(false);
 
   const [modalState, setModalState] = useState<{
     isOpen: boolean;
-    target: keyof SelectedBlogs | "latest" | "topPicks";
+    target: keyof SelectedBlogs | "latest" | "topPicks" | "capTableList";
     title: string;
     topPickIndex?: number; // Position index for top picks (0-3)
+    capTableListIndex?: number; // Position index for capTable list (0-2)
   }>({
     isOpen: false,
     target: "hero1",
-    title: "ब्लॉग चुनें",
+    title: "Choose Blog",
   });
 
   const selectedLatestBlogs = useMemo(() => {
@@ -113,8 +128,15 @@ export default function HomeManagerPage() {
     return allBlogs.find(blog => blog.id === blogId) || null;
   };
 
-  const handleOpenModal = (target: keyof SelectedBlogs | "latest" | "topPicks", title: string, topPickIndex?: number) => {
-    setModalState({ isOpen: true, target, title, topPickIndex });
+  // Get blog objects for capTable list positions
+  const getCapTableListBlog = (index: number): BlogPost | null => {
+    const blogId = selectedBlogs.capTableList[index];
+    if (!blogId) return null;
+    return allBlogs.find(blog => blog.id === blogId) || null;
+  };
+
+  const handleOpenModal = (target: keyof SelectedBlogs | "latest" | "topPicks" | "capTableList", title: string, topPickIndex?: number, capTableListIndex?: number) => {
+    setModalState({ isOpen: true, target, title, topPickIndex, capTableListIndex });
   };
 
 
@@ -142,6 +164,24 @@ export default function HomeManagerPage() {
           return {
             ...prev,
             topPicks: newTopPicks,
+          };
+        });
+        // Close modal after selection
+        handleCloseModal();
+      }
+    } else if (target === "capTableList") {
+      // Position-based selection for capTable list
+      const positionIndex = modalState.capTableListIndex !== undefined 
+        ? modalState.capTableListIndex 
+        : selectedBlogs.capTableList.findIndex(id => id === null); // Find first empty slot
+      
+      if (positionIndex >= 0 && positionIndex < 3) {
+        setSelectedBlogs((prev) => {
+          const newCapTableList = [...prev.capTableList];
+          newCapTableList[positionIndex] = blog.id;
+          return {
+            ...prev,
+            capTableList: newCapTableList,
           };
         });
         // Close modal after selection
@@ -176,6 +216,8 @@ export default function HomeManagerPage() {
       // Prepare data for API
       const configData = {
         topPicks: selectedBlogs.topPicks.filter(id => id !== null) as string[], // Filter out nulls for API
+        capTableFeatured: selectedBlogs.capTableFeatured?.id || null,
+        capTableList: selectedBlogs.capTableList.filter(id => id !== null) as string[],
         hero1: selectedBlogs.hero1?.id || null,
         hero2: selectedBlogs.hero2?.id || null,
         related1: selectedBlogs.related1?.id || null,
@@ -224,6 +266,17 @@ export default function HomeManagerPage() {
     });
   };
 
+  const handleRemoveCapTableListBlog = (positionIndex: number) => {
+    setSelectedBlogs((prev) => {
+      const newCapTableList = [...prev.capTableList];
+      newCapTableList[positionIndex] = null;
+      return {
+        ...prev,
+        capTableList: newCapTableList,
+      };
+    });
+  };
+
   if (isLoading) {
     return (
       <div className="flex min-h-screen items-center justify-center bg-[var(--background)]">
@@ -237,7 +290,7 @@ export default function HomeManagerPage() {
 
   return (
     <div className="min-h-screen bg-[var(--background)] px-4 py-8 text-[var(--foreground)] sm:px-6 lg:px-8">
-      <div className="mx-auto w-full max-w-7xl">
+      <div className="mx-auto w-full">
         {/* Header */}
         <div className="mb-8 flex items-center justify-between">
           <div>
@@ -301,6 +354,145 @@ export default function HomeManagerPage() {
                   </div>
                 );
               })}
+            </div>
+          </div>
+        </section>
+
+        {/* The CapTable Section */}
+        <section className="mb-16">
+          <div className="mb-6 flex flex-wrap items-center justify-between gap-4">
+            <div>
+              <h2 className="text-2xl font-bold text-[var(--foreground)]">The CapTable Section</h2>
+              <p className="mt-1 text-sm text-[var(--muted)]">Manage the featured article and list items for The CapTable section</p>
+            </div>
+          </div>
+
+          <div className="grid grid-cols-1 gap-8 lg:grid-cols-12">
+            {/* Left Column: Featured Article */}
+            <div className="lg:col-span-8">
+              <div className="mb-4">
+                <h3 className="mb-2 text-lg font-semibold text-[var(--foreground)]">Featured Article</h3>
+                {selectedBlogs.capTableFeatured ? (
+                  <div className="group relative rounded-xl border border-[var(--border-color)] bg-[var(--surface)] overflow-hidden">
+                    <div className="relative h-[300px] w-full sm:h-[400px]">
+                      <Image
+                        src={selectedBlogs.capTableFeatured.image}
+                        alt={selectedBlogs.capTableFeatured.title}
+                        fill
+                        className="object-cover"
+                      />
+                      <button
+                        onClick={() => handleRemoveBlog("capTableFeatured")}
+                        className="absolute right-2 top-2 rounded-full bg-red-500 p-2 text-white shadow-lg transition hover:bg-red-600 z-10"
+                        aria-label="Remove Featured Blog"
+                      >
+                        <svg className="h-4 w-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" />
+                        </svg>
+                      </button>
+                    </div>
+                    <div className="p-6">
+                      <h4 className="mb-2 text-xl font-bold text-[var(--foreground)]">{selectedBlogs.capTableFeatured.title}</h4>
+                      <p className="text-sm text-[var(--muted)]">{selectedBlogs.capTableFeatured.author}</p>
+                    </div>
+                  </div>
+                ) : (
+                  <div className="flex flex-col items-center justify-center rounded-xl border-2 border-dashed border-[var(--border-color)] bg-[var(--surface)] p-12">
+                    <svg className="mb-4 h-12 w-12 text-[var(--muted)]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 16l4.586-4.586a2 2 0 012.828 0L16 16m-2-2l1.586-1.586a2 2 0 012.828 0L20 14m-6-6h.01M6 20h12a2 2 0 002-2V6a2 2 0 00-2-2H6a2 2 0 00-2 2v12a2 2 0 002 2z" />
+                    </svg>
+                    <p className="mb-4 text-lg font-medium text-[var(--foreground)]">No Featured Article selected</p>
+                    <button
+                      onClick={() => handleOpenModal("capTableFeatured", "Choose Featured Article")}
+                      className="rounded-lg bg-[var(--accent)] px-6 py-2.5 text-sm font-semibold text-white transition hover:bg-[#fb4fa0]"
+                    >
+                      Choose Blog
+                    </button>
+                  </div>
+                )}
+              </div>
+            </div>
+
+            {/* Right Column: List & Newsletter */}
+            <div className="lg:col-span-4">
+              <div className="mb-6">
+                <div className="mb-4 border-b-4 border-green-600 pb-2">
+                  <div className="text-xl font-bold text-[var(--foreground)]">The</div>
+                  <h3 className="text-3xl font-extrabold text-[var(--foreground)]">CapTable</h3>
+                </div>
+                <h4 className="mb-4 text-lg font-semibold text-[var(--foreground)]">List Articles (3 items)</h4>
+              </div>
+
+              <div className="space-y-6">
+                {/* List Items */}
+                {Array.from({ length: 3 }).map((_, index) => {
+                  const blog = getCapTableListBlog(index);
+                  return (
+                    <div key={`capTable-list-${index}`} className="group relative">
+                      {blog ? (
+                        <div className="flex gap-4 rounded-lg border border-[var(--border-color)] bg-[var(--surface)] p-4">
+                          <div className="flex-1">
+                            <h5 className="mb-2 line-clamp-2 text-sm font-bold leading-snug text-[var(--foreground)]">
+                              {blog.title}
+                            </h5>
+                            <p className="text-xs text-[var(--muted)]">{blog.author}</p>
+                          </div>
+                          <div className="relative h-16 w-16 flex-shrink-0 overflow-hidden rounded-lg">
+                            <Image
+                              src={blog.image}
+                              alt={blog.title}
+                              fill
+                              className="object-cover"
+                            />
+                          </div>
+                          <button
+                            onClick={() => handleRemoveCapTableListBlog(index)}
+                            className="absolute right-2 top-2 rounded-full bg-red-500 p-1 text-white shadow-lg opacity-0 transition hover:bg-red-600 group-hover:opacity-100 z-10"
+                            aria-label="Remove Blog"
+                          >
+                            <svg className="h-3 w-3" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" />
+                            </svg>
+                          </button>
+                        </div>
+                      ) : (
+                        <div className="flex items-center justify-center rounded-lg border-2 border-dashed border-[var(--border-color)] bg-[var(--surface)] p-6">
+                          <button
+                            onClick={() => handleOpenModal("capTableList", "Choose Blog", undefined, index)}
+                            className="text-sm font-medium text-[var(--accent)] transition hover:underline"
+                          >
+                            Add Blog
+                          </button>
+                        </div>
+                      )}
+                    </div>
+                  );
+                })}
+
+                {/* Newsletter Box Placeholder */}
+                <div className="mt-8 rounded-xl border border-[var(--border-color)] bg-[var(--card)] p-6">
+                  <div className="mb-4 flex items-start justify-between">
+                    <h5 className="max-w-[150px] text-lg font-bold leading-tight text-[var(--foreground)]">
+                      Sign Up For YourStory Newsletter
+                    </h5>
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" className="h-8 w-8 text-[var(--foreground)]" strokeWidth="1.5">
+                      <path d="M21.75 6.75v10.5a2.25 2.25 0 01-2.25 2.25h-15a2.25 2.25 0 01-2.25-2.25V6.75m19.5 0A2.25 2.25 0 0019.5 4.5h-15a2.25 2.25 0 00-2.25 2.25m19.5 0v.243a2.25 2.25 0 01-1.07 1.916l-7.5 4.615a2.25 2.25 0 01-2.36 0L3.32 8.91a2.25 2.25 0 01-1.07-1.916V6.75" />
+                    </svg>
+                  </div>
+                  <div className="flex gap-2">
+                    <input
+                      type="email"
+                      placeholder="Enter your Email"
+                      className="w-full rounded-md border border-[var(--border-color)] bg-[var(--surface)] px-3 py-2 text-sm text-[var(--foreground)] placeholder:text-[var(--muted)] focus:border-green-600 focus:outline-none"
+                      disabled
+                    />
+                    <button className="rounded-md bg-black px-4 py-2 text-xs font-bold uppercase text-white transition hover:bg-black/80" disabled>
+                      Sign Up
+                    </button>
+                  </div>
+                  <p className="mt-2 text-xs text-[var(--muted)]">Newsletter widget (configured on homepage)</p>
+                </div>
+              </div>
             </div>
           </div>
         </section>
@@ -509,7 +701,7 @@ export default function HomeManagerPage() {
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 6v6m0 0v6m0-6h6m-6 0H6" />
                   </svg>
                   <p className="mb-2 text-lg font-medium text-[var(--foreground)]">No Blog selected</p>
-                  <p className="mb-4 text-sm text-[var(--muted)]">To choose blogs for latest stories, click "Add Blog"</p>
+                  <p className="mb-4 text-sm text-[var(--muted)]">To choose blogs for latest stories, click &quot;Add Blog&quot;</p>
                   <button
                     onClick={() => handleOpenModal("latest", "Choose Latest Stories")}
                     className="rounded-lg bg-[var(--accent)] px-6 py-2.5 text-sm font-semibold text-white transition hover:bg-[#fb4fa0]"
@@ -553,6 +745,8 @@ export default function HomeManagerPage() {
               ? selectedBlogs.latest
               : modalState.target === "topPicks"
               ? selectedBlogs.topPicks.filter(id => id !== null) as string[]
+              : modalState.target === "capTableList"
+              ? selectedBlogs.capTableList.filter(id => id !== null) as string[]
               : []
           }
         />

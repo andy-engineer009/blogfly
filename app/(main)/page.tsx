@@ -98,12 +98,12 @@ export default function Home() {
   return (
     <main className="min-h-screen bg-[var(--background)] text-[var(--foreground)]">
       <WelcomeModal />
-      <div className=" mx-auto px-4 py-8 sm:px-6 lg:px-[80px] lg:py-12">
+      <div className=" mx-auto py-8 lg:py-12">
         {/* Top Picks Section */}
         <section className="mb-10">
           <div className="flex flex-col gap-6 lg:flex-row lg:items-start">
             {/* Top Picks Title with Starburst */}
-            <div className="flex-shrink-0 w-[120px] sm:w-[150px] lg:w-[200px]">
+            <div className="flex-shrink-0 w-[120px] sm:w-[150px] lg:w-[240px]">
               <div className="relative">
                <svg className="w-full h-auto hidden md:block" xmlns="http://www.w3.org/2000/svg" width="242" height="194" fill="none" viewBox="0 0 242 194"><g clipPath="url(#a)"><path fill="red" fillRule="evenodd" d="M185.379 94.587c.911.128 1.823.245 2.737.349 2.003.226 2.42.983 1.956 2.845-.814 3.251-1.461 6.548-2.107 9.841l-.009.046c-.044.227-.109.454-.175.687-.207.729-.429 1.511-.074 2.487.902-.636 1.791-1.257 2.668-1.871 1.955-1.368 3.856-2.698 5.736-4.056 2.401-1.732 3.598-2.602 4.56-2.393.969.21 1.7 1.511 3.182 4.124a525.332 525.332 0 0 0 3.573 6.169c.624 1.067 1.267 2.166 1.935 3.314.148-.416.278-.768.393-1.079.206-.557.363-.983.488-1.417.246-.866.493-1.731.741-2.596.862-3.009 1.723-6.018 2.506-9.048.358-1.396.999-1.934 2.454-1.803 3.502.314 7.017.536 10.528.759l.031.002c.156.01.313.027.473.044.687.074 1.409.152 2.159-.288a11.837 11.837 0 0 1-.247-.382 4.21 4.21 0 0 0-.432-.606l-1.389-1.524a657.596 657.596 0 0 0-6.501-7.068c-.941-1-1.016-1.665.392-2.249 1.22-.51 2.41-1.092 3.563-1.74.81-.451 1.656-.84 2.522-1.24 1.465-.674 2.989-1.376 4.499-2.45a1052.76 1052.76 0 0 1-3.43-1.331 329.866 329.866 0 0 0-6.458-2.466c-2.354-.857-3.521-1.274-3.9-2.068-.372-.777.011-1.917.775-4.186.752-2.227 1.501-4.453 2.329-6.913l.922-2.739c-1.411.68-2.777 1.333-4.109 1.968-3.41 1.628-6.593 3.147-9.735 4.75-1.455.744-2.42.79-3.221-.749-.232-.45-.529-.868-.826-1.285-.13-.183-.26-.366-.385-.551a5602.751 5602.751 0 0 0-4.271-6.363L197.545 59c-.643.395-.735.852-.824 1.288a6.3 6.3 0 0 1-.041.192 449.972 449.972 0 0 1-.759 3.244c-.603 2.554-1.206 5.108-1.716 7.68-.304 1.547-1.092 1.9-2.467 1.699a98.287 98.287 0 0 0-4.153-.526c-2.581-.277-5.161-.543-8.034-.839l-2.829-.291c.847 1.14 1.65 2.233 2.426 3.29 1.79 2.44 3.442 4.69 5.177 6.874 1.256 1.584 1.337 2.576-.443 3.867-2.172 1.571-4.248 3.276-6.322 4.979-.849.697-1.699 1.395-2.554 2.083.409.573.851.605 1.258.634.101.008.199.015.293.03 1.02.159 2.039.325 3.058.49.973.159 1.946.317 2.92.47-20.698 15.204-24.939 33.998-23.862 43.344a1 1 0 1 0 1.987-.229c-1.014-8.799 3.108-27.676 24.719-42.692Z" clipRule="evenodd"></path><path fill="red" fillRule="evenodd" d="M159.777 146.384a.996.996 0 0 0 .879-1.108c-1.249-10.843 5.3-36.99 42.767-52.356l-.759-1.85c-38.209 15.67-45.357 42.612-43.995 54.435a.99.99 0 0 0 .372.669 1.002 1.002 0 0 0 .736.21Z" clipRule="evenodd"></path><path fill="red" fillRule="evenodd" d="M202.663 100.07c-38.208 15.67-45.356 42.613-43.994 54.436l1.986-.229c-1.249-10.843 5.3-36.99 42.767-52.356l-.759-1.851Z" clipRule="evenodd"></path><path fill="#000" d="M221.199 193.652c-5.94 0-11.88-1.65-17.16-4.18l1.98-13.42c4.73 2.31 9.13 3.85 13.09 3.85 3.08 0 4.73-1.21 4.73-3.08 0-1.65-1.1-2.86-4.51-3.85l-2.09-.77c-7.48-2.75-12.32-8.14-12.32-16.17 0-9.57 7.37-16.61 19.36-16.61 5.06 0 10.67 1.32 15.73 3.3l-2.09 13.42c-4.51-2.09-9.46-3.52-12.65-3.52-2.64 0-3.74 1.32-3.74 2.75 0 1.32.88 2.53 3.63 3.52l2.42.88c9.24 3.3 13.86 8.47 13.86 16.61 0 10.34-7.92 17.27-20.24 17.27Zm-20.573-1.654h-21.67l-13.2-22v22h-18.92v-77.33l18.92-2.09v48.84l12.98-20.35h20.9l-16.72 24.42 17.71 26.51Zm-75.21 1.654c-16.39 0-28.6-11.66-28.6-27.06 0-15.51 12.43-27.17 28.49-27.17 4.84 0 9.35.99 13.42 2.64l-2.53 15.73c-3.52-1.65-6.6-2.53-9.57-2.53-7.04 0-11.77 4.95-11.77 11.22 0 6.16 4.62 11.22 11.99 11.22 3.08 0 6.49-.88 10.12-2.75l2.2 15.73c-4.29 1.76-8.69 2.97-13.75 2.97Zm-46.35-58.742c-6.16 0-11.11-4.84-11.11-10.67s4.95-10.67 11.11-10.67c6.16 0 11.11 4.84 11.11 10.67s-4.95 10.67-11.11 10.67ZM69.497 192v-49.94l18.92-1.98V192h-18.92Zm-38.263-77c17.49 0 30.14 11.66 30.14 27.72 0 16.17-12.65 27.94-30.14 27.94h-6.38V192H5.383v-77h25.85Zm-1.98 39.16c7.26 0 12.54-4.73 12.54-11.44 0-6.6-5.28-11.22-12.54-11.22h-4.4v22.66h4.4ZM151.996 24.64c13.64 0 24.64 11.77 24.64 26.95 0 15.07-11.11 26.84-24.64 26.84-5.28 0-9.79-1.87-13.31-5.06v27.281h-18.92v-73.7l16.83-1.76v6.82c3.63-4.73 8.91-7.37 15.4-7.37v-.001Zm-3.85 38.06c6.16 0 10.89-4.84 10.89-11.11 0-6.38-4.73-11.22-10.89-11.22-6.27 0-11 4.84-11 11.22 0 6.27 4.73 11.11 11 11.11ZM83.088 78.652c-16.06 0-28.49-11.77-28.49-27.06s12.43-27.17 28.49-27.17c16.17 0 28.6 11.88 28.6 27.17 0 15.29-12.43 27.06-28.6 27.06Zm0-15.95c6.27 0 11-4.84 11-11.11 0-6.38-4.73-11.22-11-11.22-6.16 0-11 4.84-11 11.22 0 6.27 4.84 11.11 11 11.11ZM57.742 18.15h-19.14V77h-19.47V18.15H.102L2.742 0h52.36l2.64 18.15Z"></path></g><defs><clipPath id="a"><path fill="#fff" d="M0 0h242v194H0z"></path></clipPath></defs></svg>
                 {/* Red Starburst SVG */}
@@ -112,7 +112,7 @@ export default function Home() {
             </div>
 
             {/* Top Picks Articles */}
-            <div className="flex flex-1 flex-wrap gap-3 sm:gap-4 lg:gap-6 lg:flex-nowrap">
+            <div className="lg:ms-4 flex flex-1 flex-wrap gap-3 sm:gap-4 lg:gap-10 lg:flex-nowrap">
               {topPicks.map((post) => (
                 <Link
                   key={post.id}
@@ -127,7 +127,7 @@ export default function Home() {
                       className="object-cover transition-transform duration-300 group-hover:scale-105"
                     />
                   </div>
-                  <h3 className="line-clamp-2 text-sm font-semibold leading-[26px] text-[var(--foreground)] transition-colors group-hover:text-[var(--accent)] sm:text-base">
+                  <h3 className="line-clamp-3 text-sm font-semibold leading-[26px] text-[var(--foreground)] transition-colors group-hover:text-[var(--accent)] sm:text-base">
                     {post.title}
                   </h3>
                 </Link>
@@ -136,9 +136,126 @@ export default function Home() {
           </div>
         </section>
 
+           {/* The CapTable Section */}
+           <section className="mb-16 pt-0">
+          <div className="grid grid-cols-1 gap-12 lg:grid-cols-12">
+            {/* Left Column: Featured Interview */}
+            <div className="lg:col-span-8">
+              <div className="relative h-[300px] w-full overflow-hidden bg-gray-100 sm:h-[500px]">
+                <Image
+                  src="https://images.unsplash.com/photo-1556157382-97eda2d62296?auto=format&fit=crop&w=1200&q=80"
+                  alt="Saurabh Jain"
+                  fill
+                  className="object-cover object-top"
+                />
+                {/* Overlay Badge */}
+                <div className="absolute bottom-6 left-6 -rotate-2 rounded bg-black px-4 py-2 text-white shadow-lg">
+                  <div className="text-lg font-bold leading-none">Saurabh</div>
+                  <div className="text-lg font-bold leading-none mb-1">Jain</div>
+                  <div className="text-[10px] font-medium leading-tight opacity-90">
+                    Co-founder & CEO,<br />Stable Money
+                  </div>
+                </div>
+                <div className="absolute bottom-6 right-6 text-3xl font-bold text-red-600 drop-shadow-md">YS</div>
+              </div>
+
+              <div className="mt-8">
+                <div className="mb-4 flex items-center gap-2">
+                  <span className="h-2 w-2 bg-black dark:bg-white"></span>
+                  <span className="text-sm font-bold uppercase tracking-wider text-[var(--foreground)]">Interview</span>
+                </div>
+                <h2 className="mb-4 text-3xl font-bold leading-tight text-[var(--foreground)] sm:text-4xl lg:text-[42px]">
+                  Stable Money aims to triple fixed deposit assets to Rs 12,000 crore by 2026
+                </h2>
+                <p className="mb-4 text-lg leading-relaxed text-[var(--muted)]">
+                  Saurabh Jain, the founder of fixed-income investment platform Stable Money, says FD, which was once considered a boring product, is now finding new life among young Indians seeking better returns with low risks—in a new avatar.
+                </p>
+                <div className="font-bold text-[var(--foreground)]">Sayan Sen</div>
+              </div>
+            </div>
+
+            <div className="w-full block md:hidden mb-4 md:mb-16">
+          <div className="flex min-h-[100px] md:min-h-[200px] overflow-hidden w-full flex-col items-center justify-center rounded-2xl border border-dashed border-[var(--border-color)] bg-[var(--surface)] p-8 text-center relative">
+      
+            <Image src="/image/dubai-1.jpg" alt="Advertisement" fill className="object-contain w-full h-full" />
+          </div>
+        </div>
+
+            {/* Right Column: List & Newsletter */}
+            <div className="lg:col-span-4">
+              <div className="mb-8 pb-2">
+              <h2 className="block text-[66px] leading-[59px] font-[800] text-[#000] mb-[0] border-b-[10px] border-[#5EC25F]">The <br/> CapTable</h2>
+              </div>
+
+              <div className="space-y-8">
+                {/* List Items */}
+                {[
+                  {
+                    title: "VCs are racing to fund India's first reusable rocket. Who's winning the game?",
+                    author: "Parvathi Benu",
+                    image: "https://images.unsplash.com/photo-1517976487492-5750f3195933?auto=format&fit=crop&w=200&q=80"
+                  },
+                  {
+                    title: "India's air cargo boom leaves most carriers grounded",
+                    author: "Anuj Suvarna",
+                    image: "https://images.unsplash.com/photo-1559268975-f54f9a712284?auto=format&fit=crop&w=200&q=80"
+                  },
+                  {
+                    title: "When the side bet becomes the main game: How Thyrocare went from...",
+                    author: "Shivani Verma",
+                    image: "https://images.unsplash.com/photo-1576091160399-112ba8d25d1d?auto=format&fit=crop&w=200&q=80"
+                  }
+                ].map((item, i) => (
+                  <Link key={i} href="#" className="group flex gap-4">
+                    <div className="flex-1">
+                      <h3 className="mb-2 text-[18px] font-bold leading-snug text-[var(--foreground)] group-hover:text-green-600 group-hover:underline">
+                        {item.title}
+                      </h3>
+                      <p className="text-xs font-medium text-[var(--muted)]">{item.author}</p>
+                    </div>
+                    <div className="relative h-[93px] w-[93px] flex-shrink-0 overflow-hidden bg-gray-100">
+                      <Image
+                        src={item.image}
+                        alt={item.title}
+                        fill
+                        className="object-cover transition-transform duration-300 group-hover:scale-105"
+                      />
+                    </div>
+                  </Link>
+                ))}
+
+                {/* Newsletter Box */}
+                <div className="mt-8 rounded-xl border border-[var(--border-color)] bg-[var(--card)] p-6 shadow-sm">
+                  <div className="mb-6 flex items-start justify-between">
+                    <h3 className=" text-lg font-bold leading-tight text-[var(--foreground)]">
+                      Sign Up For YourStory Newsletter
+                    </h3>
+                    <div className="relative h-12 w-12">
+                       {/* Simple SVG Illustration placeholder */}
+                       <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" className="text-[var(--foreground)]" strokeWidth="1.5">
+                         <path d="M21.75 6.75v10.5a2.25 2.25 0 01-2.25 2.25h-15a2.25 2.25 0 01-2.25-2.25V6.75m19.5 0A2.25 2.25 0 0019.5 4.5h-15a2.25 2.25 0 00-2.25 2.25m19.5 0v.243a2.25 2.25 0 01-1.07 1.916l-7.5 4.615a2.25 2.25 0 01-2.36 0L3.32 8.91a2.25 2.25 0 01-1.07-1.916V6.75" />
+                       </svg>
+                    </div>
+                  </div>
+                  <div className="flex gap-2">
+                    <input
+                      type="email"
+                      placeholder="Enter your Email"
+                      className="w-full rounded-md border border-[var(--border-color)] bg-[var(--surface)] px-3 py-2 text-sm text-[var(--foreground)] placeholder:text-[var(--muted)] focus:border-green-600 focus:outline-none"
+                    />
+                    <button className="rounded-md bg-black px-4 py-2 text-xs font-bold uppercase text-white transition hover:bg-black/80 dark:bg-white dark:text-black">
+                      Sign Up
+                    </button>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+
+
         {/* Hero Section */}
-        <section className="mb-8 md:mb-16 grid gap-4 lg:grid-cols-2 lg:h-[600px]">
-          {/* Div A: Left Column (Main Hero - 1 Card) */}
+        {/* <section className="mb-8 md:mb-16 grid gap-4 lg:grid-cols-2 lg:h-[600px]">
           <Link 
             href={`/${getCategorySlug(hero1.label)}/${hero1.id}`}
             className="group relative w-full h-[500px] lg:h-full overflow-hidden  cursor-pointer"
@@ -168,17 +285,12 @@ export default function Home() {
 
           <div className="w-full block md:hidden mb-4 md:mb-16">
           <div className="flex min-h-[100px] md:min-h-[200px] overflow-hidden w-full flex-col items-center justify-center rounded-2xl border border-dashed border-[var(--border-color)] bg-[var(--surface)] p-8 text-center relative">
-            {/* <span className="text-xs font-bold uppercase tracking-widest text-[var(--muted)]">Advertisement</span>
-            <div className="mt-2 text-lg font-medium text-[var(--foreground)]">
-              Show advertisement here
-            </div> */}
+      
             <Image src="/image/dubai-1.jpg" alt="Advertisement" fill className="object-contain w-full h-full" />
           </div>
         </div>
 
-          {/* Div B: Right Column (Split Rows) */}
           <div className="flex flex-col gap-4 h-auto lg:h-full">
-            {/* Row 1: Full Width Card */}
             <Link 
               href={`/${getCategorySlug(hero2.label)}/${hero2.id}`}
               className="group relative w-full h-[300px] lg:h-[60%] overflow-hidden  cursor-pointer"
@@ -205,7 +317,6 @@ export default function Home() {
               </div>
             </Link>
 
-            {/* Row 2: Two Cards (50% / 50%) */}
             <div className="grid grid-cols-2 gap-4 h-[200px] lg:h-[40%]">
               {relatedStories.slice(0, 2).map((story) => (
                 <Link
@@ -234,7 +345,7 @@ export default function Home() {
               ))}
             </div>
           </div>
-        </section>
+        </section> */}
 
 
         <div className="w-full hidden md:block mb-4 md:mb-16">
@@ -296,7 +407,7 @@ export default function Home() {
                     href={`/${getCategorySlug(post.label)}/${post.id}`}
                     className="group flex gap-4 transition-opacity hover:opacity-80"
                   >
-                    <div className="relative h-20 w-20 md:w-[150] md:h-[80px] flex-shrink-0 overflow-hidden  bg-[var(--surface)]">
+                    <div className="relative h-[93px] w-[93px] md:w-[150] md:h-[80px] flex-shrink-0 overflow-hidden  bg-[var(--surface)]">
                       <Image
                         src={post.image}
                         alt={post.title}
@@ -305,7 +416,7 @@ export default function Home() {
                       />
                     </div>
                     <div className="flex-1 min-w-0">
-                      <h3 className="line-clamp-2 text-sm md:text-[18px] font-semibold leading-tight text-[var(--foreground)] group-hover:text-[var(--accent)] transition-colors">
+                      <h3 className="line-clamp-2 text-[18px] md:text-[18px] font-semibold leading-tight text-[var(--foreground)] group-hover:text-[var(--accent)] transition-colors">
                         {post.title}
                       </h3>
                       <p className="mt-1.5 text-xs text-[var(--muted)]">{post.author}</p>
@@ -327,6 +438,7 @@ export default function Home() {
           </div>
         </div>
 
+     
         {/* Latest Stories Section */}
         <section className="flex flex-col gap-12 lg:flex-row">
           <div className="w-full space-y-8 lg:w-2/3">
@@ -368,7 +480,7 @@ export default function Home() {
               </svg>
             </h2>
               <Link href="/topics" className="text-sm font-medium text-[var(--muted)] hover:text-[var(--foreground)]">
-                सभी देखें →
+                View All 
               </Link>
             </div>
             

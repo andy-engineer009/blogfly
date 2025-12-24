@@ -22,7 +22,7 @@
   --color-primary: var(--primary);
   --color-secondary: var(--secondary);
   --color-accent: var(--accent);
-  --font-sans: var(--font-poppins);
+  --font-sans: var(--font-reddit-sans);
 }
 
 * {
@@ -34,7 +34,7 @@ body {
   margin: 0;
   background: var(--background);
   color: var(--foreground);
-  font-family: var(--font-poppins), system-ui, -apple-system, sans-serif;
+  font-family: var(--font-reddit-sans), system-ui, -apple-system, sans-serif;
 }
 
 .theme-swatch {

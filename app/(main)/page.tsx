@@ -127,7 +127,7 @@ export default function Home() {
                       className="object-cover transition-transform duration-300 group-hover:scale-105"
                     />
                   </div>
-                  <h3 className="line-clamp-3 text-sm font-semibold leading-[26px] text-[var(--foreground)] transition-colors group-hover:text-[var(--accent)] sm:text-base">
+                  <h3 className="line-clamp-3 text-[18px] font-semibold leading-[26px] text-[var(--foreground)] transition-colors group-hover:text-[var(--accent)] sm:text-base">
                     {post.title}
                   </h3>
                 </Link>
@@ -198,7 +198,7 @@ export default function Home() {
                   {
                     title: "India's air cargo boom leaves most carriers grounded",
                     author: "Anuj Suvarna",
-                    image: "https://images.unsplash.com/photo-1559268975-f54f9a712284?auto=format&fit=crop&w=200&q=80"
+                    image: "https://images.unsplash.com/photo-1517976487492-5750f3195933?auto=format&fit=crop&w=200&q=80"
                   },
                   {
                     title: "When the side bet becomes the main game: How Thyrocare went from...",

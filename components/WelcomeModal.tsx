@@ -61,67 +61,57 @@ export function WelcomeModal() {
 
   return (
     <div
-      className="fixed inset-0 z-[100] flex items-center justify-center bg-black/60 p-4 backdrop-blur-sm transition-opacity duration-300"
+      className="fixed inset-0 z-[100] flex items-center justify-center bg-black/40 p-4 backdrop-blur-sm transition-opacity duration-300"
       onClick={handleBackdropClick}
       aria-modal="true"
       aria-labelledby="welcome-modal-title"
       role="dialog"
     >
-      <div className="w-full max-w-md transform overflow-hidden rounded-3xl border border-[var(--border-color)] bg-[var(--surface)] shadow-2xl transition-all duration-300 scale-100">
-        {/* Header with Close Button */}
-        <div className="relative border-b border-[var(--border-color)] bg-[var(--surface)] px-6 py-5">
-          <button
-            onClick={handleClose}
-            className="absolute right-4 top-4 rounded-lg p-2 text-[var(--muted)] transition-colors hover:bg-[var(--border-color)] hover:text-[var(--foreground)]"
-            aria-label="Close modal"
-          >
-            <svg 
-              className="h-5 w-5 sm:h-6 sm:w-6" 
-              fill="none" 
-              stroke="currentColor" 
-              viewBox="0 0 24 24"
-            >
-              <path 
-                strokeLinecap="round" 
-                strokeLinejoin="round" 
-                strokeWidth={2} 
-                d="M6 18L18 6M6 6l12 12" 
-              />
-            </svg>
-          </button>
-        </div>
+      <div className="relative w-full max-w-[400px] transform overflow-hidden rounded-2xl bg-[var(--surface)] shadow-2xl transition-all duration-300 scale-100">
+        {/* Decorative Top Gradient */}
+        <div className="h-1.5 w-full bg-gradient-to-r from-[var(--accent)] to-pink-500" />
+        
+        {/* Close Button */}
+        <button
+          onClick={handleClose}
+          className="absolute right-3 top-4 rounded-full p-2 text-[var(--muted)] transition-colors hover:bg-[var(--card)] hover:text-[var(--foreground)] z-10"
+          aria-label="Close"
+        >
+          <svg className="h-5 w-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" />
+          </svg>
+        </button>
 
-        {/* Body */}
-        <div className="px-6 py-8 sm:px-8 sm:py-10">
-          <div className="text-center">
-            <div className="mb-4 text-4xl sm:text-5xl">👋</div>
-            <h2
-              id="welcome-modal-title"
-              className="mb-4 text-2xl font-bold text-[var(--foreground)] sm:text-3xl"
-            >
-              Hey! Welcome to the demo
-            </h2>
-            <div className="space-y-3 text-left text-base text-[var(--muted)] sm:text-lg">
-              <p>
-                This is a demo version, so sample content is in English.
-              </p>
-              <p>
-                Want another language? No stress 😌
-              </p>
-              <p>
-                You can publish blogs in any language — Hindi, Tamil, Telugu, or anything else.
-              </p>
-            </div>
+        <div className="px-8 py-8 text-center">
+          {/* Icon with Glow */}
+          <div className="mx-auto mb-6 flex h-16 w-16 items-center justify-center rounded-full bg-gradient-to-br from-[var(--accent)]/10 to-pink-500/10 ring-1 ring-[var(--accent)]/20">
+            <span className="text-3xl animate-wave origin-bottom-right">👋</span>
           </div>
-        </div>
 
-        {/* Footer */}
-        <div className="border-t border-[var(--border-color)] bg-[var(--surface)] px-6 py-5 sm:px-8 sm:py-6">
+          {/* Title */}
+          <h2
+            id="welcome-modal-title"
+            className="mb-3 text-2xl font-bold tracking-tight text-[var(--foreground)]"
+          >
+            Welcome to Demo
+          </h2>
+
+          {/* Content */}
+          <div className="mb-8 space-y-2 text-[15px] leading-relaxed text-[var(--muted)]">
+            <p>
+              This is a demo version with English content.
+            </p>
+            <p>
+              You can publish blogs in <span className="font-semibold text-[var(--foreground)]">Hindi, Tamil, Telugu</span>, or any language you choose.
+            </p>
+          </div>
+
+          {/* Action Button */}
           <button
             onClick={handleClose}
-            className="w-full rounded-xl bg-[var(--accent)] px-6 py-3 text-sm font-semibold text-white transition-colors hover:bg-[#fb4fa0] focus:outline-none focus:ring-2 focus:ring-[var(--accent)] focus:ring-offset-2 sm:text-base"
+            className="group w-full rounded-xl bg-[var(--foreground)] px-4 py-3.5 text-sm font-semibold text-[var(--background)] shadow-lg transition-all hover:scale-[1.02] hover:shadow-xl focus:outline-none focus:ring-2 focus:ring-[var(--foreground)] focus:ring-offset-2"
           >
-            Got it!
+            Start Exploring
           </button>
         </div>
       </div>

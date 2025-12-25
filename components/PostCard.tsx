@@ -71,7 +71,7 @@ export function PostCard({ id, label, title, author, timeAgo, image }: PostCardP
           {label}
         </span>
 
-        <h3 className="text-[18px] md:text-[16px] leading-[22px] md:leading-[26px] font-[600] sm:leading-snug text-[var(--foreground)] sm:text-[18px] group-hover:text-green-600 group-hover:underline transition-colors">
+        <h3 className="text-[18px] md:text-[20px] leading-[22px] md:leading-[26px] font-[600] sm:leading-snug text-[var(--foreground)] sm:text-[18px] group-hover:text-green-600 group-hover:underline transition-colors">
           {title}
         </h3>
 
